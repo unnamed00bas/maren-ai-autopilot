@@ -1,12 +1,44 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { Header } from '@/components/Header';
+import { Hero } from '@/components/Hero';
+import { Products } from '@/components/Products';
+import { Process } from '@/components/Process';
+import { FAQ } from '@/components/FAQ';
+import { Contact } from '@/components/Contact';
+import { Footer } from '@/components/Footer';
+import { CalcModal } from '@/components/CalcModal';
+import { DemoModal } from '@/components/DemoModal';
 
 const Index = () => {
+  const [calcModalOpen, setCalcModalOpen] = useState(false);
+  const [demoModalOpen, setDemoModalOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Header 
+        onCalcClick={() => setCalcModalOpen(true)}
+        onDemoClick={() => setDemoModalOpen(true)}
+      />
+      
+      <main className="pt-20">
+        <Hero />
+        <Products />
+        <Process />
+        <FAQ />
+        <Contact />
+      </main>
+
+      <Footer />
+
+      <CalcModal 
+        open={calcModalOpen}
+        onOpenChange={setCalcModalOpen}
+      />
+
+      <DemoModal 
+        open={demoModalOpen}
+        onOpenChange={setDemoModalOpen}
+      />
     </div>
   );
 };
