@@ -20,8 +20,7 @@ export const Contact = () => {
             className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 hover:bg-white/20 transition-all border border-white/10 hover:border-accent group"
           >
             <MessageCircle className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 text-accent group-hover:scale-110 transition-transform" />
-            <h3 className="font-bold text-base md:text-lg mb-1 md:mb-2">Telegram</h3>
-            <p className="text-xs md:text-sm opacity-75">@Marinochcin</p>
+            <h3 className="font-bold text-base md:text-lg">Telegram</h3>
           </a>
 
           <a 
@@ -29,19 +28,17 @@ export const Contact = () => {
             className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 hover:bg-white/20 transition-all border border-white/10 hover:border-accent group"
           >
             <Mail className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 text-accent group-hover:scale-110 transition-transform" />
-            <h3 className="font-bold text-base md:text-lg mb-1 md:mb-2">Email</h3>
-            <p className="text-xs md:text-sm opacity-75">Marina.Y.Pogodina@yandex.ru</p>
+            <h3 className="font-bold text-base md:text-lg">Email</h3>
           </a>
 
           <a 
-            href="https://zoom.us" 
+            href="https://t.me/promaren_support_bot" 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 hover:bg-white/20 transition-all border border-white/10 hover:border-accent group"
           >
             <Video className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 text-accent group-hover:scale-110 transition-transform" />
-            <h3 className="font-bold text-base md:text-lg mb-1 md:mb-2">Zoom</h3>
-            <p className="text-xs md:text-sm opacity-75">Созвон онлайн</p>
+            <h3 className="font-bold text-base md:text-lg">Zoom</h3>
           </a>
         </div>
 
