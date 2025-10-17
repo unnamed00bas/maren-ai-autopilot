@@ -53,6 +53,7 @@ const products = [
     effect: 'Рост аудитории и входящих без агрессии; первые касания превращаются в запросы.',
     note: 'Работаем в рамках правил площадок. Скорости и лимиты согласовываем индивидуально.',
     stack: ['Telegram/VK/Email', 'n8n/Make', 'CRM/таблицы'],
+    inDevelopment: true,
   },
   {
     id: 'P4',
@@ -111,7 +112,15 @@ export const Products = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {products.map((product) => {
           return (
-            <div key={product.id} className="card-product group">
+            <div key={product.id} className={`card-product group ${product.inDevelopment ? 'relative overflow-hidden' : ''}`}>
+              {product.inDevelopment && (
+                <div className="absolute top-0 right-0 bg-gradient-to-br from-accent/20 to-accent/5 px-3 py-1.5 rounded-bl-lg border-l border-b border-accent/30">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                    <span className="text-xs font-bold text-accent uppercase tracking-wide">В разработке</span>
+                  </div>
+                </div>
+              )}
               <div className="flex items-start gap-4 mb-4">
                 <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
                   <img src={product.icon} alt={product.title} className="w-6 h-6" />
