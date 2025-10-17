@@ -21,14 +21,16 @@ const pricingData = [
     description: '100% авто: по плану генерит форматы, ставит UTM и публикует сам + SEO Блог под ключ.',
     price: '100 000 ₽',
     note: 'опционально — современный ai-лэндинг — 30 000 ₽',
-    type: 'one-time'
+    type: 'one-time',
+    inDevelopment: true
   },
   {
     id: 'P4',
     title: 'MAREN GrowthOps',
     description: 'этичный «холод»: масслайк/коммент, рост охватов.',
     price: 'лист ожидания',
-    type: 'waitlist'
+    type: 'waitlist',
+    inDevelopment: true
   },
   {
     id: 'P5',
@@ -64,10 +66,17 @@ export const Pricing = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {pricingData.map((item) => (
-            <div key={item.id} className="card-product flex flex-col">
+            <div key={item.id} className={`card-product flex flex-col ${item.inDevelopment ? 'opacity-60' : ''}`}>
               <div className="mb-4">
-                <div className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-lg text-sm font-semibold mb-3">
-                  {item.id}
+                <div className="inline-flex items-center gap-2 mb-3">
+                  <div className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-lg text-sm font-semibold">
+                    {item.id}
+                  </div>
+                  {item.inDevelopment && (
+                    <span className="text-xs px-2 py-1 bg-muted rounded text-muted-foreground">
+                      в разработке
+                    </span>
+                  )}
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-2">
                   {item.title}
