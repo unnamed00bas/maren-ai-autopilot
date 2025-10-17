@@ -39,18 +39,18 @@ export const ConsentCheckbox = ({
             e.preventDefault();
             onPrivacyClick();
           }}
-          className="text-accent hover:underline"
+          className="text-accent hover:text-accent/80 underline decoration-accent/30 hover:decoration-accent/60 underline-offset-2 transition-all"
         >
           Политикой обработки персональных данных
         </button>
-        , и согласен с предложением{' '}
+        {' '}и согласен с условиями{' '}
         <button
           type="button"
           onClick={(e) => {
             e.preventDefault();
             onOfferClick();
           }}
-          className="text-accent hover:underline"
+          className="text-accent hover:text-accent/80 underline decoration-accent/30 hover:decoration-accent/60 underline-offset-2 transition-all"
         >
           Публичной оферты
         </button>
