@@ -45,15 +45,15 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
               <div className="flex items-center gap-2 md:gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-border/50">
                 <Zap className="w-6 h-6 md:w-8 md:h-8 text-accent flex-shrink-0" />
                 <div>
-                  <div className="font-bold text-sm md:text-base lg:text-lg">Ответ ≤10 сек</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">24/7 без перерывов</div>
+                  <div className="font-bold text-sm md:text-base lg:text-lg">Ответ ассистента ≤10 секунд</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">(не спит, не берёт больничный)</div>
                 </div>
               </div>
               
               <div className="flex items-center gap-2 md:gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-border/50">
                 <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-accent flex-shrink-0" />
                 <div>
-                  <div className="font-bold text-sm md:text-base lg:text-lg">Идея→публикация</div>
+                  <div className="font-bold text-sm md:text-base lg:text-lg">Идея → контент → публикация:</div>
                   <div className="text-xs md:text-sm text-muted-foreground">UTM, расписание, отчёт</div>
                 </div>
               </div>
