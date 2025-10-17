@@ -1,3 +1,5 @@
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
+
 const products = [
   {
     id: 'P1',
@@ -7,16 +9,40 @@ const products = [
     description: 'Понимает контекст, ищет материалы, конспектирует, генерит планы/тексты/сценарии, пишет письма в Gmail, ставит слоты в Calendar, ведёт переписку «как человек» (история и память). STT/TTS для видео.',
     effect: 'Минус 2–4 часа рутины/день; скорость креатива ↑, ошибок от забывчивости ↓.',
     demo: 'По запросу — 24 ч / 999 ₽ через бота.',
-    stack: ['LLM (OpenAI/Claude/Gemini)', 'Perplexity', 'Notion', 'Gmail/Calendar', 'STT/TTS', 'Telegram Bot'],
+    stack: ['LLM (OpenAI/Claude/Gemini)', 'Perplexity', 'Gmail/Calendar/Drive', 'Notion', 'STT/TTS', 'n8n/Make', 'Telegram Bot API'],
   },
   {
     id: 'P2',
     icon: '/assets/icons/flow.svg',
     title: 'MAREN Flow',
     subtitle: 'пайплайны генерации и автопостинга',
-    description: 'Из одной идеи собирает: карусель, обложку, видео/шорт; ставит UTM, публикует по расписанию в Telegram, VK, Meta (Instagram + Threads + Facebook), Pinterest, ОК, Telegra.ph, Дзен, YouTube, TikTok. Ведёт логи и отчёты.',
-    effect: '70–90% публикаций без ручного труда; стабильный график, рост охватов.',
-    stack: ['n8n/Make', 'Telegram/VK/Meta API', 'YouTube/TikTok API', 'Notion/Sheets', 'LLM адаптация'],
+    description: 'По подготовленному контент-плану сам собирает форматы (карусель/пост/обложка/шорт с TTS), ставит UTM и публикует по расписанию в TG, VK, Meta* (Instagram/Threads/Facebook), Pinterest, OK, Telegra.ph, Дзен, YouTube, TikTok, WordPress. Ведёт логи и отчёт в Sheets/Notion.',
+    effect: 'Ежедневные выходы без касаний, стабильная сетка, прозрачные ссылки-отчёты.',
+    demos: [
+      {
+        category: 'Видео контент',
+        links: [
+          { text: 'рекламный ролик VK', url: 'https://vk.com/wall-232352420_9' },
+          { text: 'аватар Дзен', url: 'https://dzen.ru/shorts/68dbccc99f3b6c54d7e8480e?share_to=link' },
+        ],
+      },
+      {
+        category: 'Текстовой контент',
+        links: [
+          { text: 'лонгрид', url: 'https://dzen.ru/a/aPIAxiSR60Svf9hS' },
+          { text: 'Telegra.ph', url: 'https://telegra.ph/Gipsovyj-podnos-master-klass-po-osennej-rezbe-09-25' },
+          { text: 'LinkedIn-статья', url: 'https://www.linkedin.com/posts/marinapogodina_ai-digitaltrust-audit-activity-7383786246701076480-ZY2k?utm_source=share&utm_medium=member_desktop&rcm=ACoAABvY4jMBmJCqQ_rwViRCLTr8z5-1I5zNtM8' },
+          { text: 'Pinterest-пин', url: 'https://pin.it/4EjQ0CHbz' },
+        ],
+      },
+      {
+        category: 'Блог',
+        links: [
+          { text: 'полностью автоматизированный блог на WordPress', url: 'https://blog.ecogift.site/' },
+        ],
+      },
+    ],
+    stack: ['n8n/Make', 'LLM (OpenAI/Claude/Gemini)', 'Perplexity', 'STT/TTS', 'API площадок', 'Sheets/Notion'],
   },
   {
     id: 'P3',
@@ -49,6 +75,28 @@ const products = [
 ];
 
 export const Products = () => {
+  const renderDescription = (text: string) => {
+    const parts = text.split('Meta*');
+    if (parts.length === 1) return text;
+    
+    return (
+      <>
+        {parts[0]}
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="underline decoration-dotted cursor-help">Meta*</span>
+            </TooltipTrigger>
+            <TooltipContent className="max-w-xs">
+              <p className="text-xs">Meta Platforms Inc. — экстремистская организация, запрещена в РФ; WhatsApp не затронут. Реклама на ресурсах Meta в РФ запрещена. Упоминание — только в информационных целях; мы не аффилированы.</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        {parts[1]}
+      </>
+    );
+  };
+
   return (
     <section id="products" className="section-container bg-muted/30">
       <div className="text-center mb-16">
@@ -75,7 +123,7 @@ export const Products = () => {
                 </div>
               </div>
 
-              <p className="text-sm leading-relaxed mb-4">{product.description}</p>
+              <p className="text-sm leading-relaxed mb-4">{renderDescription(product.description)}</p>
 
               <div className="space-y-3 pt-4 border-t border-border/50">
                 <div>
@@ -87,6 +135,33 @@ export const Products = () => {
                   <div>
                     <div className="text-xs font-semibold text-accent mb-1">ДЕМО:</div>
                     <p className="text-sm text-muted-foreground">{product.demo}</p>
+                  </div>
+                )}
+
+                {product.demos && (
+                  <div>
+                    <div className="text-xs font-semibold text-accent mb-2">ДЕМО-ПРИМЕРЫ (автопостинг):</div>
+                    <div className="space-y-2">
+                      {product.demos.map((demo, idx) => (
+                        <div key={idx}>
+                          <div className="text-xs font-semibold text-muted-foreground mb-1">{demo.category}:</div>
+                          <ul className="space-y-1 ml-2">
+                            {demo.links.map((link, linkIdx) => (
+                              <li key={linkIdx}>
+                                <a 
+                                  href={link.url} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="text-xs text-accent hover:underline"
+                                >
+                                  — {link.text}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
 
