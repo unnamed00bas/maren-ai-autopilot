@@ -21,7 +21,7 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
             </a>
             <Button 
               asChild
-              className="hidden sm:inline-flex px-3 py-1.5 rounded-lg bg-gradient-to-br from-cyan/20 to-cyan/5 border border-cyan/30 hover:from-cyan/30 hover:to-cyan/10 transition-all"
+              className="hidden sm:inline-flex px-3 py-1.5 rounded-lg bg-gradient-to-br from-cyan/40 to-cyan/20 border border-cyan/50 hover:from-cyan/50 hover:to-cyan/30 transition-all"
             >
               <a 
                 href="https://t.me/promaren" 
