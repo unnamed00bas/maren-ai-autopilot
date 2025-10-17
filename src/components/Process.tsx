@@ -136,14 +136,14 @@ export const Process = ({ onCalcClick }: ProcessProps) => {
                           return (
                             <div 
                               key={optionIndex}
-                              className="bg-card/50 border border-dashed border-accent/50 rounded-2xl p-4 md:p-6 hover:border-accent hover:bg-card transition-all"
+                              className="bg-cyan/5 border border-cyan/30 rounded-2xl p-4 md:p-6 hover:border-cyan hover:bg-cyan/10 transition-all backdrop-blur-sm"
                             >
                               <div className="flex items-start gap-3 mb-3">
-                                <div className="p-2 bg-accent/10 rounded-lg flex-shrink-0">
-                                  <OptionIcon className="w-5 h-5 text-accent" />
+                                <div className="p-2 bg-cyan/10 rounded-lg flex-shrink-0">
+                                  <OptionIcon className="w-5 h-5 text-cyan" />
                                 </div>
                                 <div className="flex-1">
-                                  <span className="text-xs font-bold text-accent/70 mb-1 block">{option.badge}</span>
+                                  <span className="text-xs font-bold text-cyan/80 mb-1 block">{option.badge}</span>
                                   <h4 className="text-base md:text-lg font-bold mb-2">{option.title}</h4>
                                 </div>
                               </div>
@@ -152,7 +152,7 @@ export const Process = ({ onCalcClick }: ProcessProps) => {
                                 variant="outline"
                                 size="sm"
                                 onClick={() => window.open(option.link, '_blank')}
-                                className="w-full"
+                                className="w-full border-cyan/50 text-cyan hover:bg-cyan/10 hover:border-cyan"
                               >
                                 {option.cta}
                               </Button>
