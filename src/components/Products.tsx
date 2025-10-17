@@ -196,7 +196,7 @@ export const Products = () => {
               )}
               <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
                 <div className="p-2 md:p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors flex-shrink-0">
-                  <img src={product.icon} alt={product.title} className="w-5 h-5 md:w-6 md:h-6" />
+                  <img src={product.icon} alt={`${product.title} — ${product.subtitle}`} className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="text-xs md:text-sm font-bold text-accent mb-0.5 md:mb-1">{product.id}</div>

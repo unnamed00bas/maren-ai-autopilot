@@ -17,7 +17,7 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
           {/* Logo */}
           <div className="flex items-center gap-4">
             <a href="/">
-              <img src="/assets/maren-wordmark-lime.svg" alt="MAREN — ассистент 24/7" className="logo h-10" />
+              <img src="/assets/maren-wordmark-lime.svg" alt="MAREN — AI-ассистент 24/7 для автоматизации контента" className="logo h-10" />
             </a>
             <Button 
               asChild

@@ -83,7 +83,7 @@ export const Testimonials = () => {
                 <div className="flex items-start gap-4 mb-4">
                   <img 
                     src={testimonial.photo} 
-                    alt={testimonial.name}
+                    alt={`Фото ${testimonial.name}, ${testimonial.position} в ${testimonial.company}`}
                     className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-accent/20"
                   />
                   <div className="flex-1">
@@ -92,7 +92,7 @@ export const Testimonials = () => {
                   </div>
                   <img 
                     src={testimonial.logo} 
-                    alt={testimonial.company}
+                    alt={`Логотип компании ${testimonial.company}`}
                     className="h-6 md:h-8 opacity-70"
                   />
                 </div>
