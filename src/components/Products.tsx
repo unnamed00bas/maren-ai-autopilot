@@ -8,7 +8,7 @@ const products = [
     subtitle: 'личный креатор с памятью',
     description: 'Понимает контекст, ищет материалы, конспектирует, генерит планы/тексты/сценарии, пишет письма в Gmail, ставит слоты в Calendar, ведёт переписку «как человек» (история и память). STT/TTS для видео.',
     effect: 'Минус 2–4 часа рутины/день; скорость креатива ↑, ошибок от забывчивости ↓.',
-    demo: 'По запросу — 24 ч / 999 ₽ через бота.',
+    demo: 'Что вы получаете?\n• Ассистент с памятью (общается как человек), работает в Telegram.\n• Мультимодально: текст, голос (STT), изображения/видео (TTS), ссылки.\n• Контент под вас: мини-план на несколько дней, посты, статьи, официальные письма, тезисы для видео, хэштеги и др.\n• Поиск с проверкой фактов: агрегируем ответы из нескольких LLM + источники/ссылки.\n• (опционально) доступ к Gmail и Google Calendar через OAuth — чтобы ассистент сам отправил письмо и поставил встречу\n• Без автопубликации (это P2 Flow). Здесь — генерация и подготовка.',
     stack: ['LLM (OpenAI/Claude/Gemini)', 'Perplexity', 'Gmail/Calendar/Drive', 'Notion', 'STT/TTS', 'n8n/Make', 'Telegram Bot API'],
   },
   {
@@ -16,7 +16,7 @@ const products = [
     icon: '/assets/icons/flow.svg',
     title: 'MAREN Flow',
     subtitle: 'пайплайны генерации и автопостинга',
-    description: 'По подготовленному контент-плану сам собирает форматы (карусель/пост/обложка/шорт с TTS), ставит UTM и публикует по расписанию в TG, VK, Meta* (Instagram/Threads/Facebook), Pinterest, OK, Telegra.ph, Дзен, YouTube, TikTok, WordPress. Ведёт логи и отчёт в Sheets/Notion.',
+    description: 'По подготовленному контент-плану сам собирает форматы (карусель/пост/обложка/шорт с TTS), ставит UTM и публикует по расписанию в TG, VK, Meta* (Instagram/Threads/Facebook), Pinterest, OK, Telegra.ph, Дзен, YouTube, TikTok, WordPress. Ведёт логи и отчёт в Sheets/Notion. + полностью автоматизированный SEO Блог под ключ',
     effect: 'Ежедневные выходы без касаний, стабильная сетка, прозрачные ссылки-отчёты.',
     demos: [
       {
@@ -134,7 +134,7 @@ export const Products = () => {
                 {product.demo && (
                   <div>
                     <div className="text-xs font-semibold text-accent mb-1">ДЕМО:</div>
-                    <p className="text-sm text-muted-foreground">{product.demo}</p>
+                    <p className="text-sm text-muted-foreground whitespace-pre-line">{product.demo}</p>
                   </div>
                 )}
 
