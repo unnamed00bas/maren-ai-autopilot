@@ -21,7 +21,7 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
             </a>
             <Button 
               asChild
-              className="btn-hero hidden sm:inline-flex"
+              className="bg-[hsl(var(--cyan))] text-white font-bold px-4 py-2 rounded-xl transition-all duration-300 hover:bg-[hsl(var(--uv-cyan))] hover:shadow-[0_0_20px_hsl(var(--cyan)/0.5)] hidden sm:inline-flex"
             >
               <a 
                 href="https://t.me/promaren" 
