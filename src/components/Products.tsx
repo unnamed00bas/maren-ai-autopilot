@@ -80,6 +80,20 @@ const products = [
     stack: ['LLM + шаблоны', 'Notion/Sheets', 'Облачные редакторы'],
     inDevelopment: true,
   },
+  {
+    id: 'P6',
+    icon: '/assets/icons/minutes.svg',
+    title: 'MAREN Minutes',
+    subtitle: 'авто-протоколы и follow-up после созвонов',
+    description: 'Автоматизация протоколов встреч, создание чек-листов задач и follow-up коммуникаций после видеозвонков.',
+    effect: '• −30–60 мин на конспект каждой встречи.\n• Итоги «5–7 буллетов» и таймлайн через ≤2 мин после звонка.\n• Авто-follow-up: письмо/ТГ-сообщение + задачи и напоминания.\n• Лёгкая аналитика: соблюдение скрипта, возражения, следующий шаг.\n• Архив встреч с поиском по содержимому.',
+    demoPrice: 'Пилот «1 встреча» / 499 ₽',
+    demo: 'Подключаем Zoom → после звонка в Telegram прилетают: протокол, чек-лист задач, черновик письма клиенту и краткий скоринг звонка.',
+    demoAction: { label: 'Заказать видео-встречу за 499 р', url: 'https://t.me/promaren_support_bot' },
+    stack: ['n8n', 'Zoom', 'LLM + поиск: OpenAI / Claude / Gemini + Perplexity', 'Telegram Bot API', 'Google Docs/Sheets'],
+    inDevelopment: true,
+    pilotBadge: true,
+  },
 ];
 
 export const Products = () => {
@@ -143,7 +157,7 @@ export const Products = () => {
     <section id="products" className="section-container bg-muted/30">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
-            Продукты <span className="text-accent">P1–P5</span>
+            Продукты <span className="text-accent">P1–P6</span>
           </h2>
           <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
             От ассистента с памятью до полной автоматизации контент-производства
@@ -158,7 +172,9 @@ export const Products = () => {
                 <div className="absolute top-0 right-0 bg-gradient-to-br from-accent/20 to-accent/5 px-2 md:px-3 py-1 md:py-1.5 rounded-bl-lg border-l border-b border-accent/30">
                   <div className="flex items-center gap-1.5 md:gap-2">
                     <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-accent rounded-full animate-pulse" />
-                    <span className="text-[10px] md:text-xs font-bold text-accent uppercase tracking-wide">В разработке</span>
+                    <span className="text-[10px] md:text-xs font-bold text-accent uppercase tracking-wide">
+                      {product.pilotBadge ? 'Идет пилот' : 'В разработке'}
+                    </span>
                   </div>
                 </div>
               )}

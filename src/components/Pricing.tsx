@@ -43,8 +43,10 @@ const pricingData = [
     id: 'P6',
     title: 'MAREN Minutes',
     description: 'авто-протоколы ВКС',
-    price: 'по запросу (идет пилот)',
-    type: 'custom'
+    price: '5 000 ₽ / мес.',
+    type: 'subscription',
+    inDevelopment: true,
+    pilotBadge: true
   }
 ];
 
@@ -71,7 +73,9 @@ export const Pricing = () => {
                 <div className="absolute top-0 right-0 bg-gradient-to-br from-accent/20 to-accent/5 px-2 md:px-3 py-1 md:py-1.5 rounded-bl-lg border-l border-b border-accent/30">
                   <div className="flex items-center gap-1.5 md:gap-2">
                     <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-accent rounded-full animate-pulse" />
-                    <span className="text-[10px] md:text-xs font-bold text-accent uppercase tracking-wide">В разработке</span>
+                    <span className="text-[10px] md:text-xs font-bold text-accent uppercase tracking-wide">
+                      {item.pilotBadge ? 'Идет пилот' : 'В разработке'}
+                    </span>
                   </div>
                 </div>
               )}
