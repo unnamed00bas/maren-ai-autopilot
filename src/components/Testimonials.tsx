@@ -150,7 +150,7 @@ export const Testimonials = () => {
                 className="btn-hero"
                 onClick={() => setCaseModalOpen(true)}
               >
-                Хочу так же — посмотреть демо 7 дней
+                Разобрать кейс
               </Button>
             </div>
           </div>
@@ -271,7 +271,7 @@ export const Testimonials = () => {
                 className="btn-hero w-full md:w-auto"
                 onClick={() => window.open('https://t.me/promaren_support_bot?text=Хочу+демо+7+дней', '_blank')}
               >
-                Хочу так же — посмотреть демо 7 дней
+                Хочу так же
               </Button>
             </div>
           </div>
