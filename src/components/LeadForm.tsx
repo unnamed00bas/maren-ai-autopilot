@@ -52,11 +52,11 @@ export const LeadForm = ({ onPrivacyClick, onOfferClick }: LeadFormProps) => {
   return (
     <section className="section-padding">
       <div className="section-container">
-        <div className="bg-cyan/5 rounded-3xl p-8 md:p-12 shadow-lg border-2 border-cyan/20 relative">
-          <div className="absolute top-4 right-4 md:top-6 md:right-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan/10 border border-cyan/20">
+        <div className="bg-cyan/5 rounded-3xl p-8 md:p-12 shadow-lg border-2 border-cyan/20 relative overflow-hidden">
+          <div className="absolute top-3 right-3 md:top-4 md:right-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-cyan/10 border border-cyan/20">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse"></span>
-              <span className="text-sm font-medium text-cyan">Идет пилот</span>
+              <span className="text-xs md:text-sm font-medium text-cyan">ИДЕТ ПИЛОТ</span>
             </div>
           </div>
           
