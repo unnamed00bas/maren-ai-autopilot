@@ -4,7 +4,7 @@ export const Footer = () => {
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 pb-6 md:pb-8 border-b border-border/50">
           <div>
-            <img src="/assets/maren-mono-dark.svg" alt="MAREN" className="h-10 md:h-12 w-auto mb-3 md:mb-4" />
+            <img src="/assets/maren-wordmark-lime.svg" alt="MAREN" className="h-10 md:h-12 w-auto mb-3 md:mb-4" />
             <p className="text-xs md:text-sm text-muted-foreground">
               Ассистент 24/7 и контент, который делает себя сам
             </p>
