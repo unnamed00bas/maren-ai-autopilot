@@ -167,16 +167,16 @@ export const Products = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
         {products.map((product) => {
           return (
-            <div key={product.id} className={`card-product group ${product.inDevelopment && !product.pilotBadge ? 'relative overflow-hidden bg-muted/50' : product.pilotBadge ? 'relative overflow-hidden bg-primary/5' : ''}`}>
+            <div key={product.id} className={`card-product group ${product.inDevelopment && !product.pilotBadge ? 'relative overflow-hidden bg-muted/50' : product.pilotBadge ? 'relative overflow-hidden bg-cyan/5' : ''}`}>
               {product.inDevelopment && (
                 <div className={`absolute top-0 right-0 px-2 md:px-3 py-1 md:py-1.5 rounded-bl-lg border-l border-b ${
                   product.pilotBadge 
-                    ? 'bg-gradient-to-br from-primary/20 to-primary/5 border-primary/30' 
+                    ? 'bg-gradient-to-br from-cyan/20 to-cyan/5 border-cyan/30' 
                     : 'bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30'
                 }`}>
                   <div className="flex items-center gap-1.5 md:gap-2">
-                    <div className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse ${product.pilotBadge ? 'bg-primary' : 'bg-accent'}`} />
-                    <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wide ${product.pilotBadge ? 'text-primary' : 'text-accent'}`}>
+                    <div className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse ${product.pilotBadge ? 'bg-cyan' : 'bg-accent'}`} />
+                    <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wide ${product.pilotBadge ? 'text-cyan' : 'text-accent'}`}>
                       {product.pilotBadge ? 'Идет пилот' : 'В разработке'}
                     </span>
                   </div>
