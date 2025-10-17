@@ -26,7 +26,7 @@ const testimonials = [
     company: 'Tech Solutions',
     logo: '/assets/brands/telegram.svg',
     photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
-    text: 'Управляю 5 каналами через один дашборд. Отчёты генерируются автоматически, а я вижу все метрики в реальном времени.',
+    text: 'Управляю 5 каналами через один дашборд.',
     caseId: 'techsolutions'
   }
 ];
@@ -97,15 +97,6 @@ export const Testimonials = () => {
                     {testimonial.text}
                   </p>
                 </div>
-
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="w-full border-accent/50 hover:bg-accent/10 hover:border-accent"
-                  onClick={() => window.open('https://t.me/promaren_support_bot?text=Хочу+посмотреть+кейс', '_blank')}
-                >
-                  Посмотреть кейс
-                </Button>
               </div>
             ))}
           </div>
