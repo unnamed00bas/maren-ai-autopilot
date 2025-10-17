@@ -98,7 +98,13 @@ export const Process = ({ onCalcClick }: ProcessProps) => {
                             <h3 className="text-base md:text-xl font-bold mb-2">{step.title}</h3>
                             <p className="text-sm md:text-base text-muted-foreground mb-3">{step.description}</p>
                             {step.cta && (
-                              <Button 
+                              <>
+                                {step.action === 'calc' && (
+                                  <p className="text-sm text-muted-foreground mb-3">
+                                    Узнайте, сколько часов MAREN вернёт вам
+                                  </p>
+                                )}
+                                <Button
                                 size="sm"
                                 onClick={() => {
                                   if (step.action === 'calc') {
@@ -110,7 +116,8 @@ export const Process = ({ onCalcClick }: ProcessProps) => {
                                 className="w-full sm:w-auto"
                               >
                                 {step.cta}
-                              </Button>
+                                </Button>
+                              </>
                             )}
                           </div>
                         </div>
