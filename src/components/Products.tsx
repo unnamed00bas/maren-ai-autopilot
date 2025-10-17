@@ -249,7 +249,7 @@ export const Products = () => {
                                   rel="noopener noreferrer"
                                   className="text-xs font-bold text-cyan underline decoration-2 hover:text-accent transition-colors"
                                 >
-                                  — {link.text} (ссылка ↗)
+                                  — {link.text}{link.url.startsWith('/') ? '' : ' (ссылка ↗)'}
                                 </a>
                               </li>
                             ))}
