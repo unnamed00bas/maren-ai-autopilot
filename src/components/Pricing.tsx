@@ -66,17 +66,18 @@ export const Pricing = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {pricingData.map((item) => (
-            <div key={item.id} className={`card-product flex flex-col ${item.inDevelopment ? 'bg-muted/50' : ''}`}>
-              <div className="mb-4">
-                <div className="inline-flex items-center gap-2 mb-3">
-                  <div className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-lg text-sm font-semibold">
-                    {item.id}
+            <div key={item.id} className={`card-product flex flex-col ${item.inDevelopment ? 'relative overflow-hidden bg-muted/50' : ''}`}>
+              {item.inDevelopment && (
+                <div className="absolute top-0 right-0 bg-gradient-to-br from-accent/20 to-accent/5 px-2 md:px-3 py-1 md:py-1.5 rounded-bl-lg border-l border-b border-accent/30">
+                  <div className="flex items-center gap-1.5 md:gap-2">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-accent rounded-full animate-pulse" />
+                    <span className="text-[10px] md:text-xs font-bold text-accent uppercase tracking-wide">В разработке</span>
                   </div>
-                  {item.inDevelopment && (
-                    <span className="text-xs px-2 py-1 bg-muted rounded text-muted-foreground">
-                      в разработке
-                    </span>
-                  )}
+                </div>
+              )}
+              <div className="mb-4">
+                <div className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-lg text-sm font-semibold mb-3">
+                  {item.id}
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-2">
                   {item.title}
