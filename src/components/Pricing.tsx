@@ -19,17 +19,16 @@ const pricingData = [
     id: 'P3',
     title: 'MAREN Flow',
     description: '100% авто: по плану генерит форматы, ставит UTM и публикует сам + SEO Блог под ключ.',
-    price: '100 000 ₽',
-    note: 'опционально — современный ai-лэндинг — 30 000 ₽',
-    type: 'one-time'
+    price: '30 000 ₽ / мес.',
+    type: 'subscription'
   },
   {
     id: 'P4',
     title: 'MAREN GrowthOps',
-    description: 'этичный «холод»: масслайк/коммент, рост охватов.',
-    price: 'лист ожидания',
-    type: 'waitlist',
-    inDevelopment: true
+    description: 'ИИ-Лендинг + полностью автоматизированный SEO Блог под ключ с автопостингом в канал Дзен.',
+    price: 'от 50 000 ₽',
+    note: 'под ключ в базе: ИИ-лендинг, SEO-блог, Telegram. Подключение дополнительных соцсетей — +5 000 ₽ за каждую.',
+    type: 'one-time'
   },
   {
     id: 'P5',
