@@ -9,11 +9,11 @@ interface DemoModalProps {
 
 export const DemoModal = ({ open, onOpenChange }: DemoModalProps) => {
   const handleDemo24 = () => {
-    window.open('https://t.me/promaren_bot?start=demo24', '_blank');
+    window.open('https://t.me/promaren_support_bot?start=demo24', '_blank');
   };
 
   const handleBook15 = () => {
-    window.open('https://t.me/promaren_bot?start=book', '_blank');
+    window.open('https://t.me/promaren_support_bot?start=book', '_blank');
   };
 
   return (

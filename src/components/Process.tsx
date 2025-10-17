@@ -19,7 +19,7 @@ const steps = [
     description: 'Проверяете на своих задачах: план, посты/тексты, письмо, поиск с источниками.',
     cta: 'Запросить демо',
     action: 'link',
-    link: 'https://t.me/promaren_bot?start=demo24'
+    link: 'https://t.me/promaren_support_bot?start=demo24'
   },
   {
     icon: Settings,
@@ -37,7 +37,7 @@ const steps = [
     description: 'Поддержка, масштабирование: больше каналов, GrowthOps (P4), Cards (P5), новые пайплайны.',
     cta: 'Забронировать 15 минут',
     action: 'link',
-    link: 'https://t.me/promaren_bot?start=book'
+    link: 'https://t.me/promaren_support_bot?start=book'
   }
 ];
 
@@ -47,7 +47,7 @@ const options = [
     title: 'Дорожная карта Audit (P1)',
     description: 'За 10 дней: что именно купить из P2–P6, риски ИТ/ИБ, чек-лист 152-ФЗ, карта 30–60–90, политика/оферта.',
     cta: 'Запросить аудит',
-    link: 'https://t.me/promaren_bot?start=audit',
+    link: 'https://t.me/promaren_support_bot?start=audit',
     badge: 'Опция A'
   },
   {
@@ -55,7 +55,7 @@ const options = [
     title: 'Minutes (P6)',
     description: 'Включаем авто-протоколы созвонов (протокол ≤2 мин, задачи, письма).',
     cta: 'Пилот 1 встреча / 499 ₽',
-    link: 'https://t.me/promaren_bot?start=minutes',
+    link: 'https://t.me/promaren_support_bot?start=minutes',
     badge: 'Опция B'
   }
 ];
