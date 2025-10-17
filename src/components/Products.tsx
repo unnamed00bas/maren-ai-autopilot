@@ -73,6 +73,7 @@ const products = [
         category: 'Блог',
         links: [
           { text: 'полностью автоматизированный блог на WordPress', url: 'https://blog.ecogift.site/' },
+          { text: 'автопостинг на канал Дзен', url: 'https://dzen.ru/ecogift.site' },
         ],
       },
     ],
