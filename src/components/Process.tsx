@@ -88,7 +88,7 @@ export const Process = ({ onCalcClick }: ProcessProps) => {
                   >
                     {/* Content */}
                     <div className={`flex-1 ${isEven ? 'lg:text-right' : 'lg:text-left'}`}>
-                      <div className={`bg-card border border-border rounded-2xl p-4 md:p-6 hover:border-accent transition-colors ${isEven ? 'lg:ml-auto' : ''} max-w-md`}>
+                      <div className={`bg-card border border-border rounded-2xl p-4 md:p-6 hover:border-accent transition-colors ${isEven ? 'lg:ml-auto' : ''} max-w-lg`}>
                         <div className="flex items-start gap-3 md:gap-4 mb-2 md:mb-3">
                           <div className="p-2 md:p-3 bg-accent/10 rounded-xl flex-shrink-0">
                             <Icon className="w-5 h-5 md:w-6 md:h-6 text-accent" />
