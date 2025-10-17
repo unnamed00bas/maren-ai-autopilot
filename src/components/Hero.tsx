@@ -19,60 +19,60 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
       <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left column - Content */}
-          <div className="space-y-8">
-            <h1 className="text-5xl lg:text-7xl font-black leading-tight">
+          <div className="space-y-6 md:space-y-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black leading-tight">
               <span className="block text-foreground">MAREN: время</span>
               <span className="block bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent">
                 назад с ИИ
               </span>
             </h1>
             
-            <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
               Ассистент думает и помнит, Flow публикует, GrowthOps приводит аудиторию. 
               Лиды — за минуты, KPI — в дашборде.
             </p>
 
             {/* Key benefits */}
-            <div className="grid sm:grid-cols-3 gap-4 py-6">
-              <div className="flex items-center gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-border/50">
-                <Clock className="w-8 h-8 text-accent flex-shrink-0" />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 py-4 md:py-6">
+              <div className="flex items-center gap-2 md:gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-border/50">
+                <Clock className="w-6 h-6 md:w-8 md:h-8 text-accent flex-shrink-0" />
                 <div>
-                  <div className="font-bold text-lg">−2–4 часа</div>
-                  <div className="text-sm text-muted-foreground">рутины ежедневно</div>
+                  <div className="font-bold text-sm md:text-base lg:text-lg">−2–4 часа</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">рутины ежедневно</div>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-border/50">
-                <Zap className="w-8 h-8 text-accent flex-shrink-0" />
+              <div className="flex items-center gap-2 md:gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-border/50">
+                <Zap className="w-6 h-6 md:w-8 md:h-8 text-accent flex-shrink-0" />
                 <div>
-                  <div className="font-bold text-lg">Ответ ассистента ≤10 секунд</div>
-                  <div className="text-sm text-muted-foreground">(не спит, не берёт больничный)</div>
+                  <div className="font-bold text-sm md:text-base lg:text-lg">Ответ ≤10 сек</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">24/7 без перерывов</div>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-border/50">
-                <TrendingUp className="w-8 h-8 text-accent flex-shrink-0" />
+              <div className="flex items-center gap-2 md:gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-border/50">
+                <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-accent flex-shrink-0" />
                 <div>
-                  <div className="font-bold text-lg">Идея → контент → публикация:</div>
-                  <div className="text-sm text-muted-foreground">UTM, расписание, отчёт</div>
+                  <div className="font-bold text-sm md:text-base lg:text-lg">Идея→публикация</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">UTM, расписание, отчёт</div>
                 </div>
               </div>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button onClick={onCalcClick} className="btn-hero text-lg">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
+              <Button onClick={onCalcClick} className="btn-hero text-sm md:text-base lg:text-lg w-full sm:w-auto">
                 Посчитать экономию времени
               </Button>
-              <Button onClick={onDemoClick} variant="outline" size="lg" className="text-lg">
+              <Button onClick={onDemoClick} variant="outline" size="lg" className="text-sm md:text-base lg:text-lg w-full sm:w-auto">
                 Посмотреть демо
               </Button>
             </div>
 
             {/* Trust badges */}
-            <div className="pt-8 border-t border-border/50">
-              <p className="text-sm text-muted-foreground mb-4">Работаем с:</p>
-              <div className="flex flex-wrap gap-6 items-center opacity-70">
+            <div className="pt-6 md:pt-8 border-t border-border/50">
+              <p className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-4">Работаем с:</p>
+              <div className="flex flex-wrap gap-4 md:gap-6 items-center opacity-70">
                 {[
                   { name: 'n8n', logo: '/assets/brands/n8n.svg' },
                   { name: 'Make', logo: '/assets/brands/make.svg' },
@@ -89,7 +89,7 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
                     key={tech.name} 
                     src={tech.logo} 
                     alt={tech.name}
-                    className="h-8 grayscale hover:grayscale-0 transition-all duration-300"
+                    className="h-6 md:h-8 grayscale hover:grayscale-0 transition-all duration-300"
                     title={tech.name}
                   />
                 ))}

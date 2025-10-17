@@ -124,35 +124,35 @@ export const Products = () => {
 
   return (
     <section id="products" className="section-container bg-muted/30">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-          Продукты <span className="text-accent">P1–P5</span>
-        </h2>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          От ассистента с памятью до полной автоматизации контент-производства
-        </p>
-      </div>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
+            Продукты <span className="text-accent">P1–P5</span>
+          </h2>
+          <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            От ассистента с памятью до полной автоматизации контент-производства
+          </p>
+        </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
         {products.map((product) => {
           return (
             <div key={product.id} className={`card-product group ${product.inDevelopment ? 'relative overflow-hidden bg-muted/50' : ''}`}>
               {product.inDevelopment && (
-                <div className="absolute top-0 right-0 bg-gradient-to-br from-accent/20 to-accent/5 px-3 py-1.5 rounded-bl-lg border-l border-b border-accent/30">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                    <span className="text-xs font-bold text-accent uppercase tracking-wide">В разработке</span>
+                <div className="absolute top-0 right-0 bg-gradient-to-br from-accent/20 to-accent/5 px-2 md:px-3 py-1 md:py-1.5 rounded-bl-lg border-l border-b border-accent/30">
+                  <div className="flex items-center gap-1.5 md:gap-2">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-accent rounded-full animate-pulse" />
+                    <span className="text-[10px] md:text-xs font-bold text-accent uppercase tracking-wide">В разработке</span>
                   </div>
                 </div>
               )}
-              <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
-                  <img src={product.icon} alt={product.title} className="w-6 h-6" />
+              <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
+                <div className="p-2 md:p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors flex-shrink-0">
+                  <img src={product.icon} alt={product.title} className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <div className="flex-1">
-                  <div className="text-sm font-bold text-accent mb-1">{product.id}</div>
-                  <h3 className="text-xl font-bold mb-1">{product.title}</h3>
-                  <p className="text-sm text-muted-foreground">{product.subtitle}</p>
+                <div className="flex-1 min-w-0">
+                  <div className="text-xs md:text-sm font-bold text-accent mb-0.5 md:mb-1">{product.id}</div>
+                  <h3 className="text-lg md:text-xl font-bold mb-0.5 md:mb-1">{product.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground">{product.subtitle}</p>
                 </div>
               </div>
 

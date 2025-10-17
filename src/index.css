@@ -101,6 +101,8 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    /* Improve touch scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -112,24 +114,26 @@ All colors MUST be HSL.
 
 @layer components {
   .btn-hero {
-    @apply bg-accent text-accent-foreground font-bold px-8 py-4 rounded-xl transition-all duration-300;
+    @apply bg-accent text-accent-foreground font-bold px-6 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300;
     @apply hover:bg-[#84CC16] hover:shadow-[0_0_30px_hsl(var(--lime)/0.5)] active:bg-[#65A30D] active:scale-95;
+    @apply min-h-[44px]; /* Touch-friendly minimum size */
   }
   
   .btn-neon {
     @apply relative overflow-hidden;
     background: linear-gradient(135deg, hsl(var(--toxic-lime)), hsl(var(--uv-cyan)));
-    @apply text-pitch font-black px-8 py-4 rounded-xl transition-all duration-300;
+    @apply text-pitch font-black px-6 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300;
     @apply hover:scale-105 active:scale-95;
+    @apply min-h-[44px]; /* Touch-friendly minimum size */
     box-shadow: 0 0 40px hsl(var(--electric-fuchsia) / 0.4);
   }
   
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24;
   }
   
   .card-product {
-    @apply bg-card border border-border rounded-2xl p-8 transition-all duration-300;
+    @apply bg-card border border-border rounded-2xl p-4 md:p-6 lg:p-8 transition-all duration-300;
     @apply hover:border-accent hover:shadow-[0_0_20px_hsl(var(--lime)/0.2)];
   }
 

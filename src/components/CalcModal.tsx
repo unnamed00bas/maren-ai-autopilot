@@ -42,10 +42,10 @@ export const CalcModal = ({ open, onOpenChange }: CalcModalProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-2 text-2xl">
-            <Calculator className="w-6 h-6 text-accent" />
+          <DialogTitle className="flex items-center gap-2 text-xl md:text-2xl">
+            <Calculator className="w-5 h-5 md:w-6 md:h-6 text-accent" />
             Калькулятор времени
           </DialogTitle>
         </DialogHeader>

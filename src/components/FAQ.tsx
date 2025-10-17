@@ -36,26 +36,26 @@ export const FAQ = () => {
   return (
     <section id="faq" className="section-container">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             Часто задаваемые вопросы
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base md:text-xl text-muted-foreground">
             Ответы на популярные вопросы о MAREN
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
           {faqs.map((faq, index) => (
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="border border-border rounded-xl px-6 bg-card"
+              className="border border-border rounded-xl px-4 md:px-6 bg-card"
             >
-              <AccordionTrigger className="text-left hover:no-underline py-6">
-                <span className="font-semibold text-lg pr-4">{faq.question}</span>
+              <AccordionTrigger className="text-left hover:no-underline py-4 md:py-6">
+                <span className="font-semibold text-sm md:text-base lg:text-lg pr-4">{faq.question}</span>
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+              <AccordionContent className="text-sm md:text-base text-muted-foreground pb-4 md:pb-6 leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
