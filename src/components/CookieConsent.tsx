@@ -28,16 +28,16 @@ export const CookieConsent = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
           <div className="flex-1">
-            <h3 className="font-bold text-base md:text-lg mb-2">🍪 Мы используем cookies</h3>
+            <h3 className="font-bold text-base md:text-lg mb-2">Мы используем 🍪</h3>
             <p className="text-xs md:text-sm text-muted-foreground">
               Этот сайт использует cookies для улучшения пользовательского опыта и аналитики.
             </p>
           </div>
           
-          <div className="flex gap-3 w-full md:w-auto">
+          <div className="flex gap-3 w-full md:w-auto min-w-[240px]">
             <Button
               onClick={handleAccept}
-              className="flex-1 btn-hero"
+              className="flex-1 btn-hero h-9"
               size="sm"
             >
               Принять
@@ -45,7 +45,7 @@ export const CookieConsent = () => {
             <Button
               onClick={handleDecline}
               variant="outline"
-              className="flex-1"
+              className="flex-1 h-9"
               size="sm"
             >
               Отклонить
