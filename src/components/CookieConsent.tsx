@@ -1,13 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { X } from 'lucide-react';
 
-interface CookieConsentProps {
-  onPrivacyClick: () => void;
-  onOfferClick: () => void;
-}
-
-export const CookieConsent = ({ onPrivacyClick, onOfferClick }: CookieConsentProps) => {
+export const CookieConsent = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -36,35 +30,14 @@ export const CookieConsent = ({ onPrivacyClick, onOfferClick }: CookieConsentPro
           <div className="flex-1">
             <h3 className="font-bold text-base md:text-lg mb-2">🍪 Мы используем cookies</h3>
             <p className="text-xs md:text-sm text-muted-foreground">
-              Этот сайт использует cookies для улучшения пользовательского опыта и аналитики. 
-              Продолжая использовать сайт, вы соглашаетесь с{' '}
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  onPrivacyClick();
-                }}
-                className="text-accent hover:underline"
-              >
-                Политикой обработки персональных данных
-              </button>
-              {' '}и{' '}
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  onOfferClick();
-                }}
-                className="text-accent hover:underline"
-              >
-                Публичной офертой
-              </button>
-              .
+              Этот сайт использует cookies для улучшения пользовательского опыта и аналитики.
             </p>
           </div>
           
           <div className="flex gap-3 w-full md:w-auto">
             <Button
               onClick={handleAccept}
-              className="flex-1 md:flex-none btn-hero"
+              className="flex-1 btn-hero"
               size="sm"
             >
               Принять
@@ -72,7 +45,7 @@ export const CookieConsent = ({ onPrivacyClick, onOfferClick }: CookieConsentPro
             <Button
               onClick={handleDecline}
               variant="outline"
-              className="flex-1 md:flex-none"
+              className="flex-1"
               size="sm"
             >
               Отклонить

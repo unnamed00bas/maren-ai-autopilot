@@ -52,10 +52,7 @@ const Index = () => {
         onOpenChange={setDemoModalOpen}
       />
 
-      <CookieConsent 
-        onPrivacyClick={() => setPrivacyOpen(true)}
-        onOfferClick={() => setOfferOpen(true)}
-      />
+      <CookieConsent />
 
       <Dialog open={privacyOpen} onOpenChange={setPrivacyOpen}>
         <DialogContent className="max-w-3xl max-h-[80vh]">
