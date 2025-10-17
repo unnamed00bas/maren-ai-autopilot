@@ -113,7 +113,7 @@ export const Products = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {products.map((product) => {
           return (
-            <div key={product.id} className={`card-product group ${product.inDevelopment ? 'relative overflow-hidden bg-muted/20' : ''}`}>
+            <div key={product.id} className={`card-product group ${product.inDevelopment ? 'relative overflow-hidden bg-muted/50' : ''}`}>
               {product.inDevelopment && (
                 <div className="absolute top-0 right-0 bg-gradient-to-br from-accent/20 to-accent/5 px-3 py-1.5 rounded-bl-lg border-l border-b border-accent/30">
                   <div className="flex items-center gap-2">
