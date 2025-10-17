@@ -29,7 +29,7 @@ const Index = () => {
         />
         <Target />
         <Products />
-        <Process />
+        <Process onCalcClick={() => setCalcModalOpen(true)} />
         <Pricing />
         <FAQ />
         <Contact />
