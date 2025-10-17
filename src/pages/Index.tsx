@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Target } from '@/components/Target';
 import { Products } from '@/components/Products';
+import { Testimonials } from '@/components/Testimonials';
 import { Process } from '@/components/Process';
 import { Pricing } from '@/components/Pricing';
 import { FAQ } from '@/components/FAQ';
@@ -34,6 +35,7 @@ const Index = () => {
         />
         <Target />
         <Products />
+        <Testimonials />
         <Process onCalcClick={() => setCalcModalOpen(true)} />
         <Pricing />
         <FAQ />
