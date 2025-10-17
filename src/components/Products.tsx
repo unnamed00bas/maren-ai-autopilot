@@ -229,7 +229,7 @@ export const Products = () => {
 
                 {product.demos && (
                   <div>
-                    <div className="text-xs font-semibold text-accent mb-2">ДЕМО-ПРИМЕРЫ (автопостинг):</div>
+                    <div className="text-xs font-semibold text-accent mb-2">КЕЙСЫ (автопостинг):</div>
                     <div className="space-y-2">
                       {product.demos.map((demo, idx) => (
                         <div key={idx}>
