@@ -32,7 +32,7 @@ export const Footer = () => {
 
             <div>
               <h3 className="font-bold mb-3 md:mb-4 text-sm md:text-base text-accent">Компания</h3>
-              <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-muted-foreground">
+              <ul className="space-y-1 text-xs md:text-sm text-muted-foreground">
                 <li><a href="#faq" className="hover:text-accent transition-colors">FAQ</a></li>
                 <li><a href="#pricing" className="hover:text-accent transition-colors">Цены</a></li>
                 <li><a href="#contact" className="hover:text-accent transition-colors">Контакты</a></li>
