@@ -29,6 +29,9 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
             <a href="#faq" className="text-sm font-medium hover:text-accent transition-colors">
               FAQ
             </a>
+            <a href="#pricing" className="text-sm font-medium hover:text-accent transition-colors">
+              Цены
+            </a>
             <a href="#contact" className="text-sm font-medium hover:text-accent transition-colors">
               Контакты
             </a>
@@ -43,20 +46,6 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
               >
                 Блог MAREN
               </a>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm"
-              onClick={onCalcClick}
-            >
-              Калькулятор
-            </Button>
-            <Button 
-              size="sm"
-              className="btn-hero"
-              onClick={onDemoClick}
-            >
-              Демо
             </Button>
           </div>
 
@@ -91,6 +80,13 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
                 FAQ
               </a>
               <a 
+                href="#pricing" 
+                className="text-sm font-medium hover:text-accent transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Цены
+              </a>
+              <a 
                 href="#contact" 
                 className="text-sm font-medium hover:text-accent transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
@@ -109,27 +105,6 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
                 >
                   Блог MAREN
                 </a>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => {
-                  onCalcClick();
-                  setMobileMenuOpen(false);
-                }}
-                className="w-full"
-              >
-                Калькулятор
-              </Button>
-              <Button 
-                size="sm"
-                className="btn-hero w-full"
-                onClick={() => {
-                  onDemoClick();
-                  setMobileMenuOpen(false);
-                }}
-              >
-                Демо
               </Button>
             </div>
           </div>
