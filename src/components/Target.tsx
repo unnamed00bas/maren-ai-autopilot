@@ -16,21 +16,21 @@ export const Target = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-border hover:border-accent/50 transition-all">
+            <div className="bg-card backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-border hover:border-accent/50 transition-all shadow-lg">
               <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">eCom</h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                 тратят часы на постинг — <span className="text-accent font-semibold">MAREN публикует сам</span>
               </p>
             </div>
 
-            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-border hover:border-accent/50 transition-all">
+            <div className="bg-card backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-border hover:border-accent/50 transition-all shadow-lg">
               <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Продюсеры и эксперты</h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                 нужен контент без команды — <span className="text-accent font-semibold">MAREN пишет и планирует</span>
               </p>
             </div>
 
-            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-border hover:border-accent/50 transition-all">
+            <div className="bg-card backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-border hover:border-accent/50 transition-all shadow-lg">
               <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">SMM</h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                 управление каналами и отчетами — <span className="text-accent font-semibold">всё в одном дашборде</span>
