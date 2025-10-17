@@ -122,6 +122,23 @@ export const Products = () => {
     return <p className="text-sm text-muted-foreground whitespace-pre-line">{text}</p>;
   };
 
+  const renderDemo = (text: string) => {
+    // Check if text contains bullet points
+    if (text.includes('•')) {
+      const items = text.split('\n').filter(item => item.trim());
+      return (
+        <ul className="space-y-2">
+          {items.map((item, idx) => (
+            <li key={idx} className="text-sm text-muted-foreground">
+              {item}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    return <p className="text-sm text-muted-foreground whitespace-pre-line">{text}</p>;
+  };
+
   return (
     <section id="products" className="section-container bg-muted/30">
         <div className="text-center mb-12 md:mb-16">
@@ -170,12 +187,12 @@ export const Products = () => {
                     {product.demoPrice && (
                       <p className="text-base font-bold text-accent mb-2">{product.demoPrice}</p>
                     )}
-                    <p className="text-sm text-muted-foreground whitespace-pre-line">{product.demo}</p>
+                    {renderDemo(product.demo)}
                     {product.demoAction && (
                       <Button 
                         asChild 
-                        className="mt-3 w-full"
-                        variant="default"
+                        className="mt-3 w-full bg-accent text-accent-foreground hover:bg-accent/90 hover:border-accent"
+                        variant="outline"
                       >
                         <a 
                           href={product.demoAction.url} 
