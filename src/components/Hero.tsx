@@ -21,9 +21,9 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
           {/* Left column - Content */}
           <div className="space-y-6 md:space-y-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black leading-tight">
-              <span className="block text-foreground">MAREN: время</span>
+              <span className="block text-foreground">AI-ассистент, который генерирует</span>
               <span className="block bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent">
-                назад с ИИ
+                и публикует контент, экономя до 4 часов в день
               </span>
             </h1>
             
