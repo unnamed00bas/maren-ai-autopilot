@@ -9,11 +9,11 @@ interface DemoModalProps {
 
 export const DemoModal = ({ open, onOpenChange }: DemoModalProps) => {
   const handleDemo24 = () => {
-    window.open('https://t.me/promaren_support_bot?start=demo24', '_blank');
+    window.open('https://t.me/promaren_support_bot?text=Заказать+Демо+Ассистента+на+24+ч+за+999+р', '_blank');
   };
 
   const handleBook15 = () => {
-    window.open('https://t.me/promaren_support_bot?start=book', '_blank');
+    window.open('https://t.me/promaren_support_bot?text=Записаться+на+15-минутный+созвон+бесплатно', '_blank');
   };
 
   return (

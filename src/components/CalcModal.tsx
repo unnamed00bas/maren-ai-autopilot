@@ -37,7 +37,7 @@ export const CalcModal = ({ open, onOpenChange }: CalcModalProps) => {
   };
 
   const handleDemo = () => {
-    window.open('https://t.me/promaren_support_bot', '_blank');
+    window.open('https://t.me/promaren_support_bot?text=Заказать+Демо+Ассистента+на+24+ч+за+999+р', '_blank');
   };
 
   return (

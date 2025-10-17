@@ -17,7 +17,7 @@ export const Contact = () => {
 
           <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-12 md:mb-16 max-w-4xl mx-auto">
             <a 
-              href="https://t.me/Marinochcin" 
+              href="https://t.me/promaren_support_bot?text=Заказать+опцию+%22Готовы+вернуть+своё+время%22+%28бесплатная+15-минутная+консультация%29" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-accent/10 transition-all border border-border hover:border-accent hover:shadow-[0_0_20px_hsl(var(--lime)/0.2)] hover:-translate-y-1 duration-300 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[200px] text-center"
