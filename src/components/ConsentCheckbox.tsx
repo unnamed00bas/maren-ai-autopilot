@@ -25,12 +25,12 @@ export const ConsentCheckbox = ({
           id="consent" 
           checked={checked}
           onCheckedChange={onCheckedChange}
-          className="mt-1 h-5 w-5 md:h-6 md:w-6 border-2 border-cyan data-[state=checked]:bg-cyan data-[state=checked]:border-cyan"
+          className="mt-1 h-4 w-4 flex-shrink-0 border-2 border-cyan data-[state=checked]:bg-cyan data-[state=checked]:border-cyan"
         />
       </div>
       <Label 
         htmlFor="consent" 
-        className="text-sm md:text-base text-muted-foreground leading-relaxed cursor-pointer"
+        className="text-xs text-muted-foreground leading-relaxed cursor-pointer break-words"
       >
         Я согласен на обработку персональных данных в соответствии с{' '}
         <button
