@@ -83,6 +83,8 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
                   { name: 'Notion', logo: '/assets/brands/notion.svg' },
                   { name: 'Google Sheets', logo: '/assets/brands/sheets.svg' },
                   { name: 'Google Docs', logo: '/assets/brands/docs.svg' },
+                  { name: 'WordPress', logo: '/assets/brands/wordpress.svg' },
+                  { name: 'Lovable', logo: '/assets/brands/lovable.svg' },
                 ].map((tech) => (
                   <img 
                     key={tech.name} 
