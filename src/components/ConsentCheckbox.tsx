@@ -1,6 +1,6 @@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
-import { ArrowDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface ConsentCheckboxProps {
   checked: boolean;
@@ -19,7 +19,7 @@ export const ConsentCheckbox = ({
     <div className="flex items-start gap-3">
       <div className="relative flex-shrink-0">
         {!checked && (
-          <ArrowDown className="absolute -left-10 top-0 w-6 h-6 text-accent animate-bounce drop-shadow-lg" />
+          <ArrowRight className="absolute -left-10 top-0 w-6 h-6 text-accent animate-pulse drop-shadow-lg" />
         )}
         <Checkbox 
           id="consent" 
