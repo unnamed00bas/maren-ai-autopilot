@@ -15,9 +15,18 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex items-center gap-4">
             <a href="/">
               <img src="/assets/maren-wordmark-lime.svg" alt="MAREN — ассистент 24/7" className="logo h-10" />
+            </a>
+            <span className="text-muted-foreground hidden sm:inline">|</span>
+            <a 
+              href="https://t.me/promaren" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-sm font-medium hover:text-accent transition-colors hidden sm:inline"
+            >
+              Telegram канал
             </a>
           </div>
 
