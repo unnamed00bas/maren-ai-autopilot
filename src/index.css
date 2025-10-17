@@ -103,6 +103,10 @@ All colors MUST be HSL.
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     /* Improve touch scrolling on iOS */
     -webkit-overflow-scrolling: touch;
+    /* Prevent text size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+    /* Optimize touch interactions */
+    touch-action: manipulation;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -130,6 +134,9 @@ All colors MUST be HSL.
   
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24;
+    /* Safe area for notched devices */
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
   }
   
   .card-product {
@@ -156,5 +163,34 @@ All colors MUST be HSL.
   
   header img.logo {
     height: 40px;
+  }
+  
+  /* Touch-friendly inputs - minimum 48px for mobile accessibility */
+  input, textarea, select {
+    @apply min-h-[48px];
+    /* Prevent zoom on focus in iOS */
+    font-size: 16px;
+  }
+  
+  button {
+    @apply min-h-[48px];
+    /* Better tap targets */
+    min-width: 48px;
+  }
+  
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
