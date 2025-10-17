@@ -3,16 +3,17 @@ import { Button } from './ui/button';
 
 export const Contact = () => {
   return (
-    <section id="contact" className="section-container bg-gradient-to-br from-graphite to-pitch text-white">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
-          Готовы вернуть своё время?
-        </h2>
-        <p className="text-base md:text-xl opacity-90 mb-8 md:mb-12">
-          Свяжитесь с нами любым удобным способом
-        </p>
+    <section id="contact" className="section-container">
+      <div className="max-w-4xl mx-auto bg-gradient-to-br from-graphite/80 to-pitch/80 rounded-3xl p-8 md:p-12 text-white">
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+            Готовы вернуть своё время?
+          </h2>
+          <p className="text-base md:text-xl opacity-90 mb-8 md:mb-12">
+            Свяжитесь с нами любым удобным способом
+          </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
           <a 
             href="https://t.me/Marinochcin" 
             target="_blank" 
@@ -54,6 +55,7 @@ export const Contact = () => {
               <p className="text-xs md:text-sm opacity-75">ИНН 615427582507</p>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
