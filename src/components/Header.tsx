@@ -21,7 +21,7 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
             </a>
             <Button 
               asChild
-              className="hidden sm:inline-flex px-3 py-1.5 rounded-lg bg-gradient-to-br from-cyan/40 to-cyan/20 border border-cyan/50 hover:from-cyan/50 hover:to-cyan/30 transition-all"
+              className="hidden sm:inline-flex px-3 py-1.5 rounded-lg bg-[hsl(189,90%,85%)] border border-cyan/30 hover:bg-[hsl(189,90%,75%)] transition-all"
             >
               <a 
                 href="https://t.me/promaren" 
@@ -30,7 +30,7 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
                 className="flex items-center gap-2"
               >
                 <div className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-                <span className="text-xs font-bold uppercase tracking-wide text-cyan">
+                <span className="text-xs font-bold uppercase tracking-wide text-[hsl(189,94%,30%)]">
                   Telegram канал
                 </span>
               </a>
