@@ -59,15 +59,17 @@ const options = [
 
 export const Process = ({ onCalcClick }: ProcessProps) => {
   return (
-    <section className="section-container bg-muted/30">
-      <div className="text-center mb-12 md:mb-16">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
-          Как мы работаем
-        </h2>
-        <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
-          Прозрачный процесс от первого контакта до масштабирования
-        </p>
-      </div>
+    <section className="section-padding">
+      <div className="section-container">
+        <div className="bg-muted/30 rounded-3xl p-8 md:p-12 shadow-lg">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
+              Как мы работаем
+            </h2>
+            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Прозрачный процесс от первого контакта до масштабирования
+            </p>
+          </div>
 
       <div className="max-w-5xl mx-auto">
         <div className="relative">
@@ -163,6 +165,8 @@ export const Process = ({ onCalcClick }: ProcessProps) => {
               );
             })}
           </div>
+        </div>
+      </div>
         </div>
       </div>
     </section>

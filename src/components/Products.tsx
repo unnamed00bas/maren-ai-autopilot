@@ -164,15 +164,17 @@ export const Products = () => {
   };
 
   return (
-    <section id="products" className="section-container bg-muted/30">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
-            Продукты <span className="text-accent">P1–P6</span>
-          </h2>
-          <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            От ассистента с памятью до полной автоматизации контент-производства
-          </p>
-        </div>
+    <section id="products" className="section-padding">
+      <div className="section-container">
+        <div className="bg-muted/30 rounded-3xl p-8 md:p-12 shadow-lg">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
+              Продукты <span className="text-accent">P1–P6</span>
+            </h2>
+            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              От ассистента с памятью до полной автоматизации контент-производства
+            </p>
+          </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
         {products.map((product) => {
@@ -292,6 +294,8 @@ export const Products = () => {
             </div>
           );
         })}
+      </div>
+        </div>
       </div>
     </section>
   );
