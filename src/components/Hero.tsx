@@ -23,7 +23,10 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black leading-tight">
               <span className="block text-foreground uppercase">AI-АССИСТЕНТ</span>
               <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent">
-                который генерирует и публикует контент, экономя до 4 часов в день
+                который генерирует и публикует контент
+              </span>
+              <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-semibold mt-2">
+                экономя до 4 часов в день
               </span>
             </h1>
             
