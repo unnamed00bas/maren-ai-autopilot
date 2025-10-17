@@ -89,7 +89,7 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
                   <img 
                     key={tech.name} 
                     src={tech.logo} 
-                    alt={`Интеграция с ${tech.name} — ${tech.name} API для автоматизации`}
+                    alt={tech.name}
                     className="h-6 md:h-8 grayscale hover:grayscale-0 transition-all duration-300"
                     title={tech.name}
                   />
