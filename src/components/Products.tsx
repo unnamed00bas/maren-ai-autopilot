@@ -24,7 +24,7 @@ const products = [
     demoPrice: 'Ассистент на 24 часа / 999 ₽',
     demo: 'Что вы получаете?\n• Ассистент с памятью (общается как человек), работает в Telegram.\n• Мультимодально: текст, голос (STT), изображения/видео (TTS), ссылки.\n• Контент под вас: мини-план на несколько дней, посты, статьи, официальные письма, тезисы для видео, хэштеги и др.\n• Поиск с проверкой фактов: агрегируем ответы из нескольких LLM + источники/ссылки.\n• (опционально) доступ к Gmail и Google Calendar через OAuth — чтобы ассистент сам отправил письмо и поставил встречу\n• Без автопубликации (это P3 Flow). Здесь — генерация и подготовка.',
     demoAction: { label: 'Заказать Демо Ассистента на 24 ч за 999 ₽', url: 'https://t.me/promaren_support_bot' },
-    stack: ['LLM (OpenAI/Claude/Gemini)', 'Perplexity', 'Gmail/Calendar/Drive', 'Notion', 'STT/TTS', 'n8n/Make', 'Telegram Bot API'],
+    stack: ['n8n', 'LLM (OpenAI/Gemini)', 'Perplexity', 'STT/TTS', 'Google (Sheets, Gmail, Calendar, Drive)', 'Telegram Bot API'],
   },
   {
     id: 'P3',
