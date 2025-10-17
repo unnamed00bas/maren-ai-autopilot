@@ -37,7 +37,7 @@ export const CalcModal = ({ open, onOpenChange }: CalcModalProps) => {
   };
 
   const handleDemo = () => {
-    window.open('https://t.me/promaren_bot?start=calc', '_blank');
+    window.open('https://t.me/promaren_bot', '_blank');
   };
 
   return (
