@@ -1,13 +1,11 @@
-import { Logo } from './Logo';
-
 export const Footer = () => {
   return (
     <footer className="bg-graphite text-white">
       <div className="section-container">
         <div className="grid md:grid-cols-3 gap-8 pb-8 border-b border-white/10">
           <div>
-            <Logo variant="light" size="md" />
-            <p className="mt-4 text-sm opacity-75">
+            <img src="/assets/maren-mono-dark.svg" alt="MAREN" className="h-12 w-auto mb-4 brightness-0 invert" />
+            <p className="text-sm opacity-75">
               Ассистент 24/7 и контент, который делает себя сам
             </p>
           </div>

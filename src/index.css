@@ -113,7 +113,7 @@ All colors MUST be HSL.
 @layer components {
   .btn-hero {
     @apply bg-accent text-accent-foreground font-bold px-8 py-4 rounded-xl transition-all duration-300;
-    @apply hover:scale-105 hover:shadow-[0_0_30px_hsl(var(--lime)/0.5)] active:scale-95;
+    @apply hover:bg-[#84CC16] hover:shadow-[0_0_30px_hsl(var(--lime)/0.5)] active:bg-[#65A30D] active:scale-95;
   }
   
   .btn-neon {
@@ -131,5 +131,26 @@ All colors MUST be HSL.
   .card-product {
     @apply bg-card border border-border rounded-2xl p-8 transition-all duration-300;
     @apply hover:border-accent hover:shadow-[0_0_20px_hsl(var(--lime)/0.2)];
+  }
+
+  .btn-primary {
+    background: hsl(var(--accent)) !important;
+    color: #0B0F12 !important;
+  }
+  
+  .btn-primary:hover {
+    background: #84CC16 !important;
+  }
+  
+  .btn-primary:active {
+    background: #65A30D !important;
+  }
+  
+  .link-tech {
+    color: hsl(var(--cyan));
+  }
+  
+  header img.logo {
+    height: 40px;
   }
 }

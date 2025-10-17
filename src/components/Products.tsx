@@ -1,9 +1,7 @@
-import { Bot, Workflow, TrendingUp, Package, Gauge } from 'lucide-react';
-
 const products = [
   {
     id: 'P1',
-    icon: Bot,
+    icon: '/assets/icons/assistant.svg',
     title: 'MAREN Assistant',
     subtitle: 'личный креатор с памятью',
     description: 'Понимает контекст, ищет материалы, конспектирует, генерит планы/тексты/сценарии, пишет письма в Gmail, ставит слоты в Calendar, ведёт переписку «как человек» (история и память). STT/TTS для видео.',
@@ -13,7 +11,7 @@ const products = [
   },
   {
     id: 'P2',
-    icon: Workflow,
+    icon: '/assets/icons/flow.svg',
     title: 'MAREN Flow',
     subtitle: 'пайплайны генерации и автопостинга',
     description: 'Из одной идеи собирает: карусель, обложку, видео/шорт; ставит UTM, публикует по расписанию в Telegram, VK, Meta (Instagram + Threads + Facebook), Pinterest, ОК, Telegra.ph, Дзен, YouTube, TikTok. Ведёт логи и отчёты.',
@@ -22,7 +20,7 @@ const products = [
   },
   {
     id: 'P3',
-    icon: TrendingUp,
+    icon: '/assets/icons/growthops.svg',
     title: 'MAREN GrowthOps',
     subtitle: 'этичный рост из «холода»',
     description: 'Масслайкинг, масскомментинг, тёплые DM и email-рассылки на релевантные сегменты. Скрипты касаний, трекинг ответов, передача лидов в диалоги/слоты.',
@@ -32,7 +30,7 @@ const products = [
   },
   {
     id: 'P4',
-    icon: Package,
+    icon: '/assets/icons/cards.svg',
     title: 'MAREN Cards',
     subtitle: 'eCom-контент для карточек',
     description: 'Генерит описание товара, 3 варианта заголовков/блоков, обложку/галерею под маркетплейс. Проверка/утверждение — на стороне клиента (полуручно).',
@@ -41,7 +39,7 @@ const products = [
   },
   {
     id: 'P5',
-    icon: Gauge,
+    icon: '/assets/icons/audit.svg',
     title: 'MAREN Audit',
     subtitle: '7-дневный спринт + план 30–60–90',
     description: 'За 7 дней: подключаем ассистента, собираем один-два ключевых пайплайна, настраиваем отчётность. План 30–60–90: эскалация — новые форматы, каналы, автоматизация откликов.',
@@ -64,12 +62,11 @@ export const Products = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {products.map((product) => {
-          const Icon = product.icon;
           return (
             <div key={product.id} className="card-product group">
               <div className="flex items-start gap-4 mb-4">
                 <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
-                  <Icon className="w-6 h-6 text-accent" />
+                  <img src={product.icon} alt={product.title} className="w-6 h-6" />
                 </div>
                 <div className="flex-1">
                   <div className="text-sm font-bold text-accent mb-1">{product.id}</div>

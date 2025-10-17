@@ -2,7 +2,12 @@ import { Logo } from './Logo';
 import { Button } from './ui/button';
 import { Clock, Zap, TrendingUp } from 'lucide-react';
 
-export const Hero = () => {
+interface HeroProps {
+  onCalcClick: () => void;
+  onDemoClick: () => void;
+}
+
+export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-muted">
       {/* Animated background elements */}
@@ -60,16 +65,12 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#calc">
-                <Button className="btn-hero text-lg">
-                  Посчитать экономию времени
-                </Button>
-              </a>
-              <a href="#demo">
-                <Button variant="outline" size="lg" className="text-lg">
-                  Посмотреть демо
-                </Button>
-              </a>
+              <Button onClick={onCalcClick} className="btn-hero text-lg">
+                Посчитать экономию времени
+              </Button>
+              <Button onClick={onDemoClick} variant="outline" size="lg" className="text-lg">
+                Посмотреть демо
+              </Button>
             </div>
 
             {/* Trust badges */}

@@ -21,7 +21,10 @@ const Index = () => {
       />
       
       <main className="pt-20">
-        <Hero />
+        <Hero 
+          onCalcClick={() => setCalcModalOpen(true)}
+          onDemoClick={() => setDemoModalOpen(true)}
+        />
         <Products />
         <Process />
         <FAQ />

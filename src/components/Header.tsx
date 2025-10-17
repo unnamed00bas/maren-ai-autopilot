@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Logo } from './Logo';
 import { Button } from './ui/button';
 import { Menu, X } from 'lucide-react';
 
@@ -18,7 +17,7 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/">
-              <Logo variant="dark" size="sm" />
+              <img src="/assets/maren-wordmark-lime.svg" alt="MAREN — ассистент 24/7" className="logo h-10" />
             </a>
           </div>
 
