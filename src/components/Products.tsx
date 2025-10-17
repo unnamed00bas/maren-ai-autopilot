@@ -105,6 +105,23 @@ export const Products = () => {
     );
   };
 
+  const renderEffect = (text: string) => {
+    // Check if text contains bullet points
+    if (text.includes('•')) {
+      const items = text.split('\n').filter(item => item.trim());
+      return (
+        <ul className="space-y-2">
+          {items.map((item, idx) => (
+            <li key={idx} className="text-sm text-muted-foreground">
+              {item}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    return <p className="text-sm text-muted-foreground whitespace-pre-line">{text}</p>;
+  };
+
   return (
     <section id="products" className="section-container bg-muted/30">
       <div className="text-center mb-16">
@@ -144,7 +161,7 @@ export const Products = () => {
               <div className="space-y-3 pt-4 border-t border-border/50">
                 <div>
                   <div className="text-xs font-semibold text-accent mb-1">ЭФФЕКТ:</div>
-                  <p className="text-sm text-muted-foreground whitespace-pre-line">{product.effect}</p>
+                  {renderEffect(product.effect)}
                 </div>
 
                 {product.demo && (
