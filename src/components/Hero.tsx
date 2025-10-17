@@ -25,14 +25,10 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
               <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent">
                 который генерирует и публикует контент
               </span>
-              <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-semibold mt-2">
-                экономя до 4 часов в день
-              </span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
-              Ассистент думает и помнит, Flow публикует, GrowthOps приводит аудиторию. 
-              Лиды — за минуты, KPI — в дашборде.
+              <span className="font-bold">Assistant</span> думает и помнит, <span className="font-bold">Flow</span> публикует, <span className="font-bold">GrowthOps</span> приводит аудиторию, <span className="font-bold">Minutes</span> экономит время. Лиды — за минуты, KPI — в дашборде. Экономя до 4 часов в день.
             </p>
 
             {/* Key benefits */}
