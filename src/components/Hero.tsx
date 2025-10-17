@@ -20,10 +20,6 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left column - Content */}
           <div className="space-y-8">
-            <div className="inline-block">
-              <Logo variant="dark" size="lg" />
-            </div>
-            
             <h1 className="text-5xl lg:text-7xl font-black leading-tight">
               <span className="block text-foreground">MAREN: время</span>
               <span className="block bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent">
@@ -42,23 +38,23 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
                 <Clock className="w-8 h-8 text-accent flex-shrink-0" />
                 <div>
                   <div className="font-bold text-lg">−2–4 часа</div>
-                  <div className="text-sm text-muted-foreground">рутины в день</div>
+                  <div className="text-sm text-muted-foreground">рутины ежедневно</div>
                 </div>
               </div>
               
               <div className="flex items-center gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-border/50">
                 <Zap className="w-8 h-8 text-accent flex-shrink-0" />
                 <div>
-                  <div className="font-bold text-lg">≤10 сек</div>
-                  <div className="text-sm text-muted-foreground">ответ ИИ</div>
+                  <div className="font-bold text-lg">≤10 секунд</div>
+                  <div className="text-sm text-muted-foreground">(не спит, не берёт больничный)</div>
                 </div>
               </div>
               
               <div className="flex items-center gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-border/50">
                 <TrendingUp className="w-8 h-8 text-accent flex-shrink-0" />
                 <div>
-                  <div className="font-bold text-lg">24/7</div>
-                  <div className="text-sm text-muted-foreground">без перерывов</div>
+                  <div className="font-bold text-lg">Идея → контент → публикация:</div>
+                  <div className="text-sm text-muted-foreground">UTM, расписание, отчёт</div>
                 </div>
               </div>
             </div>
@@ -86,8 +82,8 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
                   { name: 'Perplexity', logo: '/assets/brands/perplexity.svg' },
                   { name: 'Telegram', logo: '/assets/brands/telegram.svg' },
                   { name: 'Notion', logo: '/assets/brands/notion.svg' },
-                  { name: 'Sheets', logo: '/assets/brands/sheets.svg' },
-                  { name: 'Docs', logo: '/assets/brands/docs.svg' },
+                  { name: 'Google Sheets', logo: '/assets/brands/sheets.svg' },
+                  { name: 'Google Docs', logo: '/assets/brands/docs.svg' },
                 ].map((tech) => (
                   <img 
                     key={tech.name} 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import { Target } from '@/components/Target';
 import { Products } from '@/components/Products';
 import { Process } from '@/components/Process';
 import { FAQ } from '@/components/FAQ';
@@ -25,6 +26,7 @@ const Index = () => {
           onCalcClick={() => setCalcModalOpen(true)}
           onDemoClick={() => setDemoModalOpen(true)}
         />
+        <Target />
         <Products />
         <Process />
         <FAQ />

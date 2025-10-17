@@ -36,7 +36,7 @@ export const Footer = () => {
             © {new Date().getFullYear()} MAREN. Все права защищены.
           </p>
           <p className="text-xs opacity-50 mt-2">
-            Погодина Марина Юрьевна, самозанятая · ИНН 615427582507
+            Погодина Марина Юрьевна, Самозанятая · ИНН 615427582507
           </p>
         </div>
       </div>
