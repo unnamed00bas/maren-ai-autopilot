@@ -53,6 +53,7 @@ const products = [
     ],
     stack: ['n8n', 'LLM (OpenAI/Gemini)', 'Perplexity', 'STT/TTS', 'API площадок', 'Google (Sheets, Gmail, Calendar, Drive)', 'Telegram Bot API'],
     inDevelopment: true,
+    pilotBadge: true,
   },
   {
     id: 'P4',
