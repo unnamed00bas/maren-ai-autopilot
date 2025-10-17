@@ -31,7 +31,7 @@ const products = [
     icon: '/assets/icons/flow.svg',
     title: 'MAREN Flow',
     subtitle: 'пайплайны генерации и автопостинга',
-    description: 'По подготовленному контент-плану сам собирает форматы (карусель/пост/обложка/шорт с TTS), ставит UTM и публикует по расписанию в TG, VK, Meta* (Instagram/Threads/Facebook), Pinterest, OK, Telegra.ph, Дзен, YouTube, TikTok, WordPress. Ведёт логи и отчёт в Sheets/Notion. + полностью автоматизированный SEO Блог под ключ',
+    description: 'По подготовленному контент-плану сам собирает форматы (карусель/пост/обложка/шорт с TTS), ставит UTM и публикует по расписанию в TG, VK, Meta* (Instagram/Threads/Facebook), Pinterest, OK, Telegra.ph, Дзен, YouTube, TikTok, WordPress. Ведёт логи и отчёт в Sheets/Notion.',
     effect: 'Ежедневные выходы без касаний, стабильная сетка, прозрачные ссылки-отчёты.',
     demos: [
       {
@@ -50,6 +50,17 @@ const products = [
           { text: 'Pinterest-пин', url: 'https://pin.it/4EjQ0CHbz' },
         ],
       },
+    ],
+    stack: ['n8n', 'LLM (OpenAI/Gemini)', 'Perplexity', 'STT/TTS', 'API площадок', 'Google (Sheets, Gmail, Calendar, Drive)', 'Telegram Bot API'],
+  },
+  {
+    id: 'P4',
+    icon: '/assets/icons/growthops.svg',
+    title: 'MAREN GrowthOps',
+    subtitle: 'этичный рост из «холода»',
+    description: 'ИИ-Лендинг + полностью автоматизированный SEO Блог под ключ с автопостингом в канал Дзен (опционально Telegram и другие соцсети). Масслайкинг, масскомментинг, тёплые DM и email-рассылки на релевантные сегменты. Скрипты касаний, трекинг ответов, передача лидов в диалоги/слоты.',
+    effect: 'Рост аудитории и входящих без агрессии; первые касания превращаются в запросы.',
+    demos: [
       {
         category: 'Блог',
         links: [
@@ -57,18 +68,8 @@ const products = [
         ],
       },
     ],
-    stack: ['n8n/Make', 'LLM (OpenAI/Claude/Gemini)', 'Perplexity', 'STT/TTS', 'API площадок', 'Sheets/Notion'],
-  },
-  {
-    id: 'P4',
-    icon: '/assets/icons/growthops.svg',
-    title: 'MAREN GrowthOps',
-    subtitle: 'этичный рост из «холода»',
-    description: 'Масслайкинг, масскомментинг, тёплые DM и email-рассылки на релевантные сегменты. Скрипты касаний, трекинг ответов, передача лидов в диалоги/слоты.',
-    effect: 'Рост аудитории и входящих без агрессии; первые касания превращаются в запросы.',
     note: 'Работаем в рамках правил площадок. Скорости и лимиты согласовываем индивидуально.',
     stack: ['Telegram/VK/Email', 'n8n/Make', 'CRM/таблицы'],
-    inDevelopment: true,
   },
   {
     id: 'P5',
