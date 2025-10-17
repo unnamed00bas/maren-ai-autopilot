@@ -1,3 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="currentColor">
+  <!-- Lovable heart icon -->
+  <path d="M20 12 C20 8 14 8 14 12 C14 8 8 8 8 12 C8 18 14 24 20 28 C26 24 32 18 32 12 C32 8 26 8 26 12 C26 8 20 8 20 12 Z" fill="currentColor" transform="translate(-6, 0) scale(0.8)"/>
+  <!-- Text -->
+  <text x="38" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Lovable</text>
 </svg>
