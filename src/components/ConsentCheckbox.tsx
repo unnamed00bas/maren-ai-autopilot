@@ -30,7 +30,7 @@ export const ConsentCheckbox = ({
       </div>
       <Label 
         htmlFor="consent" 
-        className="text-sm text-muted-foreground leading-relaxed cursor-pointer break-all"
+        className="text-sm text-muted-foreground leading-relaxed cursor-pointer break-words"
       >
         Я согласен на обработку персональных данных в соответствии с{' '}
         <button
