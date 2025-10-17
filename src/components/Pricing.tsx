@@ -44,7 +44,7 @@ const pricingData = [
     id: 'P6',
     title: 'MAREN Minutes',
     description: 'авто-протоколы ВКС',
-    price: '5 000 ₽ / мес.',
+    price: '2 000 ₽ / мес.',
     type: 'subscription',
     inDevelopment: true,
     pilotBadge: true
