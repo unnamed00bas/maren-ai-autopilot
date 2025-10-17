@@ -52,7 +52,7 @@ export const Contact = () => {
               <p className="text-sm opacity-75">Основатель MAREN</p>
             </div>
             <div>
-              <h3 className="font-bold mb-2 text-accent">ИП</h3>
+              <h3 className="font-bold mb-2 text-accent">Самозанятая</h3>
               <p className="text-sm opacity-75">Погодина Марина Юрьевна</p>
               <p className="text-sm opacity-75">ИНН 615427582507</p>
             </div>

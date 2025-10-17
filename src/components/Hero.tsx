@@ -45,7 +45,7 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
               <div className="flex items-center gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-border/50">
                 <Zap className="w-8 h-8 text-accent flex-shrink-0" />
                 <div>
-                  <div className="font-bold text-lg">≤10 секунд</div>
+                  <div className="font-bold text-lg">Ответ ассистента ≤10 секунд</div>
                   <div className="text-sm text-muted-foreground">(не спит, не берёт больничный)</div>
                 </div>
               </div>
