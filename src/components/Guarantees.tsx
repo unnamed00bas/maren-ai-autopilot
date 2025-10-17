@@ -9,7 +9,7 @@ export const Guarantees = ({ onPrivacyClick, onOfferClick }: GuaranteesProps) =>
   return (
     <section className="section-padding">
       <div className="section-container">
-        <div className="bg-muted/30 rounded-3xl p-8 md:p-12">
+        <div className="bg-muted/30 rounded-3xl p-8 md:p-12 shadow-lg">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-accent/10 mb-4 md:mb-6">
               <Shield className="w-6 h-6 md:w-8 md:h-8 text-accent" />
