@@ -1,14 +1,17 @@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
+import { Button } from './ui/button';
 
 const products = [
   {
     id: 'P1',
     icon: '/assets/icons/audit.svg',
     title: 'MAREN Audit',
-    subtitle: '7-дневный спринт + план 30–60–90',
-    description: 'За 7 дней: подключаем ассистента, собираем один-два ключевых пайплайна, настраиваем отчётность. План 30–60–90: эскалация — новые форматы, каналы, автоматизация откликов.',
-    effect: 'Быстрый запуск и понятная дорожная карта без «чёрных ящиков».',
-    stack: ['Комплексная настройка', 'Дашборды', 'Документация'],
+    subtitle: 'аудит и дорожная карта за 10 дней',
+    description: 'Понять, что именно купить/внедрить из MAREN (P2–P5), где сэкономим часы и как сделать это безопасно по 152-ФЗ.',
+    effect: 'Чёткий понимание что внедрить из P2–P5 и сколько времени сэкономим.\n\nДорожная карта 30–60–90 с приоритетами «сейчас / дальше».\n\nМатрица рисков ИТ/ИБ + рекомендации по 152-ФЗ (ПДн, хранение в РФ, политика/оферта).\n\nROI-оценка: часы → деньги, % автопостинга, TTM, CTR/заявки.',
+    demo: 'Диагностика 30 мин (видео zoom) → выдаю мини-резюме: 3 быстрые победы, 1 риск, 1 пример пайплайна.',
+    demoAction: { label: 'Записаться', url: 'https://t.me/promaren_support_bot' },
+    stack: ['Документы: Notion / Google Docs & Sheets', 'Комплаенс: чек-лист 152-ФЗ (ПДн, хранение в РФ, минимизация, сроки, удаление), базовые ИБ-контроли, политика/оферта'],
   },
   {
     id: 'P2',
@@ -17,7 +20,9 @@ const products = [
     subtitle: 'личный креатор с памятью',
     description: 'Понимает контекст, ищет материалы, конспектирует, генерит планы/тексты/сценарии, пишет письма в Gmail, ставит слоты в Calendar, ведёт переписку «как человек» (история и память). STT/TTS для видео.',
     effect: 'Минус 2–4 часа рутины/день; скорость креатива ↑, ошибок от забывчивости ↓.',
+    demoPrice: 'Ассистент на 24 часа / 999 ₽',
     demo: 'Что вы получаете?\n• Ассистент с памятью (общается как человек), работает в Telegram.\n• Мультимодально: текст, голос (STT), изображения/видео (TTS), ссылки.\n• Контент под вас: мини-план на несколько дней, посты, статьи, официальные письма, тезисы для видео, хэштеги и др.\n• Поиск с проверкой фактов: агрегируем ответы из нескольких LLM + источники/ссылки.\n• (опционально) доступ к Gmail и Google Calendar через OAuth — чтобы ассистент сам отправил письмо и поставил встречу\n• Без автопубликации (это P3 Flow). Здесь — генерация и подготовка.',
+    demoAction: { label: 'Заказать Демо Ассистента на 24 ч', url: 'https://t.me/promaren_support_bot' },
     stack: ['LLM (OpenAI/Claude/Gemini)', 'Perplexity', 'Gmail/Calendar/Drive', 'Notion', 'STT/TTS', 'n8n/Make', 'Telegram Bot API'],
   },
   {
@@ -144,7 +149,25 @@ export const Products = () => {
                 {product.demo && (
                   <div>
                     <div className="text-xs font-semibold text-accent mb-1">ДЕМО:</div>
+                    {product.demoPrice && (
+                      <p className="text-base font-bold text-accent mb-2">{product.demoPrice}</p>
+                    )}
                     <p className="text-sm text-muted-foreground whitespace-pre-line">{product.demo}</p>
+                    {product.demoAction && (
+                      <Button 
+                        asChild 
+                        className="mt-3 w-full"
+                        variant="default"
+                      >
+                        <a 
+                          href={product.demoAction.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          {product.demoAction.label}
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 )}
 
