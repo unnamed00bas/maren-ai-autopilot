@@ -17,9 +17,9 @@ export const ConsentCheckbox = ({
 }: ConsentCheckboxProps) => {
   return (
     <div className="flex items-start gap-3">
-      <div className="relative">
+      <div className="relative flex-shrink-0">
         {!checked && (
-          <ArrowDown className="absolute -left-8 top-0 w-5 h-5 text-accent animate-bounce" />
+          <ArrowDown className="absolute -left-10 top-0 w-6 h-6 text-accent animate-bounce drop-shadow-lg" />
         )}
         <Checkbox 
           id="consent" 

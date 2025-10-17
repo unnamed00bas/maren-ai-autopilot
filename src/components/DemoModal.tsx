@@ -38,12 +38,14 @@ export const DemoModal = ({ open, onOpenChange }: DemoModalProps) => {
           </DialogHeader>
 
           <div className="space-y-4 py-4 md:py-6">
-            <ConsentCheckbox
-              checked={consentChecked}
-              onCheckedChange={setConsentChecked}
-              onPrivacyClick={() => setPrivacyOpen(true)}
-              onOfferClick={() => setOfferOpen(true)}
-            />
+            <div className="pl-10">
+              <ConsentCheckbox
+                checked={consentChecked}
+                onCheckedChange={setConsentChecked}
+                onPrivacyClick={() => setPrivacyOpen(true)}
+                onOfferClick={() => setOfferOpen(true)}
+              />
+            </div>
           <div className="bg-card border border-accent/30 rounded-xl p-4 md:p-6 space-y-3 md:space-y-4">
             <div className="flex items-start gap-3 md:gap-4">
               <div className="p-2 md:p-3 bg-accent/10 rounded-xl flex-shrink-0">
