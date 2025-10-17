@@ -37,7 +37,7 @@ export const CookieConsent = () => {
           <div className="flex gap-3 w-full md:w-auto min-w-[240px]">
             <Button
               onClick={handleAccept}
-              className="flex-1 btn-hero h-9"
+              className="flex-1 btn-hero h-8"
               size="sm"
             >
               Принять
