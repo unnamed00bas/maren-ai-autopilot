@@ -121,10 +121,6 @@ export const FAQ = () => {
             </AccordionItem>
           ))}
         </Accordion>
-
-        <p className="text-xs text-muted-foreground mt-8 text-center italic">
-          *Meta — Instagram/Threads/Facebook. Упоминание справочное; сервис не аффилирован. Публикации — в рамках правил площадок и законодательства РФ.
-        </p>
       </div>
     </section>
   );
