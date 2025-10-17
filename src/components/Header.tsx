@@ -21,14 +21,18 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
             </a>
             <Button 
               asChild
-              className="bg-[hsl(var(--cyan))] text-white font-bold px-4 py-2 rounded-xl transition-all duration-300 hover:bg-[hsl(var(--uv-cyan))] hover:shadow-[0_0_20px_hsl(var(--cyan)/0.5)] hidden sm:inline-flex"
+              className="hidden sm:inline-flex px-3 py-1.5 rounded-lg bg-gradient-to-br from-cyan/20 to-cyan/5 border border-cyan/30 hover:from-cyan/30 hover:to-cyan/10 transition-all"
             >
               <a 
                 href="https://t.me/promaren" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                className="flex items-center gap-2"
               >
-                Telegram канал
+                <div className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
+                <span className="text-xs font-bold uppercase tracking-wide text-cyan">
+                  Telegram канал
+                </span>
               </a>
             </Button>
           </div>
