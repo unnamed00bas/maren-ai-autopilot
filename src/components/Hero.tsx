@@ -76,11 +76,26 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
             {/* Trust badges */}
             <div className="pt-8 border-t border-border/50">
               <p className="text-sm text-muted-foreground mb-4">Работаем с:</p>
-              <div className="flex flex-wrap gap-4 items-center opacity-60">
-                {['n8n', 'Make', 'OpenAI', 'Claude', 'Gemini', 'Perplexity', 'Telegram', 'Notion'].map((tech) => (
-                  <span key={tech} className="px-4 py-2 bg-muted rounded-lg text-sm font-medium">
-                    {tech}
-                  </span>
+              <div className="flex flex-wrap gap-6 items-center opacity-70">
+                {[
+                  { name: 'n8n', logo: '/assets/brands/n8n.svg' },
+                  { name: 'Make', logo: '/assets/brands/make.svg' },
+                  { name: 'OpenAI', logo: '/assets/brands/openai.svg' },
+                  { name: 'Claude', logo: '/assets/brands/claude.svg' },
+                  { name: 'Gemini', logo: '/assets/brands/gemini.svg' },
+                  { name: 'Perplexity', logo: '/assets/brands/perplexity.svg' },
+                  { name: 'Telegram', logo: '/assets/brands/telegram.svg' },
+                  { name: 'Notion', logo: '/assets/brands/notion.svg' },
+                  { name: 'Sheets', logo: '/assets/brands/sheets.svg' },
+                  { name: 'Docs', logo: '/assets/brands/docs.svg' },
+                ].map((tech) => (
+                  <img 
+                    key={tech.name} 
+                    src={tech.logo} 
+                    alt={tech.name}
+                    className="h-8 grayscale hover:grayscale-0 transition-all duration-300"
+                    title={tech.name}
+                  />
                 ))}
               </div>
             </div>
