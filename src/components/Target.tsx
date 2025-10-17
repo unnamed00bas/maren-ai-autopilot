@@ -17,7 +17,7 @@ export const Target = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all shadow-lg">
+              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all">
                 <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-accent/10 mb-4">
                   <Clock className="w-6 h-6 md:w-7 md:h-7 text-accent" />
                 </div>
@@ -28,7 +28,7 @@ export const Target = () => {
                 </p>
               </div>
 
-              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all shadow-lg">
+              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all">
                 <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-cyan/10 mb-4">
                   <FileText className="w-6 h-6 md:w-7 md:h-7 text-cyan" />
                 </div>
@@ -39,7 +39,7 @@ export const Target = () => {
                 </p>
               </div>
 
-              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all shadow-lg">
+              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all">
                 <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-accent/10 mb-4">
                   <BarChart3 className="w-6 h-6 md:w-7 md:h-7 text-accent" />
                 </div>
