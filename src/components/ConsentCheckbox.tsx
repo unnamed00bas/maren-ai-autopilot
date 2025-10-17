@@ -1,5 +1,6 @@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
+import { ArrowDown } from 'lucide-react';
 
 interface ConsentCheckboxProps {
   checked: boolean;
@@ -15,13 +16,18 @@ export const ConsentCheckbox = ({
   onOfferClick 
 }: ConsentCheckboxProps) => {
   return (
-    <div className="flex items-start gap-2">
-      <Checkbox 
-        id="consent" 
-        checked={checked}
-        onCheckedChange={onCheckedChange}
-        className="mt-1"
-      />
+    <div className="flex items-start gap-3">
+      <div className="relative">
+        {!checked && (
+          <ArrowDown className="absolute -left-8 top-0 w-5 h-5 text-accent animate-bounce" />
+        )}
+        <Checkbox 
+          id="consent" 
+          checked={checked}
+          onCheckedChange={onCheckedChange}
+          className="mt-1 h-5 w-5"
+        />
+      </div>
       <Label 
         htmlFor="consent" 
         className="text-xs text-muted-foreground leading-relaxed cursor-pointer"
@@ -37,7 +43,7 @@ export const ConsentCheckbox = ({
         >
           Политикой обработки персональных данных
         </button>
-        {' '}и{' '}
+        , и согласен с предложением{' '}
         <button
           type="button"
           onClick={(e) => {
@@ -46,7 +52,7 @@ export const ConsentCheckbox = ({
           }}
           className="text-accent hover:underline"
         >
-          Публичной офертой
+          Публичной оферты
         </button>
       </Label>
     </div>
