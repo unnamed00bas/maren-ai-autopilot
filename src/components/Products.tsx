@@ -58,9 +58,15 @@ const products = [
     icon: '/assets/icons/growthops.svg',
     title: 'MAREN GrowthOps',
     subtitle: 'этичный рост из «холода»',
-    description: 'ИИ-Лендинг + полностью автоматизированный SEO Блог под ключ с автопостингом в канал Дзен (опционально Telegram и другие соцсети). Масслайкинг, масскомментинг, тёплые DM и email-рассылки на релевантные сегменты. Скрипты касаний, трекинг ответов, передача лидов в диалоги/слоты.',
+    description: 'ИИ-Лендинг + полностью автоматизированный SEO Блог под ключ с автопостингом в канал Дзен (опционально Telegram и другие соцсети).',
     effect: 'Рост аудитории и входящих без агрессии; первые касания превращаются в запросы.',
     demos: [
+      {
+        category: 'ИИ-Лендинг',
+        links: [
+          { text: 'вы как раз на таком сайте ✨ Lovable', url: '/' },
+        ],
+      },
       {
         category: 'Блог',
         links: [
@@ -69,7 +75,7 @@ const products = [
       },
     ],
     note: 'Работаем в рамках правил площадок. Скорости и лимиты согласовываем индивидуально.',
-    stack: ['Telegram/VK/Email', 'n8n/Make', 'CRM/таблицы'],
+    stack: ['make', 'LLM (OpenAI/Gemini/Claude)', 'Perplexity', 'STT/TTS', 'API площадок соцсетей', 'Google Sheets', 'Telegram Bot API', 'Wordpress', 'Lovable'],
   },
   {
     id: 'P5',
