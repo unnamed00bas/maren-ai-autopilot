@@ -60,11 +60,11 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
-              <Button onClick={onCalcClick} className="btn-hero text-sm md:text-base lg:text-lg w-full sm:w-auto">
-                Посчитать экономию времени (бесплатно)
-              </Button>
-              <Button onClick={onDemoClick} variant="outline" size="lg" className="text-sm md:text-base lg:text-lg w-full sm:w-auto">
+              <Button onClick={onDemoClick} className="btn-hero text-sm md:text-base lg:text-lg w-full sm:w-auto">
                 Посмотреть демо
+              </Button>
+              <Button onClick={onCalcClick} variant="outline" size="lg" className="text-sm md:text-base lg:text-lg w-full sm:w-auto">
+                Посчитать экономию времени (бесплатно)
               </Button>
             </div>
 
