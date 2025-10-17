@@ -15,12 +15,12 @@ export const Contact = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-12 md:mb-16 max-w-4xl mx-auto">
             <a 
               href="https://t.me/Marinochcin" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-accent/10 transition-all border border-border hover:border-accent hover:shadow-xl hover:-translate-y-1 duration-300"
+              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-accent/10 transition-all border border-border hover:border-accent hover:shadow-xl hover:-translate-y-1 duration-300 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[200px]"
             >
               <MessageCircle className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-accent group-hover:scale-110 transition-transform" />
               <h3 className="font-bold text-xl md:text-2xl">Telegram</h3>
@@ -28,7 +28,7 @@ export const Contact = () => {
 
             <a 
               href="mailto:Marina.Y.Pogodina@yandex.ru"
-              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-primary/10 transition-all border border-border hover:border-primary hover:shadow-xl hover:-translate-y-1 duration-300"
+              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-primary/10 transition-all border border-border hover:border-primary hover:shadow-xl hover:-translate-y-1 duration-300 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[200px]"
             >
               <Mail className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-primary group-hover:scale-110 transition-transform" />
               <h3 className="font-bold text-xl md:text-2xl">Email</h3>
@@ -38,7 +38,7 @@ export const Contact = () => {
               href="https://t.me/promaren_support_bot" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-cyan/10 transition-all border border-border hover:border-cyan hover:shadow-xl hover:-translate-y-1 duration-300"
+              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-cyan/10 transition-all border border-border hover:border-cyan hover:shadow-xl hover:-translate-y-1 duration-300 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[200px]"
             >
               <Video className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-cyan group-hover:scale-110 transition-transform" />
               <h3 className="font-bold text-xl md:text-2xl">Zoom</h3>
