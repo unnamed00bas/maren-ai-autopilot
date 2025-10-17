@@ -19,14 +19,18 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
             <a href="/">
               <img src="/assets/maren-wordmark-lime.svg" alt="MAREN — ассистент 24/7" className="logo h-10" />
             </a>
-            <a 
-              href="https://t.me/promaren" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-sm font-medium hover:text-accent transition-colors hidden sm:inline"
+            <Button 
+              asChild
+              className="btn-hero hidden sm:inline-flex"
             >
-              Telegram канал
-            </a>
+              <a 
+                href="https://t.me/promaren" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Telegram канал
+              </a>
+            </Button>
           </div>
 
           {/* Desktop Navigation */}
