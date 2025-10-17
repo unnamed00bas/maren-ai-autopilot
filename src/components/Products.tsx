@@ -52,6 +52,7 @@ const products = [
       },
     ],
     stack: ['n8n', 'LLM (OpenAI/Gemini)', 'Perplexity', 'STT/TTS', 'API площадок', 'Google (Sheets, Gmail, Calendar, Drive)', 'Telegram Bot API'],
+    inDevelopment: true,
   },
   {
     id: 'P4',
@@ -64,7 +65,7 @@ const products = [
       {
         category: 'ИИ-Лендинг',
         links: [
-          { text: 'вы как раз на таком сайте ✨ Lovable', url: '/' },
+          { text: 'вы как раз на таком сайте ✨ by Lovable', url: '/' },
         ],
       },
       {
@@ -243,14 +244,20 @@ export const Products = () => {
                           <ul className="space-y-1 ml-2">
                             {demo.links.map((link, linkIdx) => (
                               <li key={linkIdx}>
-                                <a 
-                                  href={link.url} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer"
-                                  className="text-xs font-bold text-cyan underline decoration-2 hover:text-accent transition-colors"
-                                >
-                                  — {link.text}{link.url.startsWith('/') ? '' : ' (ссылка ↗)'}
-                                </a>
+                                {link.url.startsWith('/') ? (
+                                  <span className="text-xs font-bold text-muted-foreground">
+                                    — {link.text}
+                                  </span>
+                                ) : (
+                                  <a 
+                                    href={link.url} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-xs font-bold text-cyan underline decoration-2 hover:text-accent transition-colors"
+                                  >
+                                    — {link.text} (ссылка ↗)
+                                  </a>
+                                )}
                               </li>
                             ))}
                           </ul>
