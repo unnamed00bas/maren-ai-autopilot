@@ -21,8 +21,7 @@ const pricingData = [
     description: '100% авто: по плану генерит форматы, ставит UTM и публикует сам + SEO Блог под ключ.',
     price: '100 000 ₽',
     note: 'опционально — современный ai-лэндинг — 30 000 ₽',
-    type: 'one-time',
-    inDevelopment: true
+    type: 'one-time'
   },
   {
     id: 'P4',
@@ -37,7 +36,8 @@ const pricingData = [
     title: 'MAREN Cards',
     description: 'eCom-описания, заголовки и обложки для карточек.',
     price: 'лист ожидания',
-    type: 'waitlist'
+    type: 'waitlist',
+    inDevelopment: true
   },
   {
     id: 'P6',
