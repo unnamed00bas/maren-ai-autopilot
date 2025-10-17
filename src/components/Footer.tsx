@@ -36,18 +36,18 @@ export const Footer = () => {
                 <li><a href="#faq" className="hover:text-accent transition-colors">FAQ</a></li>
                 <li><a href="#pricing" className="hover:text-accent transition-colors">Цены</a></li>
                 <li><a href="#contact" className="hover:text-accent transition-colors">Контакты</a></li>
-                <li>
+                <li className="!mt-1">
                   <button 
                     onClick={() => setPrivacyOpen(true)}
-                    className="hover:text-accent transition-colors text-left"
+                    className="hover:text-accent transition-colors text-left w-full"
                   >
                     Политика обработки персональных данных
                   </button>
                 </li>
-                <li>
+                <li className="!mt-1">
                   <button 
                     onClick={() => setOfferOpen(true)}
-                    className="hover:text-accent transition-colors text-left"
+                    className="hover:text-accent transition-colors text-left w-full"
                   >
                     Публичная оферта
                   </button>
