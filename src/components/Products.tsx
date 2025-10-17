@@ -9,6 +9,7 @@ const products = [
     subtitle: 'аудит и дорожная карта за 10 дней',
     description: 'Понять, что именно купить/внедрить из MAREN (P2–P5), где сэкономим часы и как сделать это безопасно по 152-ФЗ.',
     effect: '• Чёткий понимание что внедрить из P2–P5 и сколько времени сэкономим.\n• Дорожная карта 30–60–90 с приоритетами «сейчас / дальше».\n• Матрица рисков ИТ/ИБ + рекомендации по 152-ФЗ (ПДн, хранение в РФ, политика/оферта).\n• ROI-оценка: часы → деньги, % автопостинга, TTM, CTR/заявки.',
+    demoPrice: 'Консультация / 2000 ₽',
     demo: 'Диагностика 30 мин (видео zoom) → выдаю мини-резюме: 3 быстрые победы, 1 риск, 1 пример пайплайна.',
     demoAction: { label: 'Записаться на Демо консультацию за 2000 р', url: 'https://t.me/promaren_support_bot' },
     stack: ['Документы: Notion / Google Docs & Sheets', 'Комплаенс: чек-лист 152-ФЗ (ПДн, хранение в РФ, минимизация, сроки, удаление), базовые ИБ-контроли, политика/оферта'],
@@ -143,7 +144,7 @@ export const Products = () => {
               <div className="space-y-3 pt-4 border-t border-border/50">
                 <div>
                   <div className="text-xs font-semibold text-accent mb-1">ЭФФЕКТ:</div>
-                  <p className="text-sm text-muted-foreground">{product.effect}</p>
+                  <p className="text-sm text-muted-foreground whitespace-pre-line">{product.effect}</p>
                 </div>
 
                 {product.demo && (
