@@ -52,15 +52,20 @@ export const LeadForm = ({ onPrivacyClick, onOfferClick }: LeadFormProps) => {
   return (
     <section className="section-padding">
       <div className="section-container">
-        <div className="bg-gradient-to-br from-accent/10 to-cyan/10 rounded-3xl p-8 md:p-12 shadow-lg border-2 border-accent/20">
+        <div className="bg-cyan/5 rounded-3xl p-8 md:p-12 shadow-lg border-2 border-cyan/20">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8 md:mb-10">
-              <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-accent/10 mb-4 md:mb-6">
-                <FileText className="w-6 h-6 md:w-8 md:h-8 text-accent" />
+              <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-cyan/10 mb-4 md:mb-6">
+                <FileText className="w-6 h-6 md:w-8 md:h-8 text-cyan" />
+              </div>
+              
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan"></span>
+                <span className="text-sm font-medium text-cyan">Получите PDF-дорожную карту</span>
               </div>
               
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
-                Получите PDF-дорожную карту
+                Узнайте, как внедрить MAREN за 30–60–90 дней
               </h2>
               <p className="text-sm md:text-base text-muted-foreground">
                 Узнайте, как внедрить MAREN за 30–60–90 дней
