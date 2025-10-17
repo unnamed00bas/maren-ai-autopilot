@@ -59,11 +59,15 @@ export const LeadForm = ({ onPrivacyClick, onOfferClick }: LeadFormProps) => {
                 <FileText className="w-6 h-6 md:w-8 md:h-8 text-accent" />
               </div>
               
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4">
+                <span className="text-sm font-medium text-cyan">Получите PDF-дорожную карту</span>
+              </div>
+              
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
-                Получите PDF-дорожную карту
+                Узнайте, как внедрить MAREN за 30–60–90 дней
               </h2>
               <p className="text-sm md:text-base text-muted-foreground">
-                Узнайте, как внедрить MAREN за 30–60–90 дней
+                Пошаговый план от первой консультации до полного внедрения
               </p>
             </div>
 
