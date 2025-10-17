@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 
 const faqs = [
   {
@@ -73,6 +74,28 @@ const faqs = [
 ];
 
 export const FAQ = () => {
+  const renderAnswer = (text: string) => {
+    const parts = text.split('Meta*');
+    if (parts.length === 1) return text;
+    
+    return (
+      <>
+        {parts[0]}
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="underline decoration-dotted cursor-help">Meta*</span>
+            </TooltipTrigger>
+            <TooltipContent className="max-w-xs">
+              <p className="text-xs">Meta Platforms Inc. — экстремистская организация, запрещена в РФ; WhatsApp не затронут. Реклама на ресурсах Meta в РФ запрещена. Упоминание — только в информационных целях; мы не аффилированы.</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        {parts[1]}
+      </>
+    );
+  };
+
   return (
     <section id="faq" className="section-container">
       <div className="max-w-4xl mx-auto">
@@ -93,7 +116,7 @@ export const FAQ = () => {
                 <span className="font-semibold text-sm md:text-base lg:text-lg pr-4">{faq.question}</span>
               </AccordionTrigger>
               <AccordionContent className="text-sm md:text-base text-muted-foreground pb-4 md:pb-6 leading-relaxed">
-                {faq.answer}
+                {renderAnswer(faq.answer)}
               </AccordionContent>
             </AccordionItem>
           ))}
