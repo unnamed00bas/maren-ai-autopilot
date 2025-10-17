@@ -66,7 +66,7 @@ export const Pricing = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {pricingData.map((item) => (
-            <div key={item.id} className={`card-product flex flex-col ${item.inDevelopment ? 'opacity-60' : ''}`}>
+            <div key={item.id} className={`card-product flex flex-col ${item.inDevelopment ? 'bg-muted/50' : ''}`}>
               <div className="mb-4">
                 <div className="inline-flex items-center gap-2 mb-3">
                   <div className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-lg text-sm font-semibold">
