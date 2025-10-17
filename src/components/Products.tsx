@@ -89,7 +89,7 @@ const products = [
     effect: '• −30–60 мин на конспект каждой встречи.\n• Итоги «5–7 буллетов» и таймлайн через ≤2 мин после звонка.\n• Авто-follow-up: письмо/ТГ-сообщение + задачи и напоминания.\n• Лёгкая аналитика: соблюдение скрипта, возражения, следующий шаг.\n• Архив встреч с поиском по содержимому.',
     demoPrice: 'Пилот «1 встреча» / 499 ₽',
     demo: 'Подключаем Zoom → после звонка в Telegram прилетают: протокол, чек-лист задач, черновик письма клиенту и краткий скоринг звонка.',
-    demoAction: { label: 'Заказать видео-встречу за 499 р', url: 'https://t.me/promaren_support_bot' },
+    demoAction: { label: 'Заказать Демо видео-встречу за 499 р', url: 'https://t.me/promaren_support_bot' },
     stack: ['n8n', 'Zoom', 'LLM + поиск: OpenAI / Claude / Gemini + Perplexity', 'Telegram Bot API', 'Google Docs/Sheets'],
     inDevelopment: true,
     pilotBadge: true,
