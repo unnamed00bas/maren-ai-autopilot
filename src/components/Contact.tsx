@@ -20,25 +20,25 @@ export const Contact = () => {
               href="https://t.me/Marinochcin" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-accent/5 transition-all border border-border hover:border-accent hover:shadow-[0_0_20px_hsl(var(--lime)/0.2)] hover:-translate-y-1 duration-300 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[200px] text-center"
+              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-accent/10 transition-all border border-border hover:border-accent hover:shadow-[0_0_20px_hsl(var(--lime)/0.2)] hover:-translate-y-1 duration-300 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[200px] text-center"
             >
-              <MessageCircle className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-accent group-hover:scale-110 transition-transform" />
+              <MessageCircle className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-accent group-hover:scale-110 group-hover:animate-[wiggle_0.5s_ease-in-out_infinite] transition-transform" />
               <h3 className="font-bold text-xl md:text-2xl">Telegram</h3>
             </a>
 
             <a 
               href="mailto:Marina.Y.Pogodina@yandex.ru"
-              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-cyan/5 transition-all border border-border hover:border-cyan hover:shadow-[0_0_20px_hsl(var(--cyan)/0.2)] hover:-translate-y-1 duration-300 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[200px] text-center"
+              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-cyan/10 transition-all border border-border hover:border-cyan hover:shadow-[0_0_20px_hsl(var(--cyan)/0.2)] hover:-translate-y-1 duration-300 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[200px] text-center"
             >
-              <Mail className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-cyan group-hover:scale-110 transition-transform" />
+              <Mail className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-cyan group-hover:scale-110 group-hover:animate-[wiggle_0.5s_ease-in-out_infinite] transition-transform" />
               <h3 className="font-bold text-xl md:text-2xl">Email</h3>
             </a>
 
             <a 
               href="tel:+79032355551"
-              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-accent/5 transition-all border border-border hover:border-accent hover:shadow-[0_0_20px_hsl(var(--lime)/0.2)] hover:-translate-y-1 duration-300 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[200px] text-center"
+              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-accent/10 transition-all border border-border hover:border-accent hover:shadow-[0_0_20px_hsl(var(--lime)/0.2)] hover:-translate-y-1 duration-300 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[200px] text-center"
             >
-              <Phone className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-accent group-hover:scale-110 transition-transform" />
+              <Phone className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-accent group-hover:scale-110 group-hover:animate-[wiggle_0.5s_ease-in-out_infinite] transition-transform" />
               <h3 className="font-bold text-xl md:text-2xl">Телефон</h3>
             </a>
           </div>
