@@ -176,7 +176,7 @@ export const Products = () => {
             </p>
           </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 max-w-6xl mx-auto">
         {products.map((product) => {
           return (
             <div key={product.id} className={`card-product group ${product.inDevelopment && !product.pilotBadge ? 'relative overflow-hidden bg-muted/50' : product.pilotBadge ? 'relative overflow-hidden bg-cyan/5' : ''}`}>
