@@ -8,6 +8,7 @@ import { Process } from '@/components/Process';
 import { Pricing } from '@/components/Pricing';
 import { FAQ } from '@/components/FAQ';
 import { Contact } from '@/components/Contact';
+import { Guarantees } from '@/components/Guarantees';
 import { Footer } from '@/components/Footer';
 import { CalcModal } from '@/components/CalcModal';
 import { DemoModal } from '@/components/DemoModal';
@@ -40,6 +41,10 @@ const Index = () => {
         <Pricing />
         <FAQ />
         <Contact />
+        <Guarantees 
+          onPrivacyClick={() => setPrivacyOpen(true)}
+          onOfferClick={() => setOfferOpen(true)}
+        />
       </main>
 
       <Footer />
