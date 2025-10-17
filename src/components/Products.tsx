@@ -152,9 +152,9 @@ export const Products = () => {
                                   href={link.url} 
                                   target="_blank" 
                                   rel="noopener noreferrer"
-                                  className="text-xs text-accent hover:underline"
+                                  className="text-xs font-bold text-cyan underline decoration-2 hover:text-accent transition-colors"
                                 >
-                                  — {link.text}
+                                  — {link.text} (ссылка ↗)
                                 </a>
                               </li>
                             ))}
