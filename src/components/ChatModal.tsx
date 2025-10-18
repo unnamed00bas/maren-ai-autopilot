@@ -53,18 +53,17 @@ const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
         keyIndex += beforeText.split('**').length;
       }
 
-      // Add the link (bold and clickable)
+      // Add the link (italic, underlined, blue)
       parts.push(
-        <strong key={`link-${keyIndex++}`}>
-          <a
-            href={match[2]}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:underline cursor-pointer"
-          >
-            {match[1]}
-          </a>
-        </strong>
+        <a
+          key={`link-${keyIndex++}`}
+          href={match[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:text-blue-700 underline italic cursor-pointer font-medium"
+        >
+          {match[1]}
+        </a>
       );
 
       lastIndex = match.index + match[0].length;
