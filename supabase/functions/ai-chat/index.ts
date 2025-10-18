@@ -31,6 +31,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        model: 'gpt-4o-mini',
         prompt: {
           id: 'pmpt_68f38bbef1d881939f4b1d8581858746051f5bce4058b70d',
           version: '1'
@@ -42,11 +43,14 @@ serve(async (req) => {
     if (!response.ok) {
       const errorText = await response.text();
       console.error('OpenAI API error:', response.status, errorText);
-      throw new Error(`OpenAI API error: ${response.status}`);
+      throw new Error(`OpenAI API error: ${response.status} - ${errorText}`);
     }
 
     const data = await response.json();
-    const aiResponse = data.result;
+    console.log('Full OpenAI response:', JSON.stringify(data));
+    
+    // Extract the text from the response
+    const aiResponse = data.output?.message?.content || data.result || 'No response from AI';
 
     console.log('AI response:', aiResponse);
 
