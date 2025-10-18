@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Button } from '@/components/ui/button';
+import { BookOpen } from 'lucide-react';
 
 export const Footer = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
@@ -32,21 +34,26 @@ export const Footer = () => {
 
             <div>
               <h3 className="font-bold mb-3 md:mb-4 text-sm md:text-base text-accent">Компания</h3>
-              <ul className="space-y-1 text-xs md:text-sm text-muted-foreground">
+              <ul className="space-y-1 text-xs md:text-sm text-muted-foreground mb-4">
                 <li><a href="#faq" className="hover:text-accent transition-colors">FAQ</a></li>
                 <li><a href="#pricing" className="hover:text-accent transition-colors">Цены</a></li>
                 <li><a href="#contact" className="hover:text-accent transition-colors">Контакты</a></li>
-                <li>
-                  <a 
-                    href="https://promaren.ru/blog/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-accent transition-colors"
-                  >
-                    Блог MAREN
-                  </a>
-                </li>
               </ul>
+              <Button 
+                asChild 
+                size="lg" 
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-lg hover:shadow-xl transition-all"
+              >
+                <a 
+                  href="https://promaren.ru/blog/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                >
+                  <BookOpen className="h-5 w-5" />
+                  Блог MAREN
+                </a>
+              </Button>
             </div>
           </div>
 
