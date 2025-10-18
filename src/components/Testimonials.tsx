@@ -162,7 +162,7 @@ export const Testimonials = () => {
       <DialogContent className="max-w-4xl max-h-[90vh]">
         <DialogHeader>
           <DialogTitle className="text-2xl md:text-3xl">
-            ⚙️ Кейс: как MAREN сократил подготовку контента на 4 часа в день
+            Кейс: как MAREN сократил подготовку контента на 4 часа в день
           </DialogTitle>
         </DialogHeader>
         <ScrollArea className="h-[70vh] pr-4">
@@ -175,7 +175,7 @@ export const Testimonials = () => {
             </div>
 
             <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-accent">🪄 Решение MAREN</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-accent">Решение MAREN</h3>
               
               <div className="space-y-6">
                 <div className="bg-card rounded-xl p-4 md:p-6 border-2 border-border">
@@ -186,7 +186,7 @@ export const Testimonials = () => {
                     <li>• Настроена интеграция с Google Sheets → автоматический статус «опубликовано».</li>
                   </ul>
                   <div className="bg-accent/10 rounded-lg p-3 border-l-4 border-accent">
-                    <p className="font-semibold text-accent">🕒 Результат: подготовка 1 поста — вместо 45 минут → 12 минут.</p>
+                    <p className="font-semibold text-accent">Результат: подготовка 1 поста — вместо 45 минут → 12 минут.</p>
                   </div>
                 </div>
 
@@ -198,7 +198,7 @@ export const Testimonials = () => {
                     <li>• Добавлена модерация: финальное утверждение перед публикацией.</li>
                   </ul>
                   <div className="bg-cyan/10 rounded-lg p-3 border-l-4 border-cyan">
-                    <p className="font-semibold text-cyan">🧠 Результат: экономия ≈ 2 часов в день на копирайтинге и редактировании.</p>
+                    <p className="font-semibold text-cyan">Результат: экономия ≈ 2 часов в день на копирайтинге и редактировании.</p>
                   </div>
                 </div>
 
@@ -210,14 +210,14 @@ export const Testimonials = () => {
                     <li>• Данные хранятся в white-зоне (152-ФЗ): аудит логов, шифрование TLS.</li>
                   </ul>
                   <div className="bg-accent/10 rounded-lg p-3 border-l-4 border-accent">
-                    <p className="font-semibold text-accent">📊 Результат: рост вовлечённости + 31 % за 2 недели, без найма доп. SMM-менеджера.</p>
+                    <p className="font-semibold text-accent">Результат: рост вовлечённости + 31 % за 2 недели, без найма доп. SMM-менеджера.</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4">📈 Инфографика</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4">Инфографика</h3>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
