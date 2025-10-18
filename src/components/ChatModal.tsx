@@ -25,6 +25,7 @@ const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [threadId, setThreadId] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
@@ -50,7 +51,8 @@ const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
       const { data, error } = await supabase.functions.invoke('ai-chat', {
         body: { 
           message: input,
-          context 
+          context,
+          threadId 
         }
       });
 
@@ -61,6 +63,11 @@ const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
         content: data.response 
       };
       setMessages(prev => [...prev, aiMessage]);
+      
+      // Save threadId for conversation continuity
+      if (data.threadId) {
+        setThreadId(data.threadId);
+      }
     } catch (error) {
       console.error('Error sending message:', error);
       toast({

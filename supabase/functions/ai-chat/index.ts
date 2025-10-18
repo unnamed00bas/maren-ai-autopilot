@@ -13,7 +13,7 @@ serve(async (req) => {
   }
 
   try {
-    const { message, context } = await req.json();
+    const { message, context, threadId } = await req.json();
     const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
     
     if (!OPENAI_API_KEY) {
@@ -22,20 +22,58 @@ serve(async (req) => {
 
     console.log('Received message:', message);
     console.log('Context:', context);
+    console.log('Thread ID:', threadId);
 
-    // Call OpenAI chat completions with custom MAREN consultant prompt
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const headers = {
+      'Authorization': `Bearer ${OPENAI_API_KEY}`,
+      'Content-Type': 'application/json',
+      'OpenAI-Beta': 'assistants=v2'
+    };
+
+    // Create or use existing thread
+    let currentThreadId = threadId;
+    if (!currentThreadId) {
+      const threadResponse = await fetch('https://api.openai.com/v1/threads', {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({})
+      });
+      
+      if (!threadResponse.ok) {
+        const errorText = await threadResponse.text();
+        console.error('Thread creation error:', threadResponse.status, errorText);
+        throw new Error(`Thread creation error: ${threadResponse.status}`);
+      }
+      
+      const threadData = await threadResponse.json();
+      currentThreadId = threadData.id;
+      console.log('Created new thread:', currentThreadId);
+    }
+
+    // Add message to thread
+    const messageContent = context ? `${context}\n\n${message}` : message;
+    const addMessageResponse = await fetch(`https://api.openai.com/v1/threads/${currentThreadId}/messages`, {
       method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${OPENAI_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
+      headers,
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
-        messages: [
-          {
-            role: 'system',
-            content: `Твоя задача — быть виртуальным консультантом по продуктам MAREN, который помогает посетителям сайта живо, с позитивом и лёгкой иронией понять, какие боли и задачи решает MAREN, и какой эффект пользователь получит от внедрения решений. Всегда говори не только о функционале, но и о реальных «болях» клиента, которые будут закрыты благодаря продукту. Ориентируйся на то, какие вопросы и повседневные трудности решит MAREN для пользователя, делая акцент на конечном результате и выгодах.
+        role: 'user',
+        content: messageContent
+      })
+    });
+
+    if (!addMessageResponse.ok) {
+      const errorText = await addMessageResponse.text();
+      console.error('Add message error:', addMessageResponse.status, errorText);
+      throw new Error(`Add message error: ${addMessageResponse.status}`);
+    }
+
+    // Create assistant with vector store
+    const assistantResponse = await fetch('https://api.openai.com/v1/assistants', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        name: 'MAREN Consultant',
+        instructions: `Твоя задача — быть виртуальным консультантом по продуктам MAREN, который помогает посетителям сайта живо, с позитивом и лёгкой иронией понять, какие боли и задачи решает MAREN, и какой эффект пользователь получит от внедрения решений. Всегда говори не только о функционале, но и о реальных «болях» клиента, которые будут закрыты благодаря продукту. Ориентируйся на то, какие вопросы и повседневные трудности решит MAREN для пользователя, делая акцент на конечном результате и выгодах.
 
 # Шаги работы
 
@@ -53,33 +91,114 @@ serve(async (req) => {
 - Второй абзац: какое решение MAREN может это закрыть и как.
 - Третий абзац: конкретный эффект/результат.
 - Финальный абзац — призыв к действию (CTA).
-- Используй эмодзи для структурирования.`
-          },
-          {
-            role: 'user',
-            content: context ? `${context}\n\n${message}` : message
+- Используй эмодзи для структурирования.
+
+Используй файловый поиск для получения информации о продуктах MAREN из базы знаний.`,
+        model: 'gpt-4o-mini',
+        tools: [{ type: 'file_search' }],
+        tool_resources: {
+          file_search: {
+            vector_store_ids: ['vs_68f3886a33988191bb1fd757842f5171']
           }
-        ],
-        temperature: 0.8,
-        max_tokens: 1000
-      }),
+        },
+        temperature: 0.8
+      })
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('OpenAI API error:', response.status, errorText);
-      throw new Error(`OpenAI API error: ${response.status} - ${errorText}`);
+    if (!assistantResponse.ok) {
+      const errorText = await assistantResponse.text();
+      console.error('Assistant creation error:', assistantResponse.status, errorText);
+      throw new Error(`Assistant creation error: ${assistantResponse.status}`);
     }
 
-    const data = await response.json();
-    console.log('Full OpenAI response:', JSON.stringify(data));
-    
-    // Extract the text from chat completions response
-    const aiResponse = data.choices?.[0]?.message?.content || 'Извините, не удалось получить ответ.';
+    const assistantData = await assistantResponse.json();
+    const assistantId = assistantData.id;
+    console.log('Created assistant:', assistantId);
+
+    // Run the assistant
+    const runResponse = await fetch(`https://api.openai.com/v1/threads/${currentThreadId}/runs`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        assistant_id: assistantId
+      })
+    });
+
+    if (!runResponse.ok) {
+      const errorText = await runResponse.text();
+      console.error('Run creation error:', runResponse.status, errorText);
+      throw new Error(`Run creation error: ${runResponse.status}`);
+    }
+
+    const runData = await runResponse.json();
+    const runId = runData.id;
+    console.log('Created run:', runId);
+
+    // Poll for completion
+    let runStatus = 'queued';
+    let attempts = 0;
+    const maxAttempts = 30;
+
+    while (runStatus !== 'completed' && attempts < maxAttempts) {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      const statusResponse = await fetch(`https://api.openai.com/v1/threads/${currentThreadId}/runs/${runId}`, {
+        method: 'GET',
+        headers
+      });
+
+      if (!statusResponse.ok) {
+        const errorText = await statusResponse.text();
+        console.error('Status check error:', statusResponse.status, errorText);
+        throw new Error(`Status check error: ${statusResponse.status}`);
+      }
+
+      const statusData = await statusResponse.json();
+      runStatus = statusData.status;
+      console.log('Run status:', runStatus);
+
+      if (runStatus === 'failed' || runStatus === 'cancelled' || runStatus === 'expired') {
+        throw new Error(`Run ended with status: ${runStatus}`);
+      }
+
+      attempts++;
+    }
+
+    if (runStatus !== 'completed') {
+      throw new Error('Run timed out');
+    }
+
+    // Get messages
+    const messagesResponse = await fetch(`https://api.openai.com/v1/threads/${currentThreadId}/messages`, {
+      method: 'GET',
+      headers
+    });
+
+    if (!messagesResponse.ok) {
+      const errorText = await messagesResponse.text();
+      console.error('Messages retrieval error:', messagesResponse.status, errorText);
+      throw new Error(`Messages retrieval error: ${messagesResponse.status}`);
+    }
+
+    const messagesData = await messagesResponse.json();
+    console.log('Messages:', JSON.stringify(messagesData));
+
+    // Get the latest assistant message
+    const assistantMessage = messagesData.data.find((msg: any) => msg.role === 'assistant');
+    const aiResponse = assistantMessage?.content?.[0]?.text?.value || 'Извините, не удалось получить ответ.';
 
     console.log('AI response:', aiResponse);
 
-    return new Response(JSON.stringify({ response: aiResponse }), {
+    // Clean up assistant
+    await fetch(`https://api.openai.com/v1/assistants/${assistantId}`, {
+      method: 'DELETE',
+      headers
+    });
+
+    return new Response(JSON.stringify({ 
+      response: aiResponse,
+      threadId: currentThreadId
+    }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (error) {
