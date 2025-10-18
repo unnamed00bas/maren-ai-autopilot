@@ -46,22 +46,6 @@ export const Footer = () => {
                     Блог MAREN
                   </a>
                 </li>
-                <li className="!mt-1">
-                  <button 
-                    onClick={() => setPrivacyOpen(true)}
-                    className="hover:text-accent transition-colors text-left w-full"
-                  >
-                    Политика обработки персональных данных
-                  </button>
-                </li>
-                <li className="!mt-1">
-                  <button 
-                    onClick={() => setOfferOpen(true)}
-                    className="hover:text-accent transition-colors text-left w-full"
-                  >
-                    Публичная оферта
-                  </button>
-                </li>
               </ul>
             </div>
           </div>
