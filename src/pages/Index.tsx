@@ -14,6 +14,7 @@ import { Footer } from '@/components/Footer';
 import { CalcModal } from '@/components/CalcModal';
 import { DemoModal } from '@/components/DemoModal';
 import { CookieConsent } from '@/components/CookieConsent';
+import { ScrollToTop } from '@/components/ScrollToTop';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
@@ -65,6 +66,7 @@ const Index = () => {
       />
 
       <CookieConsent />
+      <ScrollToTop />
 
       <Dialog open={privacyOpen} onOpenChange={setPrivacyOpen}>
         <DialogContent className="max-w-3xl max-h-[80vh]">
