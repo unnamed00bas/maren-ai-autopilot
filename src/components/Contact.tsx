@@ -6,54 +6,68 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-container">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-card/50 backdrop-blur-sm rounded-3xl p-8 md:p-16 border border-border shadow-lg">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6">
-              Готовы <span className="bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent">вернуть</span> своё время?
-            </h2>
-            <p className="text-base md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              Свяжитесь с нами любым удобным способом
-            </p>
-          </div>
+    <section id="contact" className="section-container section-padding">
+      <div className="max-w-5xl mx-auto">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-card/90 to-card/50 backdrop-blur-xl border border-border/50 shadow-2xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-cyan/5 pointer-events-none" />
+          
+          <div className="relative z-10 p-8 md:p-16">
+            <div className="text-center mb-12 md:mb-14">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+                Готовы <span className="bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent">вернуть</span> своё время?
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+                Выберите удобный способ связи
+              </p>
+            </div>
 
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-12 md:mb-16 max-w-4xl mx-auto">
-            <button
-              onClick={() => handleExternalLink('https://t.me/promaren_support_bot?text=Заказать+опцию+%22Готовы+вернуть+своё+время%22+%28бесплатная+15-минутная+консультация%29')}
-              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-accent/10 transition-all border border-border hover:border-accent hover:shadow-[0_0_20px_hsl(var(--lime)/0.2)] hover:-translate-y-1 duration-300 w-full sm:w-auto flex items-center gap-4"
-            >
-              <MessageCircle className="w-10 h-10 md:w-12 md:h-12 text-accent group-hover:scale-110 group-hover:animate-[wiggle_0.5s_ease-in-out_infinite] transition-transform shrink-0" />
-              <h3 className="font-bold text-xl md:text-2xl">Telegram</h3>
-            </button>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto mb-12">
+              <button
+                onClick={() => handleExternalLink('https://t.me/promaren_support_bot?text=Заказать+опцию+%22Готовы+вернуть+своё+время%22+%28бесплатная+15-минутная+консультация%29')}
+                className="group relative overflow-hidden bg-gradient-to-br from-card to-card/80 rounded-2xl p-6 border border-border/50 hover:border-accent/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/10"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative flex flex-col items-center gap-3">
+                  <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
+                    <MessageCircle className="w-8 h-8 text-accent" />
+                  </div>
+                  <h3 className="font-semibold text-lg">Telegram</h3>
+                </div>
+              </button>
 
-            <button
-              onClick={() => handleExternalLink('mailto:Marina.Y.Pogodina@yandex.ru')}
-              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-cyan/10 transition-all border border-border hover:border-cyan hover:shadow-[0_0_20px_hsl(var(--cyan)/0.2)] hover:-translate-y-1 duration-300 w-full sm:w-auto flex items-center gap-4"
-            >
-              <Mail className="w-10 h-10 md:w-12 md:h-12 text-cyan group-hover:scale-110 group-hover:animate-[wiggle_0.5s_ease-in-out_infinite] transition-transform shrink-0" />
-              <h3 className="font-bold text-xl md:text-2xl">Email</h3>
-            </button>
+              <button
+                onClick={() => handleExternalLink('mailto:Marina.Y.Pogodina@yandex.ru')}
+                className="group relative overflow-hidden bg-gradient-to-br from-card to-card/80 rounded-2xl p-6 border border-border/50 hover:border-cyan/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan/10"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan/0 to-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative flex flex-col items-center gap-3">
+                  <div className="p-3 bg-cyan/10 rounded-xl group-hover:bg-cyan/20 transition-colors">
+                    <Mail className="w-8 h-8 text-cyan" />
+                  </div>
+                  <h3 className="font-semibold text-lg">Email</h3>
+                </div>
+              </button>
 
-            <button
-              onClick={() => handleExternalLink('tel:+79032355551')}
-              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 hover:bg-accent/10 transition-all border border-border hover:border-accent hover:shadow-[0_0_20px_hsl(var(--lime)/0.2)] hover:-translate-y-1 duration-300 w-full sm:w-auto flex items-center gap-4"
-            >
-              <Phone className="w-10 h-10 md:w-12 md:h-12 text-accent group-hover:scale-110 group-hover:animate-[wiggle_0.5s_ease-in-out_infinite] transition-transform shrink-0" />
-              <h3 className="font-bold text-xl md:text-2xl">Телефон</h3>
-            </button>
-          </div>
+              <button
+                onClick={() => handleExternalLink('tel:+79032355551')}
+                className="group relative overflow-hidden bg-gradient-to-br from-card to-card/80 rounded-2xl p-6 border border-border/50 hover:border-accent/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/10"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative flex flex-col items-center gap-3">
+                  <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
+                    <Phone className="w-8 h-8 text-accent" />
+                  </div>
+                  <h3 className="font-semibold text-lg">Телефон</h3>
+                </div>
+              </button>
+            </div>
 
-          <div className="bg-muted/30 backdrop-blur-sm rounded-2xl p-6 md:p-10 border border-border/50">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-              <div className="text-center md:text-left">
-                <h3 className="font-bold mb-2 text-accent text-lg md:text-xl">Марина Погодина</h3>
-                <p className="text-sm md:text-base text-muted-foreground">Основатель MAREN</p>
-              </div>
-              <div className="text-center md:text-left">
-                <h3 className="font-bold mb-2 text-accent text-lg md:text-xl">Самозанятая</h3>
-                <p className="text-sm md:text-base text-muted-foreground">Погодина Марина Юрьевна</p>
-                <p className="text-sm md:text-base text-muted-foreground">ИНН 615427582507</p>
+            <div className="text-center">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-muted/30 backdrop-blur-sm border border-border/30">
+                <div className="text-sm md:text-base">
+                  <span className="font-semibold text-accent">Марина Погодина</span>
+                  <span className="text-muted-foreground"> • Основатель MAREN</span>
+                </div>
               </div>
             </div>
           </div>
