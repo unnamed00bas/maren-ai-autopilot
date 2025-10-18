@@ -8,7 +8,7 @@ export const Contact = () => {
   return (
     <section id="contact" className="section-container section-padding">
       <div className="max-w-5xl mx-auto">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-card/90 to-card/50 backdrop-blur-xl border border-border/50 shadow-2xl">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-card/90 to-card/50 backdrop-blur-xl border border-border/50 shadow-lg">
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-cyan/5 pointer-events-none" />
           
           <div className="relative z-10 p-8 md:p-16">
