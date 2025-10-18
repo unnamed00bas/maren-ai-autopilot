@@ -35,18 +35,43 @@ export const LeadForm = ({ onPrivacyClick, onOfferClick }: LeadFormProps) => {
 
     setIsSubmitting(true);
 
-    // Simulate API call
+    // Save user data to localStorage
+    const timestamp = new Date().toISOString();
+    const userData = {
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      timestamp
+    };
+    
+    // Get existing leads from localStorage
+    const existingLeads = localStorage.getItem('maren_leads');
+    const leads = existingLeads ? JSON.parse(existingLeads) : [];
+    leads.push(userData);
+    localStorage.setItem('maren_leads', JSON.stringify(leads));
+    
+    console.log('Сохранены данные пользователя:', userData);
+    console.log('Все лиды доступны в localStorage под ключом "maren_leads"');
+
+    // Trigger PDF download
     setTimeout(() => {
+      const link = document.createElement('a');
+      link.href = '/assets/MAREN_Zero-Touch-avtomatizirovannyj-kontent.pdf';
+      link.download = 'MAREN_Zero-Touch-avtomatizirovannyj-kontent.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
       toast({
         title: "✅ Готово!",
-        description: "Проверьте почту — ссылка на материал уже там.",
+        description: "Скачивание файла запущено. Спасибо за Ваш интерес к MAREN.",
         duration: 5000,
       });
       
       setFormData({ name: '', email: '', company: '' });
       setConsentChecked(false);
       setIsSubmitting(false);
-    }, 1000);
+    }, 500);
   };
 
   return (
