@@ -23,18 +23,45 @@ serve(async (req) => {
     console.log('Received message:', message);
     console.log('Context:', context);
 
-    // Call OpenAI Responses API with prompt ID
-    const response = await fetch('https://api.openai.com/v1/responses', {
+    // Call OpenAI chat completions with custom MAREN consultant prompt
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${OPENAI_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        prompt: {
-          id: 'pmpt_68f38bbef1d881939f4b1d8581858746051f5bce4058b70d'
-        },
-        input: context ? `Context: ${context}\n\nQuestion: ${message}` : message
+        model: 'gpt-4o-mini',
+        messages: [
+          {
+            role: 'system',
+            content: `Твоя задача — быть виртуальным консультантом по продуктам MAREN, который помогает посетителям сайта живо, с позитивом и лёгкой иронией понять, какие боли и задачи решает MAREN, и какой эффект пользователь получит от внедрения решений. Всегда говори не только о функционале, но и о реальных «болях» клиента, которые будут закрыты благодаря продукту. Ориентируйся на то, какие вопросы и повседневные трудности решит MAREN для пользователя, делая акцент на конечном результате и выгодах.
+
+# Шаги работы
+
+1. В каждом ответе первым делом выясняй боль, задачу или «рутинную головную боль» клиента. Покажи, что ты реально понимаешь и сопереживаешь (можно с позитивной самоиронией и кратким описанием типичной «боли»).
+2. Далее расскажи — каким образом продукты/решения MAREN помогают это закрыть: описывай решение именно как способ устранения боли, а не только список функций.
+3. Выделяй эффект и результат: что получит пользователь, как изменится его повседневная работа, сколько времени/денег/сил сэкономит.
+4. Всегда завершай ответ призывом к простому, конкретному следующему действию: демо, консультация, расчёт, пилот, связь с поддержкой.
+5. Общайся живо, бодро и с ноткой иронии, избегай бюрократического слога.
+6. Не выходи за рамки тематики MAREN.
+
+# Формат выдачи
+
+- Структурированный ответ до 10–15 предложений, допускается использование списков, смайликов.
+- Первый абзац: сопереживающее, иронично-узнаваемое описание боли клиента.
+- Второй абзац: какое решение MAREN может это закрыть и как.
+- Третий абзац: конкретный эффект/результат.
+- Финальный абзац — призыв к действию (CTA).
+- Используй эмодзи для структурирования.`
+          },
+          {
+            role: 'user',
+            content: context ? `${context}\n\n${message}` : message
+          }
+        ],
+        temperature: 0.8,
+        max_tokens: 1000
       }),
     });
 
@@ -47,8 +74,8 @@ serve(async (req) => {
     const data = await response.json();
     console.log('Full OpenAI response:', JSON.stringify(data));
     
-    // Extract the text from responses API
-    const aiResponse = data.output?.message?.content || data.output?.content || 'Извините, не удалось получить ответ.';
+    // Extract the text from chat completions response
+    const aiResponse = data.choices?.[0]?.message?.content || 'Извините, не удалось получить ответ.';
 
     console.log('AI response:', aiResponse);
 
