@@ -35,43 +35,69 @@ export const LeadForm = ({ onPrivacyClick, onOfferClick }: LeadFormProps) => {
 
     setIsSubmitting(true);
 
-    // Save user data to localStorage
-    const timestamp = new Date().toISOString();
-    const userData = {
-      name: formData.name,
-      email: formData.email,
-      company: formData.company,
-      timestamp
-    };
-    
-    // Get existing leads from localStorage
-    const existingLeads = localStorage.getItem('maren_leads');
-    const leads = existingLeads ? JSON.parse(existingLeads) : [];
-    leads.push(userData);
-    localStorage.setItem('maren_leads', JSON.stringify(leads));
-    
-    console.log('Сохранены данные пользователя:', userData);
-    console.log('Все лиды доступны в localStorage под ключом "maren_leads"');
-
-    // Trigger PDF download
-    setTimeout(() => {
-      const link = document.createElement('a');
-      link.href = '/assets/MAREN_Zero-Touch-avtomatizirovannyj-kontent.pdf';
-      link.download = 'MAREN_Zero-Touch-avtomatizirovannyj-kontent.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-      toast({
-        title: "✅ Готово!",
-        description: "Скачивание файла запущено. Спасибо за Ваш интерес к MAREN.",
-        duration: 5000,
+    try {
+      // Send data to server
+      const response = await fetch('https://writer.promaren.ru/clients.csv', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || ''
+        })
       });
+
+      if (!response.ok) {
+        throw new Error('Ошибка отправки данных');
+      }
+
+      // Save user data to localStorage
+      const timestamp = new Date().toISOString();
+      const userData = {
+        name: formData.name,
+        email: formData.email,
+        company: formData.company,
+        timestamp
+      };
       
-      setFormData({ name: '', email: '', company: '' });
-      setConsentChecked(false);
+      // Get existing leads from localStorage
+      const existingLeads = localStorage.getItem('maren_leads');
+      const leads = existingLeads ? JSON.parse(existingLeads) : [];
+      leads.push(userData);
+      localStorage.setItem('maren_leads', JSON.stringify(leads));
+      
+      console.log('Данные отправлены на сервер и сохранены локально:', userData);
+
+      // Trigger PDF download
+      setTimeout(() => {
+        const link = document.createElement('a');
+        link.href = '/assets/MAREN_Zero-Touch-avtomatizirovannyj-kontent.pdf';
+        link.download = 'MAREN_Zero-Touch-avtomatizirovannyj-kontent.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        toast({
+          title: "✅ Готово!",
+          description: "Скачивание файла запущено. Спасибо за Ваш интерес к MAREN.",
+          duration: 5000,
+        });
+        
+        setFormData({ name: '', email: '', company: '' });
+        setConsentChecked(false);
+        setIsSubmitting(false);
+      }, 500);
+    } catch (error) {
+      console.error('Ошибка при отправке данных:', error);
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить данные. Попробуйте еще раз.",
+        variant: "destructive"
+      });
       setIsSubmitting(false);
-    }, 500);
+    }
   };
 
   return (
