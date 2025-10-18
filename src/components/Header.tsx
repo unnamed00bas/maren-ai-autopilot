@@ -51,18 +51,6 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
             <a href="#contact" className="text-sm font-medium hover:text-accent transition-colors">
               Контакты
             </a>
-            <Button 
-              asChild
-              className="btn-hero"
-            >
-              <a 
-                href="https://promaren.ru/blog/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Блог MAREN
-              </a>
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -109,19 +97,6 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
               >
                 Контакты
               </a>
-              <Button 
-                asChild
-                className="btn-hero w-full"
-              >
-                <a 
-                  href="https://promaren.ru/blog/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Блог MAREN
-                </a>
-              </Button>
             </div>
           </div>
         )}

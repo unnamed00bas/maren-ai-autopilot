@@ -36,6 +36,16 @@ export const Footer = () => {
                 <li><a href="#faq" className="hover:text-accent transition-colors">FAQ</a></li>
                 <li><a href="#pricing" className="hover:text-accent transition-colors">Цены</a></li>
                 <li><a href="#contact" className="hover:text-accent transition-colors">Контакты</a></li>
+                <li>
+                  <a 
+                    href="https://promaren.ru/blog/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-accent transition-colors"
+                  >
+                    Блог MAREN
+                  </a>
+                </li>
                 <li className="!mt-1">
                   <button 
                     onClick={() => setPrivacyOpen(true)}
