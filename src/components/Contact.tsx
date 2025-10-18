@@ -65,15 +65,10 @@ export const Contact = () => {
             <div className="text-center">
               <div className="max-w-3xl mx-auto px-6 py-6 rounded-2xl bg-muted/30 backdrop-blur-sm border border-border/30">
                 <p className="text-sm md:text-base leading-relaxed">
-                  <span className="font-semibold text-accent">Марина Погодина, основатель MAREN</span>
-                  <span className="text-muted-foreground">, благодарит вас за интерес к продуктам MAREN.</span>
+                  <span className="text-muted-foreground">Марина Погодина, основатель MAREN, благодарит вас за интерес к продуктам MAREN.</span>
                   <br />
-                  <span className="text-muted-foreground">В знак благодарности дарю </span>
-                  <span className="font-semibold text-accent">PDF-гайд-дорожную карту</span>
-                  <span className="text-muted-foreground"> — как за </span>
-                  <span className="font-semibold text-cyan">7 шагов</span>
-                  <span className="text-muted-foreground"> прийти к </span>
-                  <span className="font-semibold text-accent">росту метрик, охватов и освобождению личного времени</span>
+                  <span className="text-muted-foreground">В знак благодарности дарю PDF-гайд-дорожную карту — </span>
+                  <span className="font-semibold text-accent">как за 7 шагов прийти к росту метрик, охватов и освобождению личного времени</span>
                   <span className="text-muted-foreground">.</span>
                 </p>
               </div>
