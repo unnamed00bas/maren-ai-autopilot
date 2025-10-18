@@ -53,73 +53,77 @@ const pricingData = [
 
 export const Pricing = () => {
   return (
-    <section className="section-container bg-muted/30">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-accent/10 mb-4 md:mb-6">
-            <Tag className="w-6 h-6 md:w-8 md:h-8 text-accent" />
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Цены
-          </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Выберите подходящее решение для вашего бизнеса
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {pricingData.map((item) => (
-            <div key={item.id} className={`card-product flex flex-col ${item.inDevelopment && !item.pilotBadge ? 'relative overflow-hidden bg-muted/50' : item.pilotBadge ? 'relative overflow-hidden bg-cyan/5' : ''}`}>
-              {item.inDevelopment && (
-                <div className={`absolute top-0 right-0 px-2 md:px-3 py-1 md:py-1.5 rounded-bl-lg border-l border-b ${
-                  item.pilotBadge 
-                    ? 'bg-gradient-to-br from-cyan/20 to-cyan/5 border-cyan/30' 
-                    : 'bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30'
-                }`}>
-                  <div className="flex items-center gap-1.5 md:gap-2">
-                    <div className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse ${item.pilotBadge ? 'bg-cyan' : 'bg-accent'}`} />
-                    <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wide ${item.pilotBadge ? 'text-cyan' : 'text-accent'}`}>
-                      {item.pilotBadge ? 'Идет пилот' : 'В разработке'}
-                    </span>
-                  </div>
-                </div>
-              )}
-              <div className="mb-4">
-                <div className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-lg text-sm font-semibold mb-3">
-                  {item.id}
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
+    <section className="section-padding">
+      <div className="section-container">
+        <div className="bg-muted/30 rounded-3xl p-8 md:p-12 shadow-lg">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12 md:mb-16">
+              <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-accent/10 mb-4 md:mb-6">
+                <Tag className="w-6 h-6 md:w-8 md:h-8 text-accent" />
               </div>
-
-              {item.note && (
-                <div className="mb-4 p-3 bg-muted/50 rounded-lg border border-border">
-                  <p className="text-xs md:text-sm text-muted-foreground">
-                    {item.note}
-                  </p>
-                </div>
-              )}
-
-              <div className="mt-auto pt-4 border-t border-border">
-                <div className={`text-2xl md:text-3xl font-bold ${
-                  item.type === 'waitlist' || item.type === 'custom' 
-                    ? 'text-muted-foreground' 
-                    : 'text-accent'
-                }`}>
-                  {item.price}
-                </div>
-                {item.type === 'subscription' && (
-                  <div className="text-xs md:text-sm text-muted-foreground mt-1">
-                    подписка
-                  </div>
-                )}
-              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                Цены
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+                Выберите подходящее решение для вашего бизнеса
+              </p>
             </div>
-          ))}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {pricingData.map((item) => (
+                <div key={item.id} className={`card-product flex flex-col ${item.inDevelopment && !item.pilotBadge ? 'relative overflow-hidden bg-muted/50' : item.pilotBadge ? 'relative overflow-hidden bg-cyan/5' : ''}`}>
+                  {item.inDevelopment && (
+                    <div className={`absolute top-0 right-0 px-2 md:px-3 py-1 md:py-1.5 rounded-bl-lg border-l border-b ${
+                      item.pilotBadge 
+                        ? 'bg-gradient-to-br from-cyan/20 to-cyan/5 border-cyan/30' 
+                        : 'bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30'
+                    }`}>
+                      <div className="flex items-center gap-1.5 md:gap-2">
+                        <div className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse ${item.pilotBadge ? 'bg-cyan' : 'bg-accent'}`} />
+                        <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wide ${item.pilotBadge ? 'text-cyan' : 'text-accent'}`}>
+                          {item.pilotBadge ? 'Идет пилот' : 'В разработке'}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                  <div className="mb-4">
+                    <div className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-lg text-sm font-semibold mb-3">
+                      {item.id}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {item.note && (
+                    <div className="mb-4 p-3 bg-muted/50 rounded-lg border border-border">
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        {item.note}
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="mt-auto pt-4 border-t border-border">
+                    <div className={`text-2xl md:text-3xl font-bold ${
+                      item.type === 'waitlist' || item.type === 'custom' 
+                        ? 'text-muted-foreground' 
+                        : 'text-accent'
+                    }`}>
+                      {item.price}
+                    </div>
+                    {item.type === 'subscription' && (
+                      <div className="text-xs md:text-sm text-muted-foreground mt-1">
+                        подписка
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
