@@ -16,10 +16,10 @@ export const ConsentCheckbox = ({
   onOfferClick 
 }: ConsentCheckboxProps) => {
   return (
-    <div className="consent-compact flex items-start gap-3 group">
+    <div className="consent-compact flex items-start gap-1.5 group">
       <div className="relative flex-shrink-0">
         {!checked && (
-          <ArrowRight className="consent-arrow absolute -left-8 top-1/2 -translate-y-1/2 w-5 h-5 text-cyan drop-shadow-[0_0_8px_rgba(34,211,238,0.8)] transition-all duration-300 group-hover:scale-125 group-hover:-left-9" />
+          <ArrowRight className="consent-arrow absolute -left-7 top-1/2 -translate-y-1/2 w-4 h-4 text-cyan drop-shadow-[0_0_8px_rgba(34,211,238,0.8)] transition-all duration-300 group-hover:scale-125 group-hover:-left-8" />
         )}
         <Checkbox 
           id="consent" 
@@ -30,7 +30,7 @@ export const ConsentCheckbox = ({
       </div>
       <Label 
         htmlFor="consent" 
-        className="text-base text-muted-foreground cursor-pointer leading-[1.3]"
+        className="text-base text-muted-foreground cursor-pointer leading-[1.15] max-[480px]:text-sm"
       >
         Я согласен на обработку персональных данных в соответствии с{' '}
         <button
