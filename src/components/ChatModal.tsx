@@ -38,14 +38,56 @@ const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
   }, [messages, isLoading]);
 
   const formatMessage = (text: string) => {
+    // First handle markdown links [text](url) - make them bold and clickable
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts: (string | JSX.Element)[] = [];
+    let lastIndex = 0;
+    let match;
+    let keyIndex = 0;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      // Add text before the link
+      if (match.index > lastIndex) {
+        const beforeText = text.slice(lastIndex, match.index);
+        parts.push(...formatBoldText(beforeText, keyIndex));
+        keyIndex += beforeText.split('**').length;
+      }
+
+      // Add the link (bold and clickable)
+      parts.push(
+        <strong key={`link-${keyIndex++}`}>
+          <a
+            href={match[2]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline cursor-pointer"
+          >
+            {match[1]}
+          </a>
+        </strong>
+      );
+
+      lastIndex = match.index + match[0].length;
+    }
+
+    // Add remaining text after last link
+    if (lastIndex < text.length) {
+      const remainingText = text.slice(lastIndex);
+      parts.push(...formatBoldText(remainingText, keyIndex));
+    }
+
+    return parts.length > 0 ? parts : formatBoldText(text, 0);
+  };
+
+  const formatBoldText = (text: string, startKey: number) => {
     // Replace **text** with bold formatting
     const parts = text.split(/(\*\*.*?\*\*)/g);
     return parts.map((part, index) => {
       if (part.startsWith('**') && part.endsWith('**')) {
         const boldText = part.slice(2, -2);
-        return <strong key={index} className="font-semibold">{boldText}</strong>;
+        return <strong key={`bold-${startKey}-${index}`} className="font-semibold">{boldText}</strong>;
       }
-      return <span key={index}>{part}</span>;
+      return <span key={`text-${startKey}-${index}`}>{part}</span>;
     });
   };
 
@@ -106,7 +148,7 @@ const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
       <div className="bg-background rounded-lg shadow-2xl w-full max-w-2xl h-[600px] flex flex-col animate-scale-in">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b">
-          <h2 className="text-xl font-semibold">Консультант MAREN</h2>
+          <h2 className="text-xl font-semibold">AI-консультант MAREN</h2>
           <Button variant="ghost" size="icon" onClick={onClose}>
             <X className="h-5 w-5" />
           </Button>
