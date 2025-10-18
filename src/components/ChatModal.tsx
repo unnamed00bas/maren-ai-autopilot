@@ -37,6 +37,18 @@ const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
     scrollToBottom();
   }, [messages, isLoading]);
 
+  const formatMessage = (text: string) => {
+    // Replace **text** with bold formatting
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        const boldText = part.slice(2, -2);
+        return <strong key={index} className="font-semibold">{boldText}</strong>;
+      }
+      return <span key={index}>{part}</span>;
+    });
+  };
+
   const sendMessage = async () => {
     if (!input.trim() || isLoading) return;
 
@@ -115,7 +127,7 @@ const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
                       : 'bg-muted'
                   }`}
                 >
-                  <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
+                  <p className="text-sm whitespace-pre-wrap">{formatMessage(msg.content)}</p>
                 </div>
               </div>
             ))}
