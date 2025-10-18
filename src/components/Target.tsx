@@ -43,17 +43,9 @@ export const Target = ({ onDemoClick }: TargetProps) => {
                   <Badge variant="secondary" className="w-full justify-center py-2">12–20 постов/нед без найма</Badge>
                 </div>
                 
-                <p className="text-xs text-muted-foreground mb-4">
-                  *по результатам пилотов; детали в кейсе NaturaSkin
+                <p className="text-xs text-muted-foreground">
+                  *по результатам пилотов, детали в кейсе
                 </p>
-                
-                <Button onClick={onDemoClick} className="w-full mb-3">
-                  Демо для eCom
-                </Button>
-                
-                <a href="/#case" className="text-sm text-accent hover:text-accent/80 transition-colors text-center font-medium">
-                  Смотреть кейс →
-                </a>
               </div>
 
               {/* Card 2 - Producers */}
@@ -71,16 +63,6 @@ export const Target = ({ onDemoClick }: TargetProps) => {
                   <Badge variant="secondary" className="w-full justify-center py-2">до −60% правок за счёт тон-оф-войс</Badge>
                   <Badge variant="secondary" className="w-full justify-center py-2">1,5–2 ч/день вернувшегося времени</Badge>
                 </div>
-                
-                <div className="mb-4 h-[20px]"></div>
-                
-                <Button onClick={onDemoClick} className="w-full mb-3">
-                  Запустить автопилот
-                </Button>
-                
-                <a href="/#case" className="text-sm text-accent hover:text-accent/80 transition-colors text-center font-medium">
-                  Смотреть кейс →
-                </a>
               </div>
 
               {/* Card 3 - SMM */}
@@ -98,16 +80,6 @@ export const Target = ({ onDemoClick }: TargetProps) => {
                   <Badge variant="secondary" className="w-full justify-center py-2">0–5 мин на отчёт (авто-PDF)</Badge>
                   <Badge variant="secondary" className="w-full justify-center py-2">≤30 мин согласование по правилам</Badge>
                 </div>
-                
-                <div className="mb-4 h-[20px]"></div>
-                
-                <Button onClick={onDemoClick} className="w-full mb-3">
-                  Посмотреть дашборд
-                </Button>
-                
-                <a href="/#case" className="text-sm text-accent hover:text-accent/80 transition-colors text-center font-medium">
-                  Смотреть кейс →
-                </a>
               </div>
             </div>
 
