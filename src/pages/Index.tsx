@@ -35,7 +35,7 @@ const Index = () => {
           onCalcClick={() => setCalcModalOpen(true)}
           onDemoClick={() => setDemoModalOpen(true)}
         />
-        <Target />
+        <Target onDemoClick={() => setDemoModalOpen(true)} />
         <Products />
         <Testimonials />
         <Process onCalcClick={() => setCalcModalOpen(true)} />

@@ -1,54 +1,135 @@
 import { Users, Clock, FileText, BarChart3 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
-export const Target = () => {
+interface TargetProps {
+  onDemoClick: () => void;
+}
+
+export const Target = ({ onDemoClick }: TargetProps) => {
   return (
-    <section className="section-padding">
+    <section id="audience" className="section-padding">
       <div className="section-container">
         <div className="bg-muted/30 rounded-3xl p-8 md:p-12 shadow-lg">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
               <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-accent/10 mb-4 md:mb-6">
                 <Users className="w-6 h-6 md:w-8 md:h-8 text-accent" />
               </div>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
-                Для кого
+                Кому подойдёт MAREN
               </h2>
+              
+              <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+                Мы закрываем разные роли в контенте: экономим время, берём на себя генерацию и даём контроль. Ниже — что именно получите в каждой роли.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+              {/* Card 1 - eCom */}
+              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all flex flex-col">
                 <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-accent/10 mb-4">
                   <Clock className="w-6 h-6 md:w-7 md:h-7 text-accent" />
                 </div>
-                <div className="text-xs md:text-sm font-semibold text-accent mb-2 uppercase tracking-wider">Время</div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">eCom</h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  тратят часы на постинг — <span className="text-accent font-semibold">MAREN публикует сам</span>
+                <h3 className="text-xl md:text-2xl font-bold mb-3">eCom и локальный ритейл</h3>
+                <p className="text-sm md:text-base text-muted-foreground mb-4">
+                  Тратите часы на постинг — <span className="text-accent font-semibold">MAREN публикует сам (Zero-Touch)</span>.
                 </p>
+                
+                <div className="space-y-2 mb-3 flex-grow">
+                  <Badge variant="secondary" className="w-full justify-center py-2">−3–4 ч/день на рутине</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2">+15–30% охват за 2–4 недели*</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2">12–20 постов/нед без найма</Badge>
+                </div>
+                
+                <p className="text-xs text-muted-foreground mb-4">
+                  *по результатам пилотов; детали в кейсе NaturaSkin
+                </p>
+                
+                <Button onClick={onDemoClick} className="w-full mb-3">
+                  Демо для eCom
+                </Button>
+                
+                <a href="/#case" className="text-sm text-accent hover:text-accent/80 transition-colors text-center font-medium">
+                  Смотреть кейс →
+                </a>
               </div>
 
-              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all">
+              {/* Card 2 - Producers */}
+              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all flex flex-col">
                 <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-cyan/10 mb-4">
                   <FileText className="w-6 h-6 md:w-7 md:h-7 text-cyan" />
                 </div>
-                <div className="text-xs md:text-sm font-semibold text-cyan mb-2 uppercase tracking-wider">Контент</div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Продюсеры и эксперты</h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  нужен контент без команды — <span className="text-accent font-semibold">MAREN пишет и планирует</span>
+                <h3 className="text-xl md:text-2xl font-bold mb-3">Продюсеры и эксперты</h3>
+                <p className="text-sm md:text-base text-muted-foreground mb-4">
+                  Нет команды для контента — <span className="text-accent font-semibold">MAREN пишет, планирует и оформляет по гайдам</span>.
                 </p>
+                
+                <div className="space-y-2 mb-3 flex-grow">
+                  <Badge variant="secondary" className="w-full justify-center py-2">2× быстрее подготовка материалов</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2">до −60% правок за счёт тон-оф-войс</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2">1,5–2 ч/день вернувшегося времени</Badge>
+                </div>
+                
+                <div className="mb-4 h-[20px]"></div>
+                
+                <Button onClick={onDemoClick} className="w-full mb-3">
+                  Запустить автопилот
+                </Button>
+                
+                <a href="/#case" className="text-sm text-accent hover:text-accent/80 transition-colors text-center font-medium">
+                  Смотреть кейс →
+                </a>
               </div>
 
-              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all">
+              {/* Card 3 - SMM */}
+              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all flex flex-col">
                 <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-accent/10 mb-4">
                   <BarChart3 className="w-6 h-6 md:w-7 md:h-7 text-accent" />
                 </div>
-                <div className="text-xs md:text-sm font-semibold text-accent mb-2 uppercase tracking-wider">Контроль</div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">SMM</h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  управление каналами и отчетами — <span className="text-accent font-semibold">всё в одном дашборде</span>
+                <h3 className="text-xl md:text-2xl font-bold mb-3">SMM и маленькие команды</h3>
+                <p className="text-sm md:text-base text-muted-foreground mb-4">
+                  Нужен контроль и отчёты — <span className="text-accent font-semibold">всё в одном дашборде: статусы, расписание, KPI</span>.
                 </p>
+                
+                <div className="space-y-2 mb-3 flex-grow">
+                  <Badge variant="secondary" className="w-full justify-center py-2">ER +10–25% за счёт стабильной частоты</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2">0–5 мин на отчёт (авто-PDF)</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2">≤30 мин согласование по правилам</Badge>
+                </div>
+                
+                <div className="mb-4 h-[20px]"></div>
+                
+                <Button onClick={onDemoClick} className="w-full mb-3">
+                  Посмотреть дашборд
+                </Button>
+                
+                <a href="/#case" className="text-sm text-accent hover:text-accent/80 transition-colors text-center font-medium">
+                  Смотреть кейс →
+                </a>
               </div>
+            </div>
+
+            {/* Mini-block "Что получите" */}
+            <div className="bg-accent/5 rounded-2xl p-6 md:p-8 border border-accent/20">
+              <h4 className="text-xl md:text-2xl font-bold mb-6 text-center">
+                Что получите уже в первый месяц
+              </h4>
+              <ul className="space-y-4 max-w-3xl mx-auto">
+                <li className="flex gap-3">
+                  <span className="text-accent font-bold shrink-0">→</span>
+                  <span className="text-sm md:text-base">Готовый Zero-Touch пайплайн: генерация → согласование → автопостинг → отчёт</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent font-bold shrink-0">→</span>
+                  <span className="text-sm md:text-base">Экономия до 4 часов в день и понятные KPI в дашборде</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent font-bold shrink-0">→</span>
+                  <span className="text-sm md:text-base">Белая зона данных: 152-ФЗ, логирование действий, прозрачность</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
