@@ -91,15 +91,15 @@ export const Target = ({ onDemoClick }: TargetProps) => {
               <ul className="space-y-4 max-w-3xl mx-auto">
                 <li className="flex gap-3">
                   <span className="text-accent font-bold shrink-0">→</span>
-                  <span className="text-sm md:text-base">Готовый Zero-Touch пайплайн: генерация → согласование → автопостинг → отчёт</span>
+                  <span className="text-sm md:text-base"><strong>Готовый Zero-Touch пайплайн</strong>: генерация → согласование → автопостинг → отчёт</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-accent font-bold shrink-0">→</span>
-                  <span className="text-sm md:text-base">Экономия до 4 часов в день и понятные KPI в дашборде</span>
+                  <span className="text-sm md:text-base"><strong>Экономия до 4 часов в день</strong> и понятные KPI в дашборде</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-accent font-bold shrink-0">→</span>
-                  <span className="text-sm md:text-base">Белая зона данных: 152-ФЗ, логирование действий, прозрачность</span>
+                  <span className="text-sm md:text-base"><strong>Белая зона данных: 152-ФЗ</strong>, логирование действий, прозрачность</span>
                 </li>
               </ul>
             </div>
