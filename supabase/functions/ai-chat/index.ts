@@ -23,27 +23,19 @@ serve(async (req) => {
     console.log('Received message:', message);
     console.log('Context:', context);
 
-    // Call OpenAI with prompt ID
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    // Call OpenAI with prompt ID using responses endpoint
+    const response = await fetch('https://api.openai.com/v1/responses', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${OPENAI_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
-        messages: [
-          {
-            role: 'system',
-            content: 'Use prompt ID: pmpt_68f38bbef1d881939f4b1d8581858746051f5bce4058b70d'
-          },
-          {
-            role: 'user',
-            content: context ? `Context: ${context}\n\nQuestion: ${message}` : message
-          }
-        ],
-        temperature: 0.7,
-        max_tokens: 800
+        prompt: {
+          id: 'pmpt_68f38bbef1d881939f4b1d8581858746051f5bce4058b70d',
+          version: '1'
+        },
+        input: context ? `Context: ${context}\n\nQuestion: ${message}` : message
       }),
     });
 
@@ -54,7 +46,7 @@ serve(async (req) => {
     }
 
     const data = await response.json();
-    const aiResponse = data.choices[0].message.content;
+    const aiResponse = data.result;
 
     console.log('AI response:', aiResponse);
 
