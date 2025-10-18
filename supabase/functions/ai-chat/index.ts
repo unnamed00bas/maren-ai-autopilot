@@ -23,27 +23,18 @@ serve(async (req) => {
     console.log('Received message:', message);
     console.log('Context:', context);
 
-    // Call OpenAI chat completions with instructions from prompt ID
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    // Call OpenAI Responses API with prompt ID
+    const response = await fetch('https://api.openai.com/v1/responses', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${OPENAI_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
-        messages: [
-          {
-            role: 'system',
-            content: 'Ты виртуальный консультант по продуктам MAREN. Твоя задача - помогать пользователям подбирать решения для автоматизации контента и автопостинга. Отвечай на русском языке, будь дружелюбным и профессиональным. Используй информацию о продуктах MAREN: AI-ассистенты для автоматизации контента, автопостинг в Telegram, интеграции с различными платформами.'
-          },
-          {
-            role: 'user',
-            content: context ? `${context}\n\n${message}` : message
-          }
-        ],
-        temperature: 0.7,
-        max_tokens: 800
+        prompt: {
+          id: 'pmpt_68f38bbef1d881939f4b1d8581858746051f5bce4058b70d'
+        },
+        input: context ? `Context: ${context}\n\nQuestion: ${message}` : message
       }),
     });
 
@@ -56,8 +47,8 @@ serve(async (req) => {
     const data = await response.json();
     console.log('Full OpenAI response:', JSON.stringify(data));
     
-    // Extract the text from chat completions response
-    const aiResponse = data.choices?.[0]?.message?.content || 'Извините, не удалось получить ответ.';
+    // Extract the text from responses API
+    const aiResponse = data.output?.message?.content || data.output?.content || 'Извините, не удалось получить ответ.';
 
     console.log('AI response:', aiResponse);
 
