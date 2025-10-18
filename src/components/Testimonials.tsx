@@ -64,10 +64,6 @@ export const Testimonials = () => {
       <div className="section-container">
         <div className="bg-muted/30 rounded-3xl p-8 md:p-12 shadow-lg">
           <div className="text-center mb-12 md:mb-16">
-            <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-accent/10 mb-4 md:mb-6">
-              <Quote className="w-6 h-6 md:w-8 md:h-8 text-accent" />
-            </div>
-            
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
               Отзывы клиентов
             </h2>
