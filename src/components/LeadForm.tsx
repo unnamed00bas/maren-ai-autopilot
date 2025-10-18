@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
+import { Checkbox } from './ui/checkbox';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
+import { ScrollArea } from './ui/scroll-area';
 import { FileText } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -15,9 +18,20 @@ export const LeadForm = ({}: LeadFormProps) => {
     company: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [agreedToPolicy, setAgreedToPolicy] = useState(false);
+  const [policyOpen, setPolicyOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!agreedToPolicy) {
+      toast({
+        title: "Требуется согласие",
+        description: "Пожалуйста, согласитесь с Политикой обработки данных",
+        variant: "destructive"
+      });
+      return;
+    }
     
     setIsSubmitting(true);
 
@@ -147,6 +161,27 @@ export const LeadForm = ({}: LeadFormProps) => {
                 />
               </div>
 
+              <div className="flex items-start gap-3 mb-4">
+                <Checkbox
+                  id="policy-consent"
+                  checked={agreedToPolicy}
+                  onCheckedChange={(checked) => setAgreedToPolicy(checked as boolean)}
+                />
+                <Label
+                  htmlFor="policy-consent"
+                  className="text-sm leading-relaxed cursor-pointer"
+                >
+                  Согласен с{' '}
+                  <button
+                    type="button"
+                    onClick={() => setPolicyOpen(true)}
+                    className="text-accent hover:text-accent/80 underline transition-colors"
+                  >
+                    Политикой обработки данных
+                  </button>
+                </Label>
+              </div>
+
               <Button
                 type="submit"
                 disabled={isSubmitting}
@@ -158,6 +193,105 @@ export const LeadForm = ({}: LeadFormProps) => {
           </div>
         </div>
       </div>
+
+      <Dialog open={policyOpen} onOpenChange={setPolicyOpen}>
+        <DialogContent className="max-w-3xl max-h-[80vh]">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">Политика обработки персональных данных</DialogTitle>
+            <DialogDescription>
+              Последнее обновление: {new Date().toLocaleDateString('ru-RU')}
+            </DialogDescription>
+          </DialogHeader>
+          <ScrollArea className="h-[60vh] pr-4">
+            <div className="space-y-6 text-sm">
+              <section>
+                <h3 className="font-semibold text-base mb-2">1. Общие положения</h3>
+                <p className="text-muted-foreground">
+                  Настоящая Политика определяет порядок обработки и защиты персональных данных пользователей сервиса MAREN. 
+                  Мы обрабатываем данные в соответствии с Федеральным законом от 27.07.2006 N 152-ФЗ "О персональных данных".
+                </p>
+              </section>
+
+              <section>
+                <h3 className="font-semibold text-base mb-2">2. Цели обработки персональных данных</h3>
+                <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                  <li>Предоставление доступа к продуктам и услугам MAREN</li>
+                  <li>Улучшение качества обслуживания</li>
+                  <li>Отправка информационных материалов</li>
+                  <li>Обратная связь с пользователями</li>
+                </ul>
+              </section>
+
+              <section>
+                <h3 className="font-semibold text-base mb-2">3. Состав персональных данных</h3>
+                <p className="text-muted-foreground mb-2">Мы собираем следующие данные:</p>
+                <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                  <li>Имя и фамилия</li>
+                  <li>Адрес электронной почты</li>
+                  <li>Название компании</li>
+                  <li>Данные об использовании сервиса</li>
+                </ul>
+              </section>
+
+              <section>
+                <h3 className="font-semibold text-base mb-2">4. Правовые основания обработки</h3>
+                <p className="text-muted-foreground">
+                  Обработка персональных данных осуществляется на основании согласия субъекта персональных данных, 
+                  а также для исполнения договорных обязательств.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="font-semibold text-base mb-2">5. Принципы обработки данных</h3>
+                <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                  <li>Законность и справедливость обработки</li>
+                  <li>Ограничение обработки достижением конкретных целей</li>
+                  <li>Недопустимость избыточной обработки</li>
+                  <li>Обеспечение точности и актуальности данных</li>
+                  <li>Хранение данных не дольше необходимого срока</li>
+                  <li>Обеспечение безопасности данных</li>
+                </ul>
+              </section>
+
+              <section>
+                <h3 className="font-semibold text-base mb-2">6. Права субъекта персональных данных</h3>
+                <p className="text-muted-foreground mb-2">Вы имеете право:</p>
+                <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                  <li>Получать информацию об обработке ваших данных</li>
+                  <li>Требовать уточнения, блокирования или удаления данных</li>
+                  <li>Отозвать согласие на обработку данных</li>
+                  <li>Обжаловать действия или бездействие оператора</li>
+                </ul>
+              </section>
+
+              <section>
+                <h3 className="font-semibold text-base mb-2">7. Передача данных третьим лицам</h3>
+                <p className="text-muted-foreground">
+                  Мы не передаем ваши персональные данные третьим лицам, за исключением случаев, предусмотренных 
+                  законодательством или с вашего согласия.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="font-semibold text-base mb-2">8. Изменение политики</h3>
+                <p className="text-muted-foreground">
+                  Мы оставляем за собой право вносить изменения в настоящую Политику. Актуальная версия всегда 
+                  доступна на нашем сайте.
+                </p>
+              </section>
+
+              <section className="pt-4 border-t">
+                <p className="text-muted-foreground">
+                  По вопросам обработки персональных данных обращайтесь:{' '}
+                  <a href="mailto:hello@promaren.ru" className="text-accent hover:underline">
+                    hello@promaren.ru
+                  </a>
+                </p>
+              </section>
+            </div>
+          </ScrollArea>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
