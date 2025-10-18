@@ -19,13 +19,13 @@ export const ConsentCheckbox = ({
     <div className="flex items-start gap-2">
       <div className="relative flex-shrink-0">
         {!checked && (
-          <ArrowRight className="absolute -left-8 top-0 w-5 h-5 text-cyan animate-pulse drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+          <ArrowRight className="absolute -left-7 top-1/2 -translate-y-1/2 w-4 h-4 text-cyan animate-pulse drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
         )}
         <Checkbox 
           id="consent" 
           checked={checked}
           onCheckedChange={onCheckedChange}
-          className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 border-2 border-cyan data-[state=checked]:bg-cyan data-[state=checked]:border-cyan"
+          className="mt-0.5 h-3 w-3 flex-shrink-0 border border-cyan data-[state=checked]:bg-cyan data-[state=checked]:border-cyan"
         />
       </div>
       <Label 
