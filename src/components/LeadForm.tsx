@@ -4,35 +4,21 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { FileText } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { ConsentCheckbox } from './ConsentCheckbox';
 
-interface LeadFormProps {
-  onPrivacyClick: () => void;
-  onOfferClick: () => void;
-}
+interface LeadFormProps {}
 
-export const LeadForm = ({ onPrivacyClick, onOfferClick }: LeadFormProps) => {
+export const LeadForm = ({}: LeadFormProps) => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: ''
   });
-  const [consentChecked, setConsentChecked] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!consentChecked) {
-      toast({
-        title: "Требуется согласие",
-        description: "Пожалуйста, подтвердите согласие на обработку персональных данных",
-        variant: "destructive"
-      });
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
@@ -86,7 +72,6 @@ export const LeadForm = ({ onPrivacyClick, onOfferClick }: LeadFormProps) => {
         });
         
         setFormData({ name: '', email: '', company: '' });
-        setConsentChecked(false);
         setIsSubmitting(false);
       }, 500);
     } catch (error) {
@@ -162,18 +147,9 @@ export const LeadForm = ({ onPrivacyClick, onOfferClick }: LeadFormProps) => {
                 />
               </div>
 
-              <div className="pl-10">
-                <ConsentCheckbox
-                  checked={consentChecked}
-                  onCheckedChange={setConsentChecked}
-                  onPrivacyClick={onPrivacyClick}
-                  onOfferClick={onOfferClick}
-                />
-              </div>
-
               <Button
                 type="submit"
-                disabled={isSubmitting || !consentChecked}
+                disabled={isSubmitting}
                 className="w-full btn-hero h-11 md:h-12 text-base md:text-lg"
               >
                 {isSubmitting ? 'Отправка...' : 'Получить PDF-дорожную карту'}

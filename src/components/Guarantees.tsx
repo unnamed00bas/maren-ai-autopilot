@@ -1,11 +1,8 @@
 import { Shield } from 'lucide-react';
 
-interface GuaranteesProps {
-  onPrivacyClick: () => void;
-  onOfferClick: () => void;
-}
+interface GuaranteesProps {}
 
-export const Guarantees = ({ onPrivacyClick, onOfferClick }: GuaranteesProps) => {
+export const Guarantees = ({}: GuaranteesProps) => {
   return (
     <section className="section-padding">
       <div className="section-container">
@@ -21,23 +18,6 @@ export const Guarantees = ({ onPrivacyClick, onOfferClick }: GuaranteesProps) =>
               </p>
               <p>
                 Мы не используем серые данные и ведем аудит логов всех действий ассистента.
-              </p>
-              <p>
-                Ознакомьтесь с{' '}
-                <button
-                  onClick={onPrivacyClick}
-                  className="text-accent hover:underline font-semibold"
-                >
-                  Политикой обработки данных
-                </button>
-                {' '}и{' '}
-                <button
-                  onClick={onOfferClick}
-                  className="text-accent hover:underline font-semibold"
-                >
-                  Публичной офертой
-                </button>
-                .
               </p>
             </div>
           </div>
