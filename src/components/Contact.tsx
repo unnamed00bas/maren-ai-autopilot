@@ -64,13 +64,13 @@ export const Contact = () => {
 
             <div className="text-center">
               <div className="max-w-3xl mx-auto px-6 py-6 rounded-2xl bg-muted/30 backdrop-blur-sm border border-border/30">
-                <p className="text-sm md:text-base leading-relaxed">
-                  <span className="text-muted-foreground">Марина Погодина, основатель MAREN, благодарит вас за интерес к продуктам MAREN.</span>
-                  <br />
-                  <span className="text-muted-foreground">В знак благодарности дарю PDF-гайд-дорожную карту — </span>
-                  <span className="font-semibold text-accent">как за 7 шагов прийти к росту метрик, охватов и освобождению личного времени</span>
-                  <span className="text-muted-foreground">.</span>
-                </p>
+              <div className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto break-words px-4 sm:px-6">
+                <span className="text-muted-foreground">Марина Погодина, основатель MAREN, благодарит вас за интерес к продуктам MAREN.</span>
+                <br />
+                <span className="text-muted-foreground">В знак благодарности дарю PDF-гайд-дорожную карту — </span>
+                <span className="font-semibold text-accent">как за 7 шагов прийти к росту метрик, охватов и освобождению личного времени</span>
+                <span className="text-muted-foreground">.</span>
+              </div>
               </div>
             </div>
           </div>

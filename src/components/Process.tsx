@@ -113,7 +113,7 @@ export const Process = ({ onCalcClick }: ProcessProps) => {
                                     window.open(step.link, '_blank');
                                   }
                                 }}
-                                className="w-full sm:w-auto"
+                                className="w-full sm:w-auto text-xs sm:text-sm py-3 h-auto min-h-[44px] whitespace-normal break-words leading-tight"
                               >
                                 {step.cta}
                                 </Button>
@@ -158,7 +158,7 @@ export const Process = ({ onCalcClick }: ProcessProps) => {
                                 variant="outline"
                                 size="sm"
                                 onClick={() => window.open(option.link, '_blank')}
-                                className="w-full border-cyan/50 text-cyan hover:bg-cyan/10 hover:border-cyan"
+                                className="w-full border-cyan/50 text-cyan hover:bg-cyan/10 hover:border-cyan text-xs sm:text-sm py-3 h-auto min-h-[44px] whitespace-normal break-words leading-tight"
                               >
                                 {option.cta}
                               </Button>

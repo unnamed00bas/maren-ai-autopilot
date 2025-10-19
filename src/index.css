@@ -130,26 +130,32 @@ All colors MUST be HSL.
 
 @layer components {
   .btn-hero {
-    @apply bg-accent text-accent-foreground font-bold px-6 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300;
+    @apply bg-accent text-accent-foreground font-bold px-4 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300;
     @apply hover:bg-[#84CC16] hover:shadow-[0_0_30px_hsl(var(--lime)/0.5)] active:bg-[#65A30D] active:scale-95;
     @apply min-h-[44px]; /* Touch-friendly minimum size */
     font-size: clamp(0.75rem, 2.5vw, 1rem);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /* Allow text wrapping for long button labels */
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.3;
+    text-align: center;
   }
   
   .btn-neon {
     @apply relative overflow-hidden;
     background: linear-gradient(135deg, hsl(var(--toxic-lime)), hsl(var(--uv-cyan)));
-    @apply text-pitch font-black px-6 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300;
+    @apply text-pitch font-black px-4 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300;
     @apply hover:scale-105 active:scale-95;
     @apply min-h-[44px]; /* Touch-friendly minimum size */
     box-shadow: 0 0 40px hsl(var(--electric-fuchsia) / 0.4);
     font-size: clamp(0.75rem, 2.5vw, 1rem);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /* Allow text wrapping for long button labels */
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.3;
+    text-align: center;
   }
   
   .section-container {
@@ -159,9 +165,16 @@ All colors MUST be HSL.
     padding-right: max(1rem, env(safe-area-inset-right));
   }
   
+  .section-padding {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20;
+  }
+  
   .card-product {
     @apply bg-card border border-border rounded-2xl p-4 md:p-6 lg:p-8 transition-all duration-300;
     @apply hover:border-accent hover:shadow-[0_0_20px_hsl(var(--lime)/0.2)];
+    /* Ensure text wraps properly in cards */
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .btn-primary {
@@ -193,14 +206,17 @@ All colors MUST be HSL.
   }
   
   button {
-    @apply min-h-[48px];
+    @apply min-h-[44px];
     /* Better tap targets */
-    min-width: 48px;
+    min-width: 44px;
     /* Adaptive font size for all buttons */
-    font-size: clamp(0.75rem, 2.5vw, 1rem);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+    /* Allow text wrapping by default */
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.3;
+    text-align: center;
   }
   
   /* Consent checkbox styles */

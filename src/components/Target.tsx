@@ -25,56 +25,56 @@ export const Target = ({ onDemoClick }: TargetProps) => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
               {/* Card 1 - eCom */}
               <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all flex flex-col">
-                <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-accent/10 mb-4">
+                <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-accent/10 mb-4 flex-shrink-0">
                   <Clock className="w-6 h-6 md:w-7 md:h-7 text-accent" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3">eCom и локальный ритейл</h3>
-                <p className="text-sm md:text-base text-muted-foreground mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 break-words">eCom и локальный ритейл</h3>
+                <p className="text-sm md:text-base text-muted-foreground mb-4 break-words">
                   Тратите часы на постинг — <span className="text-accent font-semibold">MAREN публикует сам (Zero-Touch)</span>.
                 </p>
                 
                 <div className="space-y-2 mb-3 flex-grow">
-                  <Badge variant="secondary" className="w-full justify-center py-2">−3–4 ч/день на рутине</Badge>
-                  <Badge variant="secondary" className="w-full justify-center py-2">+15–30% охват за 2–4 недели*</Badge>
-                  <Badge variant="secondary" className="w-full justify-center py-2">12–20 постов/нед без найма</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2 text-xs sm:text-sm break-words text-center">−3–4 ч/день на рутине</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2 text-xs sm:text-sm break-words text-center">+15–30% охват за 2–4 недели*</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2 text-xs sm:text-sm break-words text-center">12–20 постов/нед без найма</Badge>
                 </div>
                 
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground break-words">
                   *по результатам пилотов, детали в кейсе
                 </p>
               </div>
 
               {/* Card 2 - Producers */}
               <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all flex flex-col">
-                <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-cyan/10 mb-4">
+                <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-cyan/10 mb-4 flex-shrink-0">
                   <FileText className="w-6 h-6 md:w-7 md:h-7 text-cyan" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3">Продюсеры и эксперты</h3>
-                <p className="text-sm md:text-base text-muted-foreground mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 break-words">Продюсеры и эксперты</h3>
+                <p className="text-sm md:text-base text-muted-foreground mb-4 break-words">
                   Нет команды для контента — <span className="text-accent font-semibold">MAREN пишет, планирует и оформляет по гайдам</span>.
                 </p>
                 
                 <div className="space-y-2 mb-3 flex-grow">
-                  <Badge variant="secondary" className="w-full justify-center py-2">2× быстрее подготовка материалов</Badge>
-                  <Badge variant="secondary" className="w-full justify-center py-2">до −60% правок за счёт тон-оф-войс</Badge>
-                  <Badge variant="secondary" className="w-full justify-center py-2">1,5–2 ч/день вернувшегося времени</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2 text-xs sm:text-sm break-words text-center">2× быстрее подготовка материалов</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2 text-xs sm:text-sm break-words text-center">до −60% правок за счёт тон-оф-войс</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2 text-xs sm:text-sm break-words text-center">1,5–2 ч/день вернувшегося времени</Badge>
                 </div>
               </div>
 
               {/* Card 3 - SMM */}
               <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all flex flex-col">
-                <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-accent/10 mb-4">
+                <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-accent/10 mb-4 flex-shrink-0">
                   <BarChart3 className="w-6 h-6 md:w-7 md:h-7 text-accent" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3">SMM и маленькие команды</h3>
-                <p className="text-sm md:text-base text-muted-foreground mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 break-words">SMM и маленькие команды</h3>
+                <p className="text-sm md:text-base text-muted-foreground mb-4 break-words">
                   Нужен контроль и отчёты — <span className="text-accent font-semibold">всё в одном дашборде: статусы, расписание, KPI</span>.
                 </p>
                 
                 <div className="space-y-2 mb-3 flex-grow">
-                  <Badge variant="secondary" className="w-full justify-center py-2">ER +10–25% за счёт стабильной частоты</Badge>
-                  <Badge variant="secondary" className="w-full justify-center py-2">0–5 мин на отчёт (авто-PDF)</Badge>
-                  <Badge variant="secondary" className="w-full justify-center py-2">≤30 мин согласование по правилам</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2 text-xs sm:text-sm break-words text-center">ER +10–25% за счёт стабильной частоты</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2 text-xs sm:text-sm break-words text-center">0–5 мин на отчёт (авто-PDF)</Badge>
+                  <Badge variant="secondary" className="w-full justify-center py-2 text-xs sm:text-sm break-words text-center">≤30 мин согласование по правилам</Badge>
                 </div>
               </div>
             </div>

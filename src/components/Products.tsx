@@ -167,14 +167,14 @@ export const Products = () => {
     <section id="products" className="section-padding">
       <div className="section-container">
         <div className="bg-muted/30 rounded-3xl p-8 md:p-12 shadow-lg">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
-              Продукты <span className="text-accent">P1–P6</span>
-            </h2>
-            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              От ассистента с памятью до полной автоматизации контент-производства
-            </p>
-          </div>
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 break-words px-2">
+                Продукты <span className="text-accent">P1–P6</span>
+              </h2>
+              <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-3xl mx-auto break-words px-4">
+                От ассистента с памятью до полной автоматизации контент-производства
+              </p>
+            </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 max-w-6xl mx-auto">
         {products.map((product) => {
@@ -223,13 +223,14 @@ export const Products = () => {
                     {product.demoAction && (
                       <Button 
                         asChild 
-                        className="mt-3 w-full bg-accent text-accent-foreground hover:bg-accent/90 hover:border-accent"
+                        className="mt-3 w-full bg-accent text-accent-foreground hover:bg-accent/90 hover:border-accent text-xs sm:text-sm md:text-base py-3 h-auto min-h-[44px]"
                         variant="outline"
                       >
                         <a 
                           href={product.demoAction.url} 
                           target="_blank" 
                           rel="noopener noreferrer"
+                          className="whitespace-normal break-words leading-tight py-2"
                         >
                           {product.demoAction.label}
                         </a>

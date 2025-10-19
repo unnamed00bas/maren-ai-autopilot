@@ -321,7 +321,7 @@ export const HowMarenWorks = () => {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full h-11 md:h-12 text-base md:text-lg"
+                      className="w-full h-auto min-h-[48px] text-sm sm:text-base md:text-lg py-3"
                     >
                       {isSubmitting ? 'Отправка...' : 'Получить дорожную карту'}
                     </Button>
@@ -343,40 +343,40 @@ export const HowMarenWorks = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
                   <button
                     onClick={() => handleExternalLink('https://t.me/promaren_support_bot?text=Заказать+опцию+%22Готовы+вернуть+своё+время%22+%28бесплатная+15-минутная+консультация%29')}
-                    className="group relative overflow-hidden bg-gradient-to-br from-card to-card/80 rounded-2xl p-6 border border-border/50 hover:border-accent/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/10"
+                    className="group relative overflow-hidden bg-gradient-to-br from-card to-card/80 rounded-2xl p-4 sm:p-6 border border-border/50 hover:border-accent/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/10"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative flex flex-col items-center gap-3">
                       <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
-                        <MessageCircle className="w-8 h-8 text-accent" />
+                        <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-accent" />
                       </div>
-                      <h3 className="font-semibold text-lg">Telegram</h3>
+                      <h3 className="font-semibold text-base sm:text-lg">Telegram</h3>
                     </div>
                   </button>
 
                   <button
                     onClick={() => handleExternalLink('mailto:Marina.Y.Pogodina@yandex.ru')}
-                    className="group relative overflow-hidden bg-gradient-to-br from-card to-card/80 rounded-2xl p-6 border border-border/50 hover:border-cyan/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan/10"
+                    className="group relative overflow-hidden bg-gradient-to-br from-card to-card/80 rounded-2xl p-4 sm:p-6 border border-border/50 hover:border-cyan/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan/10"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan/0 to-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative flex flex-col items-center gap-3">
                       <div className="p-3 bg-cyan/10 rounded-xl group-hover:bg-cyan/20 transition-colors">
-                        <Mail className="w-8 h-8 text-cyan" />
+                        <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-cyan" />
                       </div>
-                      <h3 className="font-semibold text-lg">Email</h3>
+                      <h3 className="font-semibold text-base sm:text-lg">Email</h3>
                     </div>
                   </button>
 
                   <button
                     onClick={() => handleExternalLink('tel:+79032355551')}
-                    className="group relative overflow-hidden bg-gradient-to-br from-card to-card/80 rounded-2xl p-6 border border-border/50 hover:border-accent/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/10"
+                    className="group relative overflow-hidden bg-gradient-to-br from-card to-card/80 rounded-2xl p-4 sm:p-6 border border-border/50 hover:border-accent/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/10"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative flex flex-col items-center gap-3">
                       <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
-                        <Phone className="w-8 h-8 text-accent" />
+                        <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-accent" />
                       </div>
-                      <h3 className="font-semibold text-lg">Телефон</h3>
+                      <h3 className="font-semibold text-base sm:text-lg">Телефон</h3>
                     </div>
                   </button>
                 </div>

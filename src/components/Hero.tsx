@@ -35,35 +35,35 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 py-4 md:py-6">
               <div className="flex items-center gap-2 md:gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-border/50">
                 <Clock className="w-6 h-6 md:w-8 md:h-8 text-accent flex-shrink-0" />
-                <div>
-                  <div className="font-bold text-sm md:text-base lg:text-lg">−2–4 часа</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">рутины ежедневно</div>
+                <div className="min-w-0 flex-1">
+                  <div className="font-bold text-xs sm:text-sm md:text-base lg:text-lg break-words">−2–4 часа</div>
+                  <div className="text-xs md:text-sm text-muted-foreground break-words">рутины ежедневно</div>
                 </div>
               </div>
               
               <div className="flex items-center gap-2 md:gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-border/50">
                 <Zap className="w-6 h-6 md:w-8 md:h-8 text-accent flex-shrink-0" />
-                <div>
-                  <div className="font-bold text-sm md:text-base lg:text-lg">Ответ ассистента ≤10 секунд</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">(не спит, не берёт больничный)</div>
+                <div className="min-w-0 flex-1">
+                  <div className="font-bold text-xs sm:text-sm md:text-base lg:text-lg break-words">Ответ ассистента ≤10 секунд</div>
+                  <div className="text-xs md:text-sm text-muted-foreground break-words">(не спит, не берёт больничный)</div>
                 </div>
               </div>
               
               <div className="flex items-center gap-2 md:gap-3 bg-card/50 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-border/50">
                 <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-accent flex-shrink-0" />
-                <div>
-                  <div className="font-bold text-sm md:text-base lg:text-lg">Идея → контент → публикация:</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">UTM, расписание, отчёт</div>
+                <div className="min-w-0 flex-1">
+                  <div className="font-bold text-xs sm:text-sm md:text-base lg:text-lg break-words">Идея → контент → публикация:</div>
+                  <div className="text-xs md:text-sm text-muted-foreground break-words">UTM, расписание, отчёт</div>
                 </div>
               </div>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-col gap-3 md:gap-4 pt-2 md:pt-4">
-              <Button onClick={onDemoClick} className="btn-hero text-sm md:text-base lg:text-lg w-full">
+              <Button onClick={onDemoClick} className="btn-hero text-sm md:text-base lg:text-lg w-full h-auto min-h-[44px] py-3">
                 Получить демо 24 часа
               </Button>
-              <Button onClick={onCalcClick} variant="outline" size="lg" className="text-sm md:text-base lg:text-lg w-full">
+              <Button onClick={onCalcClick} variant="outline" size="lg" className="text-sm md:text-base lg:text-lg w-full h-auto min-h-[44px] py-3 whitespace-normal break-words leading-tight">
                 Посчитать экономию времени (бесплатно)
               </Button>
             </div>

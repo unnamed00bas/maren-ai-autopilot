@@ -185,7 +185,7 @@ export const LeadForm = ({}: LeadFormProps) => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-hero h-11 md:h-12 text-base md:text-lg"
+                className="w-full btn-hero h-auto min-h-[48px] text-sm sm:text-base md:text-lg py-3"
               >
                 {isSubmitting ? 'Отправка...' : 'Получить PDF-дорожную карту'}
               </Button>
