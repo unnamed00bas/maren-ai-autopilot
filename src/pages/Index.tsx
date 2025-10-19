@@ -41,9 +41,6 @@ const Index = () => {
         <Pricing />
         <FAQ />
         <HowMarenWorks />
-        <Contact />
-        <LeadForm />
-        <Guarantees />
       </main>
 
       <Footer />

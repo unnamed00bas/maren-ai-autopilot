@@ -7,6 +7,7 @@ import { Checkbox } from './ui/checkbox';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
 import { ScrollArea } from './ui/scroll-area';
 import { useToast } from '@/hooks/use-toast';
+import marinaPogodina from '@/assets/marina-pogodina.jpg';
 
 export const HowMarenWorks = () => {
   const { toast } = useToast();
@@ -112,22 +113,26 @@ export const HowMarenWorks = () => {
 
               {/* AI под контролем */}
               <div className="bg-muted/30 rounded-2xl p-6 md:p-8">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-center">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
                   AI под контролем. Люди под защитой.
                 </h3>
-                <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
-                  <p>
-                    MAREN работает в white-data-зоне.
-                  </p>
-                  <p>
-                    Все процессы соответствуют требованиям 152-ФЗ, ISO/IEC 27001 и принципам прозрачного AI Governance.
-                  </p>
-                  <p>
-                    Мы не используем «серые» данные и ведём аудит логов всех действий ассистента.
-                  </p>
-                  <p>
-                    Каждое решение можно проверить, каждое действие — восстановить.
-                  </p>
+                <div className="grid gap-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+                  <div className="flex gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">1</span>
+                    <p className="pt-1">MAREN работает в white-data-зоне.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">2</span>
+                    <p className="pt-1">Все процессы соответствуют требованиям 152-ФЗ, ISO/IEC 27001 и принципам прозрачного AI Governance.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">3</span>
+                    <p className="pt-1">Мы не используем «серые» данные и ведём аудит логов всех действий ассистента.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">4</span>
+                    <p className="pt-1">Каждое решение можно проверить, каждое действие — восстановить.</p>
+                  </div>
                 </div>
               </div>
 
@@ -136,25 +141,39 @@ export const HowMarenWorks = () => {
                 <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
                   Кто стоит за MAREN
                 </h3>
-                <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
-                  <p>
-                    <span className="font-semibold text-foreground">Марина Погодина</span>, основатель MAREN и AI Governance & Automation Lead.
-                  </p>
-                  <p>
-                    16+ лет в управлении ИТ- и ИБ-рисками, внутреннем аудите, комплаенсе и автоматизации.
-                  </p>
-                  <p>
-                    Проводила аудиты по стандартам SOX, COBIT 2019, COSO, ISO/IEC 27001 и 152-ФЗ.
-                  </p>
-                  <p>
-                    Внедряла BI-дашборды, Python-скрипты и «one-click» отчётность для Набсовета и топ-менеджмента.
-                  </p>
-                  <p className="pt-2">
-                    Сегодня соединяю опыт аудита и AI-технологий, чтобы бизнес возвращал себе время и контроль — без хаоса и «чёрных ящиков».
-                  </p>
-                  <p className="font-bold text-lg md:text-xl text-accent pt-2">
-                    MAREN — это этичная автоматизация, где AI работает на людей, а не вместо них.
-                  </p>
+                <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
+                  <div className="flex-shrink-0">
+                    <img 
+                      src={marinaPogodina} 
+                      alt="Марина Погодина" 
+                      className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-accent/20"
+                    />
+                  </div>
+                  <div className="flex-1 space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+                    <p>
+                      <span className="font-semibold text-foreground">Марина Погодина</span>, основатель MAREN и AI Governance & Automation Lead.
+                    </p>
+                    <div className="space-y-2">
+                      <div className="flex gap-3">
+                        <span className="text-accent mt-1">•</span>
+                        <p>16+ лет в управлении ИТ- и ИБ-рисками, внутреннем аудите, комплаенсе и автоматизации</p>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-accent mt-1">•</span>
+                        <p>Проводила аудиты по стандартам SOX, COBIT 2019, COSO, ISO/IEC 27001 и 152-ФЗ</p>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-accent mt-1">•</span>
+                        <p>Внедряла BI-дашборды, Python-скрипты и «one-click» отчётность для Набсовета и топ-менеджмента</p>
+                      </div>
+                    </div>
+                    <p className="pt-2">
+                      Сегодня соединяю опыт аудита и AI-технологий, чтобы бизнес возвращал себе время и контроль — без хаоса и «чёрных ящиков».
+                    </p>
+                    <p className="font-bold text-lg md:text-xl text-accent pt-2">
+                      MAREN — это этичная автоматизация, где AI работает на людей, а не вместо них.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -219,7 +238,7 @@ export const HowMarenWorks = () => {
                       В знак благодарности за интерес к MAREN —
                     </p>
                     <p className="text-lg md:text-xl text-muted-foreground">
-                      скачайте гайд по росту метрик, охватов и освобождению личного времени.
+                      PDF-гайд-дорожную карту по росту метрик, охватов и освобождению личного времени. Узнайте, как внедрить MAREN за 30–60–90 дней.
                     </p>
                   </div>
 
@@ -227,9 +246,6 @@ export const HowMarenWorks = () => {
                     <h3 className="text-2xl md:text-3xl font-bold mb-3 text-center">
                       Получите PDF-дорожную карту
                     </h3>
-                    <p className="text-sm md:text-base text-muted-foreground text-center">
-                      Узнайте, как внедрить MAREN за 30–60–90 дней
-                    </p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
@@ -312,9 +328,12 @@ export const HowMarenWorks = () => {
               {/* Contact buttons */}
               <div className="bg-muted/30 rounded-2xl p-6 md:p-8">
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl md:text-3xl font-bold">
-                    Готовы <span className="bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent">вернуть</span> своё время?
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                    Готовы <span className="bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent">ВЕРНУТЬ</span> своё время?
                   </h3>
+                  <p className="text-lg md:text-xl text-muted-foreground mt-4">
+                    Выберите удобный способ связи
+                  </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
