@@ -238,14 +238,8 @@ export const HowMarenWorks = () => {
                       В знак благодарности за интерес к MAREN —
                     </p>
                     <p className="text-lg md:text-xl text-muted-foreground">
-                      PDF-гайд-дорожную карту по росту метрик, охватов и освобождению личного времени. Узнайте, как внедрить MAREN за 30–60–90 дней.
+                      забирайте PDF-гайд-дорожную карту по росту метрик, охватов и освобождению личного времени. Узнайте, как внедрить MAREN за 30–60–90 дней.
                     </p>
-                  </div>
-
-                  <div className="mb-6 md:mb-8">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-3 text-center">
-                      Получите PDF-дорожную карту
-                    </h3>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
