@@ -75,7 +75,7 @@ export const Testimonials = () => {
           {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-20">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-card rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all">
+              <div key={index} className="bg-card rounded-3xl p-6 md:p-8 border border-border hover:border-accent/50 transition-all">
                 <div className="flex items-start gap-4 mb-4">
                   <img 
                     src={testimonial.photo} 
@@ -104,7 +104,7 @@ export const Testimonials = () => {
           </div>
 
           {/* Case Study */}
-          <div className="bg-gradient-to-br from-accent/5 to-cyan/5 rounded-3xl p-6 md:p-10 border-2 border-accent/20">
+          <div className="bg-gradient-to-br from-accent/5 to-cyan/5 rounded-3xl p-6 md:p-10 border border-accent/20">
             <div className="text-center mb-8 md:mb-12">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
                 Кейс: как MAREN сократил подготовку контента на 4 часа в день
@@ -118,12 +118,12 @@ export const Testimonials = () => {
               {caseSteps.map((step, index) => {
                 const Icon = step.icon;
                 return (
-                  <div key={index} className="relative">
+                  <div key={index} className="relative h-full">
                     {index < caseSteps.length - 1 && (
                       <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-accent/30 to-transparent -translate-x-1/2" />
                     )}
                     
-                    <div className="bg-card rounded-2xl p-6 border-2 border-border hover:border-accent/50 transition-all relative z-10">
+                    <div className="bg-card rounded-2xl p-6 border border-border hover:border-accent/50 transition-all relative z-10 h-full flex flex-col">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 bg-accent/10 rounded-xl">
                           <Icon className={`w-6 h-6 ${step.color}`} />
@@ -132,7 +132,7 @@ export const Testimonials = () => {
                       </div>
                       
                       <h4 className="text-lg md:text-xl font-bold mb-2">{step.title}</h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                         {step.description}
                       </p>
                     </div>
