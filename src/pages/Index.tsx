@@ -22,8 +22,8 @@ const Index = () => {
   const [demoModalOpen, setDemoModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen">
-      <Header 
+    <div className="min-h-screen overflow-x-hidden max-w-[100vw]">
+      <Header
         onCalcClick={() => setCalcModalOpen(true)}
         onDemoClick={() => setDemoModalOpen(true)}
       />
