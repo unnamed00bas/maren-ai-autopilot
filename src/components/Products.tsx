@@ -48,6 +48,9 @@ const products = [
           { text: 'Telegra.ph', url: 'https://telegra.ph/Gipsovyj-podnos-master-klass-po-osennej-rezbe-09-25' },
           { text: 'LinkedIn-статья', url: 'https://www.linkedin.com/posts/marinapogodina_ai-digitaltrust-audit-activity-7383786246701076480-ZY2k?utm_source=share&utm_medium=member_desktop&rcm=ACoAABvY4jMBmJCqQ_rwViRCLTr8z5-1I5zNtM8' },
           { text: 'Pinterest-пин', url: 'https://pin.it/4EjQ0CHbz' },
+          { text: 'статья Дзен', url: 'https://dzen.ru/a/aPSG5uOn6hiPYQsq' },
+          { text: 'пост Telegram с встроенными кнопками на полный текст статьи и каталог интернет-магазина', url: 'https://t.me/ecologgift/177' },
+          { text: 'пост VK со ссылкой на полный текст статьи', url: 'https://vk.com/wall-232352420_57' },
         ],
       },
     ],
@@ -97,22 +100,6 @@ const products = [
     subtitle: 'авто-протоколы и follow-up после созвонов',
     description: 'Автоматизация протоколов встреч, создание чек-листов задач и follow-up коммуникаций после видеозвонков.',
     effect: '• −30–60 мин на конспект каждой встречи.\n• Итоги «5–7 буллетов» и таймлайн через ≤2 мин после звонка.\n• Авто-follow-up: письмо/ТГ-сообщение + задачи и напоминания.\n• Лёгкая аналитика: соблюдение скрипта, возражения, следующий шаг.\n• Архив встреч с поиском по содержимому.',
-    demos: [
-      {
-        category: 'Видео контент',
-        links: [
-          { text: 'аватар Дзен', url: 'https://dzen.ru/shorts/68dbccc99f3b6c54d7e8480e?share_to=link' },
-        ],
-      },
-      {
-        category: 'Текстовой контент',
-        links: [
-          { text: 'статья Дзен', url: 'https://dzen.ru/a/aPSG5uOn6hiPYQsq' },
-          { text: 'пост Telegram с встроенными кнопками на полный текст статьи и каталог интернет-магазина', url: 'https://t.me/ecologgift/177' },
-          { text: 'пост VK со ссылкой на полный текст статьи', url: 'https://vk.com/wall-232352420_57' },
-        ],
-      },
-    ],
     demoPrice: 'Пилот «1 встреча» / 499 ₽',
     demo: 'Подключаем Zoom → после звонка в Telegram прилетают: протокол, чек-лист задач, черновик письма клиенту и краткий скоринг звонка.',
     demoAction: { label: 'Заказать Демо видео-встречу за 499 ₽', url: 'https://t.me/promaren_support_bot' },
