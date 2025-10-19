@@ -1,14 +1,15 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
+# Allow all crawlers
 User-agent: *
 Allow: /
+
+# Disallow access to admin and system files
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /build/
+Disallow: /*.json$
+Disallow: /*.config.*$
+
+# Sitemap location
+Sitemap: https://maren.ru/sitemap.xml
