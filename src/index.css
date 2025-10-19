@@ -133,6 +133,10 @@ All colors MUST be HSL.
     @apply bg-accent text-accent-foreground font-bold px-6 py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300;
     @apply hover:bg-[#84CC16] hover:shadow-[0_0_30px_hsl(var(--lime)/0.5)] active:bg-[#65A30D] active:scale-95;
     @apply min-h-[44px]; /* Touch-friendly minimum size */
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .btn-neon {
@@ -142,6 +146,10 @@ All colors MUST be HSL.
     @apply hover:scale-105 active:scale-95;
     @apply min-h-[44px]; /* Touch-friendly minimum size */
     box-shadow: 0 0 40px hsl(var(--electric-fuchsia) / 0.4);
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .section-container {
@@ -188,6 +196,11 @@ All colors MUST be HSL.
     @apply min-h-[48px];
     /* Better tap targets */
     min-width: 48px;
+    /* Adaptive font size for all buttons */
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   /* Consent checkbox styles */
