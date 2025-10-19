@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Shield, Mail, MessageCircle, Phone } from 'lucide-react';
+import { Shield, Mail, MessageCircle, Phone, Linkedin } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -142,12 +142,22 @@ export const HowMarenWorks = () => {
                   Кто стоит за MAREN
                 </h3>
                 <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 flex flex-col items-center gap-3">
                     <img 
                       src={marinaPogodina} 
                       alt="Марина Погодина" 
                       className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-accent/20"
                     />
+                    <a 
+                      href="https://www.linkedin.com/in/marinapogodina" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 px-4 py-2 bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 border border-[#0A66C2]/30 hover:border-[#0A66C2]/50 rounded-lg transition-all duration-300"
+                      aria-label="LinkedIn профиль Марины Погодиной"
+                    >
+                      <Linkedin className="w-6 h-6 text-[#0A66C2]" />
+                      <span className="text-sm font-semibold text-[#0A66C2]">LinkedIn</span>
+                    </a>
                   </div>
                   <div className="flex-1 space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
                     <p>
@@ -224,7 +234,7 @@ export const HowMarenWorks = () => {
               </div>
 
               {/* LeadForm integration */}
-              <div className="bg-cyan/5 rounded-2xl p-6 md:p-8 border-2 border-cyan/20 relative overflow-hidden">
+              <div className="bg-cyan/5 rounded-2xl p-6 md:p-8 border border-cyan/20 relative overflow-hidden">
                 <div className="absolute top-3 right-3 md:top-4 md:right-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-cyan/10 border border-cyan/20">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse"></span>
