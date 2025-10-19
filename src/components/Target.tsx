@@ -24,7 +24,7 @@ export const Target = ({ onDemoClick }: TargetProps) => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
               {/* Card 1 - eCom */}
-              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all flex flex-col">
+              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-border hover:border-accent/50 transition-all flex flex-col">
                 <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-accent/10 mb-4 flex-shrink-0">
                   <Clock className="w-6 h-6 md:w-7 md:h-7 text-accent" />
                 </div>
@@ -45,7 +45,7 @@ export const Target = ({ onDemoClick }: TargetProps) => {
               </div>
 
               {/* Card 2 - Producers */}
-              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all flex flex-col">
+              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-border hover:border-accent/50 transition-all flex flex-col">
                 <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-cyan/10 mb-4 flex-shrink-0">
                   <FileText className="w-6 h-6 md:w-7 md:h-7 text-cyan" />
                 </div>
@@ -62,7 +62,7 @@ export const Target = ({ onDemoClick }: TargetProps) => {
               </div>
 
               {/* Card 3 - SMM */}
-              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border-2 border-border hover:border-accent/50 transition-all flex flex-col">
+              <div className="bg-card backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-border hover:border-accent/50 transition-all flex flex-col">
                 <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-accent/10 mb-4 flex-shrink-0">
                   <BarChart3 className="w-6 h-6 md:w-7 md:h-7 text-accent" />
                 </div>

@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useState } from 'react';
+import defaultAvatar from '@/assets/default-avatar.png';
 
 const testimonials = [
   {
@@ -10,7 +11,7 @@ const testimonials = [
     position: 'CEO',
     company: 'EcoGift',
     logo: '/assets/brands/sheets.svg',
-    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    photo: defaultAvatar,
     text: 'MAREN полностью автоматизировал наш блог и соцсети. Теперь контент публикуется сам, а я фокусируюсь на продажах.',
     caseId: 'ecogift'
   },
@@ -19,7 +20,7 @@ const testimonials = [
     position: 'Продюсер',
     company: 'Digital Pro',
     logo: '/assets/brands/notion.svg',
-    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face',
+    photo: defaultAvatar,
     text: 'Ассистент с памятью — это прорыв. Он помнит все детали проектов, пишет посты в моём стиле и экономит 3 часа каждый день.',
     caseId: 'digitalpro'
   },
@@ -28,7 +29,7 @@ const testimonials = [
     position: 'SMM-менеджер',
     company: 'Tech Solutions',
     logo: '/assets/brands/telegram.svg',
-    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
+    photo: defaultAvatar,
     text: 'Управляю 5 каналами через один дашборд.',
     caseId: 'techsolutions'
   }

@@ -53,7 +53,7 @@ const pricingData = [
 
 export const Pricing = () => {
   return (
-    <section className="section-padding">
+    <section id="pricing" className="section-padding">
       <div className="section-container">
         <div className="bg-muted/30 rounded-3xl p-8 md:p-12 shadow-lg">
           <div className="max-w-7xl mx-auto">
