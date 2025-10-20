@@ -234,14 +234,7 @@ export const HowMarenWorks = () => {
               </div>
 
               {/* LeadForm integration */}
-              <div className="bg-cyan/5 rounded-2xl p-6 md:p-8 border border-cyan/20 relative overflow-hidden">
-                <div className="absolute top-3 right-3 md:top-4 md:right-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-cyan/10 border border-cyan/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse"></span>
-                    <span className="text-xs md:text-sm font-medium text-cyan">ИДЕТ ПИЛОТ</span>
-                  </div>
-                </div>
-
+              <div className="bg-cyan/5 rounded-2xl p-6 md:p-8 border border-cyan/20">
                 <div className="max-w-2xl mx-auto">
                   <div className="text-center mb-6 md:mb-8">
                     <p className="text-xl md:text-2xl font-semibold mb-4">
