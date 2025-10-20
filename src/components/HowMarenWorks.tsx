@@ -330,7 +330,7 @@ export const HowMarenWorks = () => {
               </div>
 
               {/* Contact buttons */}
-              <div className="bg-muted/30 rounded-2xl p-6 md:p-8">
+              <div id="contact" className="bg-muted/30 rounded-2xl p-6 md:p-8">
                 <div className="text-center mb-8">
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">
                     Готовы <span className="bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent">ВЕРНУТЬ</span> своё время?
