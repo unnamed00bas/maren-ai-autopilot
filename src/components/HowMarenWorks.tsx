@@ -141,12 +141,12 @@ export const HowMarenWorks = () => {
                 <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
                   Кто стоит за MAREN
                 </h3>
-                <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
+                <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-start">
                   <div className="flex-shrink-0 flex flex-col items-center gap-3">
                     <img 
                       src={marinaPogodina} 
                       alt="Марина Погодина" 
-                      className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-accent/20"
+                      className="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover border-4 border-accent/20"
                     />
                     <a 
                       href="https://www.linkedin.com/in/marinapogodina" 
@@ -159,7 +159,7 @@ export const HowMarenWorks = () => {
                       <span className="text-sm font-semibold text-[#0A66C2]">LinkedIn</span>
                     </a>
                   </div>
-                  <div className="flex-1 space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+                  <div className="flex-1 space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed md:pl-4">
                     <p>
                       <span className="font-semibold text-foreground">Марина Погодина</span>, основатель MAREN и AI Governance & Automation Lead.
                     </p>

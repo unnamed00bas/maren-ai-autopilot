@@ -90,7 +90,7 @@ export const Pricing = () => {
                     <h3 className="text-xl md:text-2xl font-bold mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -104,7 +104,7 @@ export const Pricing = () => {
                   )}
 
                   <div className="mt-auto pt-4 border-t border-border">
-                    <div className={`text-2xl md:text-3xl font-bold ${
+                    <div className={`text-lg md:text-xl font-bold ${
                       item.type === 'waitlist' || item.type === 'custom' 
                         ? 'text-muted-foreground' 
                         : 'text-accent'

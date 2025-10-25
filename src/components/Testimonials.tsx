@@ -147,7 +147,7 @@ export const Testimonials = () => {
                 className="btn-hero"
                 onClick={() => setCaseModalOpen(true)}
               >
-                Разобрать кейс
+                Подробнее про кейс
               </Button>
             </div>
           </div>
@@ -156,7 +156,7 @@ export const Testimonials = () => {
     </section>
 
     <Dialog open={caseModalOpen} onOpenChange={setCaseModalOpen}>
-      <DialogContent className="max-w-4xl max-h-[90vh]">
+      <DialogContent className="max-w-4xl max-h-[90vh] [&>button]:bg-accent/20 [&>button]:hover:bg-accent/30 [&>button]:border [&>button]:border-accent/40 [&>button]:rounded-lg [&>button]:shadow-lg">
         <DialogHeader>
           <DialogTitle className="text-2xl md:text-3xl">
             Кейс: как MAREN сократил подготовку контента на 4 часа в день
