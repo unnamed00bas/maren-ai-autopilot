@@ -23,12 +23,12 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black leading-tight">
               <span className="block text-foreground uppercase">AI-АССИСТЕНТ</span>
               <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent">
-                который генерирует и публикует контент
+                общается как живой человек
               </span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
-              AI-автоматизированный блог: генерирует статьи и видео, автопостинг по расписанию и репостит в соцсети. Экономя до 4 часов в день.
+              <span className="bg-gradient-to-r from-[hsl(var(--lime))] to-[hsl(var(--cyan))] bg-clip-text text-transparent font-bold">AI-автоматизированный блог</span> генерирует статьи и короткие видео с аватаром: автопостинг по расписанию и репост в соцсети.
             </p>
 
             {/* Key benefits */}

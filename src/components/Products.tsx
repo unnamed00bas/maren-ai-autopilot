@@ -228,7 +228,7 @@ export const Products = () => {
                     variant="ghost"
                     size="sm"
                     onClick={() => toggleProduct(product.id)}
-                    className="w-full flex items-center justify-between text-accent hover:text-accent/80 mb-2 transition-all"
+                    className="w-full flex items-center justify-between text-accent hover:text-accent hover:bg-accent/10 mb-2 transition-all border border-transparent hover:border-accent/30 rounded-lg"
                   >
                     <span className="text-xs font-semibold">
                       {isExpanded ? 'Скрыть эффект' : 'Эффект от использования'}
