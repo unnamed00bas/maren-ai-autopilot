@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import { Button } from './ui/button';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const products = [
   {
@@ -110,6 +112,16 @@ const products = [
 ];
 
 export const Products = () => {
+  const [expandedProducts, setExpandedProducts] = useState<string[]>([]);
+
+  const toggleProduct = (productId: string) => {
+    setExpandedProducts(prev => 
+      prev.includes(productId) 
+        ? prev.filter(id => id !== productId)
+        : [...prev, productId]
+    );
+  };
+
   const renderDescription = (text: string) => {
     const parts = text.split('Meta*');
     if (parts.length === 1) return text;
@@ -170,135 +182,155 @@ export const Products = () => {
     <section id="products" className="section-padding">
       <div className="section-container">
         <div className="bg-muted/30 rounded-3xl p-8 md:p-12 shadow-lg">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 break-words px-2">
-                Продукты <span className="text-accent">P1–P6</span>
-              </h2>
-              <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-3xl mx-auto break-words px-4">
-                От ассистента с памятью до полной автоматизации контент-производства
-              </p>
-            </div>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 break-words px-2">
+              Продукты <span className="text-accent">P1–P6</span>
+            </h2>
+            <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-3xl mx-auto break-words px-4">
+              От ассистента с памятью до полной автоматизации контент-производства
+            </p>
+          </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 max-w-6xl mx-auto">
-        {products.map((product) => {
-          return (
-            <div key={product.id} className={`card-product group ${product.inDevelopment && !product.pilotBadge ? 'relative overflow-hidden bg-muted/50' : product.pilotBadge ? 'relative overflow-hidden bg-cyan/5' : ''}`}>
-              {product.inDevelopment && (
-                <div className={`absolute top-0 right-0 px-2 md:px-3 py-1 md:py-1.5 rounded-bl-lg border-l border-b ${
-                  product.pilotBadge 
-                    ? 'bg-gradient-to-br from-cyan/20 to-cyan/5 border-cyan/30' 
-                    : 'bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30'
-                }`}>
-                  <div className="flex items-center gap-1.5 md:gap-2">
-                    <div className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse ${product.pilotBadge ? 'bg-cyan' : 'bg-accent'}`} />
-                    <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wide ${product.pilotBadge ? 'text-cyan' : 'text-accent'}`}>
-                      {product.pilotBadge ? 'Идет пилот' : 'В разработке'}
-                    </span>
-                  </div>
-                </div>
-              )}
-              <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
-                <div className="p-2 md:p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors flex-shrink-0">
-                  <img src={product.icon} alt={`${product.title} — ${product.subtitle}`} className="w-5 h-5 md:w-6 md:h-6" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-xs md:text-sm font-bold text-accent mb-0.5 md:mb-1">{product.id}</div>
-                  <h3 className="text-lg md:text-xl font-bold mb-0.5 md:mb-1">{product.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground">{product.subtitle}</p>
-                </div>
-              </div>
-
-              <p className="text-sm leading-relaxed mb-4">{renderDescription(product.description)}</p>
-
-              <div className="space-y-3 pt-4 border-t border-border/50">
-                <div>
-                  <div className="text-xs font-semibold text-accent mb-1">ЭФФЕКТ:</div>
-                  {renderEffect(product.effect)}
-                </div>
-
-                {product.demo && (
-                  <div>
-                    <div className="text-xs font-semibold text-accent mb-1">ДЕМО:</div>
-                    {product.demoPrice && (
-                      <p className="text-base font-bold text-accent mb-2">{product.demoPrice}</p>
-                    )}
-                    {renderDemo(product.demo)}
-                    {product.demoAction && (
-                      <Button 
-                        asChild 
-                        className="mt-3 w-full bg-accent text-accent-foreground hover:bg-accent/90 hover:border-accent text-xs sm:text-sm md:text-base py-3 h-auto min-h-[44px]"
-                        variant="outline"
-                      >
-                        <a 
-                          href={product.demoAction.url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="whitespace-normal break-words leading-tight py-2"
-                        >
-                          {product.demoAction.label}
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                )}
-
-                {product.demos && (
-                  <div>
-                    <div className="text-xs font-semibold text-accent mb-2">КЕЙСЫ (автопостинг):</div>
-                    <div className="space-y-2">
-                      {product.demos.map((demo, idx) => (
-                        <div key={idx}>
-                          <div className="text-xs font-semibold text-muted-foreground mb-1">{demo.category}:</div>
-                          <ul className="space-y-1 ml-2">
-                            {demo.links.map((link, linkIdx) => (
-                              <li key={linkIdx}>
-                                {link.url.startsWith('/') ? (
-                                  <span className="text-xs font-bold text-muted-foreground">
-                                    — {link.text}
-                                  </span>
-                                ) : (
-                                  <a 
-                                    href={link.url} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="text-xs font-bold text-cyan underline decoration-2 hover:text-accent transition-colors"
-                                  >
-                                    — {link.text} (ссылка ↗)
-                                  </a>
-                                )}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 max-w-6xl mx-auto">
+            {products.map((product) => {
+              const isExpanded = expandedProducts.includes(product.id);
+              return (
+                <div key={product.id} className={`card-product group ${product.inDevelopment && !product.pilotBadge ? 'relative overflow-hidden bg-muted/50' : product.pilotBadge ? 'relative overflow-hidden bg-cyan/5' : ''}`}>
+                  {product.inDevelopment && (
+                    <div className={`absolute top-0 right-0 px-2 md:px-3 py-1 md:py-1.5 rounded-bl-lg border-l border-b ${
+                      product.pilotBadge 
+                        ? 'bg-gradient-to-br from-cyan/20 to-cyan/5 border-cyan/30' 
+                        : 'bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30'
+                    }`}>
+                      <div className="flex items-center gap-1.5 md:gap-2">
+                        <div className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse ${product.pilotBadge ? 'bg-cyan' : 'bg-accent'}`} />
+                        <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wide ${product.pilotBadge ? 'text-cyan' : 'text-accent'}`}>
+                          {product.pilotBadge ? 'Идет пилот' : 'В разработке'}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
+                    <div className="p-2 md:p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors flex-shrink-0">
+                      <img src={product.icon} alt={`${product.title} — ${product.subtitle}`} className="w-5 h-5 md:w-6 md:h-6" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs md:text-sm font-bold text-accent mb-0.5 md:mb-1">{product.id}</div>
+                      <h3 className="text-lg md:text-xl font-bold mb-0.5 md:mb-1">{product.title}</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground">{product.subtitle}</p>
                     </div>
                   </div>
-                )}
 
-                {product.note && (
-                  <div className="bg-muted/50 rounded-lg p-3">
-                    <p className="text-xs text-muted-foreground italic">{product.note}</p>
-                  </div>
-                )}
+                  <p className="text-sm leading-relaxed mb-4">{renderDescription(product.description)}</p>
 
-                <div>
-                  <div className="text-xs font-semibold text-muted-foreground mb-2">СТЕК:</div>
-                  <div className="flex flex-wrap gap-1">
-                    {product.stack.map((tech, idx) => (
-                      <span 
-                        key={idx} 
-                        className="text-xs px-2 py-1 bg-muted rounded text-muted-foreground"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => toggleProduct(product.id)}
+                    className="w-full flex items-center justify-between text-accent hover:text-accent/80 mb-2 transition-all"
+                  >
+                    <span className="text-xs font-semibold">
+                      {isExpanded ? 'Скрыть эффект' : 'Эффект от использования'}
+                    </span>
+                    {isExpanded ? (
+                      <ChevronUp className="h-4 w-4" />
+                    ) : (
+                      <ChevronDown className="h-4 w-4" />
+                    )}
+                  </Button>
+
+                  {isExpanded && (
+                    <div className="space-y-3 pt-4 border-t border-border/50 animate-accordion-down">
+                      <div>
+                        <div className="text-xs font-semibold text-accent mb-1">ЭФФЕКТ:</div>
+                        {renderEffect(product.effect)}
+                      </div>
+
+                      {product.demo && (
+                        <div>
+                          <div className="text-xs font-semibold text-accent mb-1">ДЕМО:</div>
+                          {product.demoPrice && (
+                            <p className="text-base font-bold text-accent mb-2">{product.demoPrice}</p>
+                          )}
+                          {renderDemo(product.demo)}
+                          {product.demoAction && (
+                            <Button 
+                              asChild 
+                              className="mt-3 w-full bg-accent text-accent-foreground hover:bg-accent/90 hover:border-accent text-xs sm:text-sm md:text-base py-3 h-auto min-h-[44px]"
+                              variant="outline"
+                            >
+                              <a 
+                                href={product.demoAction.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="whitespace-normal break-words leading-tight py-2"
+                              >
+                                {product.demoAction.label}
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      )}
+
+                      {product.demos && (
+                        <div>
+                          <div className="text-xs font-semibold text-accent mb-2">КЕЙСЫ (автопостинг):</div>
+                          <div className="space-y-2">
+                            {product.demos.map((demo, idx) => (
+                              <div key={idx}>
+                                <div className="text-xs font-semibold text-muted-foreground mb-1">{demo.category}:</div>
+                                <ul className="space-y-1 ml-2">
+                                  {demo.links.map((link, linkIdx) => (
+                                    <li key={linkIdx}>
+                                      {link.url.startsWith('/') ? (
+                                        <span className="text-xs font-bold text-muted-foreground">
+                                          — {link.text}
+                                        </span>
+                                      ) : (
+                                        <a 
+                                          href={link.url} 
+                                          target="_blank" 
+                                          rel="noopener noreferrer"
+                                          className="text-xs font-bold text-cyan underline decoration-2 hover:text-accent transition-colors"
+                                        >
+                                          — {link.text} (ссылка ↗)
+                                        </a>
+                                      )}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {product.note && (
+                        <div className="bg-muted/50 rounded-lg p-3">
+                          <p className="text-xs text-muted-foreground italic">{product.note}</p>
+                        </div>
+                      )}
+
+                      <div>
+                        <div className="text-xs font-semibold text-muted-foreground mb-2">СТЕК:</div>
+                        <div className="flex flex-wrap gap-1">
+                          {product.stack.map((tech, idx) => (
+                            <span 
+                              key={idx} 
+                              className="text-xs px-2 py-1 bg-muted rounded text-muted-foreground"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

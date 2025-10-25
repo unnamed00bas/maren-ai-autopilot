@@ -22,8 +22,17 @@
 # Don't cache HTML
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow
 
-# Enable compression
+# PDF and document files
+/*.pdf
+  X-Robots-Tag: noindex
+/*.doc
+  X-Robots-Tag: noindex
+/*.docx
+  X-Robots-Tag: noindex
+
+# Enable compression and security headers
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY

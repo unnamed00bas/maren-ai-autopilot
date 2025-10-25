@@ -28,7 +28,7 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
-              <span className="font-bold">Assistant</span> думает и помнит, <span className="font-bold">Flow</span> публикует, <span className="font-bold">GrowthOps</span> приводит аудиторию, <span className="font-bold">Minutes</span> экономит время. Лиды — за минуты, KPI — в дашборде. Экономя до 4 часов в день.
+              AI-автоматизированный блог: генерирует статьи и видео, автопостинг по расписанию и репостит в соцсети. Экономя до 4 часов в день.
             </p>
 
             {/* Key benefits */}

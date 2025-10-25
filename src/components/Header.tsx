@@ -15,7 +15,7 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <a href="/">
               <img src="/assets/maren-wordmark-lime.svg" alt="MAREN — AI-ассистент 24/7 для автоматизации контента" className="logo h-10" />
             </a>
@@ -33,6 +33,19 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
                 <span className="text-xs font-bold uppercase tracking-wide text-[hsl(189,94%,30%)]">
                   Telegram канал
                 </span>
+              </a>
+            </Button>
+            <Button 
+              asChild
+              size="sm"
+              className="hidden sm:inline-flex bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              <a 
+                href="https://promaren.ru/blog/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Блог MAREN
               </a>
             </Button>
           </div>
