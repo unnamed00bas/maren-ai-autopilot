@@ -224,21 +224,19 @@ export const Products = () => {
 
                   <p className="text-sm leading-relaxed mb-4">{renderDescription(product.description)}</p>
 
-                  <Button
-                    variant="ghost"
-                    size="sm"
+                  <button
                     onClick={() => toggleProduct(product.id)}
-                    className="w-full flex items-center justify-between text-accent hover:text-accent hover:bg-accent/10 mb-2 transition-all border border-transparent hover:border-accent/30 rounded-lg"
+                    className="w-full flex items-center justify-between px-6 py-4 bg-gradient-to-b from-accent/10 to-accent/5 border-2 border-accent/40 rounded-xl shadow-[0_4px_0_0_hsl(var(--accent)/0.3)] hover:shadow-[0_2px_0_0_hsl(var(--accent)/0.3)] hover:translate-y-[2px] active:translate-y-[4px] active:shadow-none transition-all duration-150 mb-2"
                   >
-                    <span className="text-xs font-semibold">
+                    <span className="text-sm font-bold text-accent">
                       {isExpanded ? 'Скрыть эффект' : 'Эффект от использования'}
                     </span>
                     {isExpanded ? (
-                      <ChevronUp className="h-4 w-4" />
+                      <ChevronUp className="h-5 w-5 text-accent" />
                     ) : (
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className="h-5 w-5 text-accent" />
                     )}
-                  </Button>
+                  </button>
 
                   {isExpanded && (
                     <div className="space-y-3 pt-4 border-t border-border/50 animate-accordion-down">

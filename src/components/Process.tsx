@@ -1,5 +1,6 @@
-import { Calculator, Rocket, Settings, TrendingUp, Repeat, FileText, Video } from 'lucide-react';
+import { Calculator, Rocket, Settings, TrendingUp, Repeat, FileText, Video, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
+import { useState } from 'react';
 
 interface ProcessProps {
   onCalcClick: () => void;
@@ -58,26 +59,43 @@ const options = [
 ];
 
 export const Process = ({ onCalcClick }: ProcessProps) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <section className="section-padding">
       <div className="section-container">
         <div className="bg-muted/30 rounded-3xl p-8 md:p-12 shadow-lg">
-          <div className="text-center mb-12 md:mb-16">
+          <div className="text-center mb-8 md:mb-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
               Как мы работаем
             </h2>
-            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
               Прозрачный процесс от первого контакта до масштабирования
             </p>
+            
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="mx-auto flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-b from-accent/10 to-accent/5 border-2 border-accent/40 rounded-xl shadow-[0_4px_0_0_hsl(var(--accent)/0.3)] hover:shadow-[0_2px_0_0_hsl(var(--accent)/0.3)] hover:translate-y-[2px] active:translate-y-[4px] active:shadow-none transition-all duration-150"
+            >
+              <span className="text-base md:text-lg font-bold text-accent">
+                {isExpanded ? 'Скрыть процесс' : 'Показать процесс работы'}
+              </span>
+              <ChevronDown 
+                className={`w-5 h-5 text-accent transition-transform duration-300 ${
+                  isExpanded ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
           </div>
 
-      <div className="max-w-5xl mx-auto">
-        <div className="relative">
-          {/* Connection line - only on desktop */}
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/20 via-accent to-accent/20 transform -translate-x-1/2" />
+          {isExpanded && (
+            <div className="max-w-5xl mx-auto overflow-hidden animate-accordion-down">
+              <div className="relative">
+                {/* Connection line - only on desktop */}
+                <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/20 via-accent to-accent/20 transform -translate-x-1/2" />
 
-          <div className="space-y-8 md:space-y-12">
-            {steps.map((step, index) => {
+                <div className="space-y-8 md:space-y-12">
+                  {steps.map((step, index) => {
               const Icon = step.icon;
               const isEven = index % 2 === 0;
 
@@ -170,10 +188,11 @@ export const Process = ({ onCalcClick }: ProcessProps) => {
                   )}
                 </div>
               );
-            })}
-          </div>
-        </div>
-      </div>
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
