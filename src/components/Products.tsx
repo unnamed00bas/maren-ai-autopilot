@@ -226,7 +226,7 @@ export const Products = () => {
 
                   <button
                     onClick={() => toggleProduct(product.id)}
-                    className="w-full flex items-center justify-between px-6 py-4 bg-gradient-to-b from-accent/10 to-accent/5 border-2 border-accent/40 rounded-xl shadow-[0_4px_0_0_hsl(var(--accent)/0.3)] hover:shadow-[0_2px_0_0_hsl(var(--accent)/0.3)] hover:translate-y-[2px] active:translate-y-[4px] active:shadow-none transition-all duration-150 mb-2"
+                    className="w-full flex items-center justify-between px-6 py-4 bg-accent/10 border border-accent/30 rounded-xl hover:bg-accent/20 hover:border-accent/50 transition-all duration-200 mb-2"
                   >
                     <span className="text-sm font-bold text-accent">
                       {isExpanded ? 'Скрыть эффект' : 'Эффект от использования'}

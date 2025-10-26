@@ -75,7 +75,7 @@ export const Process = ({ onCalcClick }: ProcessProps) => {
             
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="mx-auto flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-b from-accent/10 to-accent/5 border-2 border-accent/40 rounded-xl shadow-[0_4px_0_0_hsl(var(--accent)/0.3)] hover:shadow-[0_2px_0_0_hsl(var(--accent)/0.3)] hover:translate-y-[2px] active:translate-y-[4px] active:shadow-none transition-all duration-150"
+              className="mx-auto flex items-center justify-center gap-3 px-8 py-4 bg-accent/10 border border-accent/30 rounded-xl hover:bg-accent/20 hover:border-accent/50 transition-all duration-200"
             >
               <span className="text-base md:text-lg font-bold text-accent">
                 {isExpanded ? 'Скрыть процесс' : 'Показать процесс работы'}

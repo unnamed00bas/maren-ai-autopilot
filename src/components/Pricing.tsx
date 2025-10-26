@@ -13,7 +13,7 @@ const pricingData = [
     title: 'MAREN Assistant',
     description: 'личный креатор контента (фото/видео) с памятью, минус 2–4 часа рутины в день.',
     price: '40 000 ₽',
-    note: 'Опционально: подписка за 10 000 ₽/мес.',
+    note: 'опционально: подписка за 10 000 ₽/мес.',
     type: 'one-time'
   },
   {
@@ -28,7 +28,7 @@ const pricingData = [
   {
     id: 'P4',
     title: 'MAREN GrowthOps',
-    description: 'Полностью автоматизированный SEO Блог под ключ с автопостингом в канал Дзен и репост в соцсети.',
+    description: 'полностью автоматизированный SEO Блог под ключ с автопостингом в канал Дзен и репост в соцсети.',
     price: 'от 100 000 ₽',
     note: 'стоимость указана за работы под ключ в базе: SEO-блог-Дзен-Telegram. Подключение дополнительных соцсетей — +5 000 ₽ за каждую. Опционально: workflow support за 5 000 ₽/мес после реализации.',
     type: 'one-time'
@@ -44,7 +44,7 @@ const pricingData = [
   {
     id: 'P6',
     title: 'MAREN Minutes',
-    description: 'авто-протоколы ВКС',
+    description: 'авто-протоколы встреч zoom/google meet.',
     price: '2 000 ₽ / мес.',
     type: 'subscription',
     inDevelopment: true,
