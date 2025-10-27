@@ -38,7 +38,7 @@ const Index = () => {
         <Target onDemoClick={() => setDemoModalOpen(true)} />
         <Products />
         <Testimonials />
-        <Process onCalcClick={() => setCalcModalOpen(true)} />
+        <Process />
         <Pricing />
         <FAQ />
         <HowMarenWorks />
