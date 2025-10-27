@@ -47,7 +47,7 @@ export const Process = () => {
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               {/* Connection line - only on desktop */}
-              <div className="hidden lg:block absolute left-1/2 top-0 bottom-16 w-0.5 bg-gradient-to-b from-accent/20 via-accent to-accent/20 transform -translate-x-1/2" />
+              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/20 via-accent to-accent/20 transform -translate-x-1/2" />
 
               <div className="space-y-8 md:space-y-12">
                 {steps.map((step, index) => {
