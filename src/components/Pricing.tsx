@@ -1,4 +1,5 @@
 import { Tag } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 
 const pricingData = [
   {
@@ -28,7 +29,7 @@ const pricingData = [
   {
     id: 'P4',
     title: 'MAREN GrowthOps',
-    description: 'полностью автоматизированный SEO Блог под ключ с автопостингом в канал Дзен и репост в соцсети.',
+    description: 'полностью автоматизированный SEO Блог под ключ с автопостингом в канал Дзен и репост в соцсети (Telegram, VK, Meta* Instagram/Threads/Facebook, Pinterest, OK, Telegra.ph, Linkedin, YouTube, TikTok и др.).',
     price: 'от 100 000 ₽',
     note: 'стоимость указана за работы под ключ в базе: SEO-блог-Дзен-Telegram. Подключение дополнительных соцсетей — +5 000 ₽ за каждую. Опционально: workflow support за 5 000 ₽/мес после реализации.',
     type: 'one-time'
@@ -53,6 +54,28 @@ const pricingData = [
 ];
 
 export const Pricing = () => {
+  const renderDescription = (text: string) => {
+    const parts = text.split('Meta*');
+    if (parts.length === 1) return text;
+    
+    return (
+      <>
+        {parts[0]}
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="underline decoration-dotted cursor-help">Meta*</span>
+            </TooltipTrigger>
+            <TooltipContent className="max-w-xs">
+              <p className="text-xs">Meta Platforms Inc. — экстремистская организация, запрещена в РФ; WhatsApp не затронут. Реклама на ресурсах Meta в РФ запрещена. Упоминание — только в информационных целях; мы не аффилированы.</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        {parts[1]}
+      </>
+    );
+  };
+
   return (
     <section id="pricing" className="section-padding">
       <div className="section-container">
@@ -92,7 +115,7 @@ export const Pricing = () => {
                       {item.title}
                     </h3>
                     <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                      {item.description}
+                      {renderDescription(item.description)}
                     </p>
                   </div>
 

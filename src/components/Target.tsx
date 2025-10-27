@@ -28,7 +28,7 @@ export const Target = ({ onDemoClick }: TargetProps) => {
                 <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-accent/10 mb-4 flex-shrink-0">
                   <Clock className="w-6 h-6 md:w-7 md:h-7 text-accent" />
                 </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 break-words">eCom и локальный ритейл</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 break-words">Handmade мастера, eCom и локальный ритейл</h3>
                 <p className="text-sm md:text-base text-muted-foreground mb-4 break-words">
                   Тратите часы на постинг — <span className="text-accent font-semibold">MAREN публикует сам (Zero-Touch)</span>.
                 </p>
