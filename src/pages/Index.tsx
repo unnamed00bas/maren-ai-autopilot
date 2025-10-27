@@ -11,6 +11,7 @@ import { Contact } from '@/components/Contact';
 import { LeadForm } from '@/components/LeadForm';
 import { Guarantees } from '@/components/Guarantees';
 import { HowMarenWorks } from '@/components/HowMarenWorks';
+import { TelegramWidget } from '@/components/TelegramWidget';
 import { Footer } from '@/components/Footer';
 import { CalcModal } from '@/components/CalcModal';
 import { DemoModal } from '@/components/DemoModal';
@@ -41,6 +42,7 @@ const Index = () => {
         <Pricing />
         <FAQ />
         <HowMarenWorks />
+        <TelegramWidget />
       </main>
 
       <Footer />
