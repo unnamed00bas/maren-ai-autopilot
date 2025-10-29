@@ -17,6 +17,7 @@ import { CalcModal } from '@/components/CalcModal';
 import { DemoModal } from '@/components/DemoModal';
 import { CookieConsent } from '@/components/CookieConsent';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { ProgressBar } from '@/components/ProgressBar';
 import ChatButton from '@/components/ChatButton';
 
 const Index = () => {
@@ -25,6 +26,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen overflow-x-hidden max-w-[100vw]">
+      <ProgressBar />
       <Header
         onCalcClick={() => setCalcModalOpen(true)}
         onDemoClick={() => setDemoModalOpen(true)}
