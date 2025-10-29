@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
+import { ProductCard } from './ProductCard';
+import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Filter, Grid, List, Search } from 'lucide-react';
 
 const products = [
   {
@@ -113,6 +114,9 @@ const products = [
 
 export const Products = () => {
   const [expandedProducts, setExpandedProducts] = useState<string[]>([]);
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filterStatus, setFilterStatus] = useState<'all' | 'available' | 'pilot' | 'development'>('all');
 
   const toggleProduct = (productId: string) => {
     setExpandedProducts(prev => 
@@ -122,67 +126,31 @@ export const Products = () => {
     );
   };
 
-  const renderDescription = (text: string) => {
-    const parts = text.split('Meta*');
-    if (parts.length === 1) return text;
+  const filteredProducts = products.filter(product => {
+    const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         product.subtitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         product.description.toLowerCase().includes(searchTerm.toLowerCase());
     
-    return (
-      <>
-        {parts[0]}
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <span className="underline decoration-dotted cursor-help">Meta*</span>
-            </TooltipTrigger>
-            <TooltipContent className="max-w-xs">
-              <p className="text-xs">Meta Platforms Inc. — экстремистская организация, запрещена в РФ; WhatsApp не затронут. Реклама на ресурсах Meta в РФ запрещена. Упоминание — только в информационных целях; мы не аффилированы.</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-        {parts[1]}
-      </>
-    );
-  };
+    const matchesFilter = filterStatus === 'all' || 
+                         (filterStatus === 'available' && !product.inDevelopment) ||
+                         (filterStatus === 'pilot' && product.pilotBadge) ||
+                         (filterStatus === 'development' && product.inDevelopment && !product.pilotBadge);
+    
+    return matchesSearch && matchesFilter;
+  });
 
-  const renderEffect = (text: string) => {
-    // Check if text contains bullet points
-    if (text.includes('•')) {
-      const items = text.split('\n').filter(item => item.trim());
-      return (
-        <ul className="space-y-2">
-          {items.map((item, idx) => (
-            <li key={idx} className="text-sm text-muted-foreground">
-              {item}
-            </li>
-          ))}
-        </ul>
-      );
-    }
-    return <p className="text-sm text-muted-foreground whitespace-pre-line">{text}</p>;
-  };
-
-  const renderDemo = (text: string) => {
-    // Check if text contains bullet points
-    if (text.includes('•')) {
-      const items = text.split('\n').filter(item => item.trim());
-      return (
-        <ul className="space-y-2">
-          {items.map((item, idx) => (
-            <li key={idx} className="text-sm text-muted-foreground">
-              {item}
-            </li>
-          ))}
-        </ul>
-      );
-    }
-    return <p className="text-sm text-muted-foreground whitespace-pre-line">{text}</p>;
+  const getProductStatus = (product: any) => {
+    if (product.pilotBadge) return 'pilot';
+    if (product.inDevelopment) return 'development';
+    return 'available';
   };
 
   return (
     <section id="products" className="section-padding">
       <div className="section-container">
         <div className="bg-muted/30 rounded-3xl p-8 md:p-12 shadow-lg">
-          <div className="text-center mb-12 md:mb-16">
+          {/* Header */}
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 break-words px-2">
               Продукты <span className="text-accent">P1–P6</span>
             </h2>
@@ -191,144 +159,117 @@ export const Products = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 max-w-6xl mx-auto">
-            {products.map((product) => {
-              const isExpanded = expandedProducts.includes(product.id);
-              return (
-                <div key={product.id} className={`card-product group ${product.inDevelopment && !product.pilotBadge ? 'relative overflow-hidden bg-muted/50' : product.pilotBadge ? 'relative overflow-hidden bg-cyan/5' : ''}`}>
-                  {product.inDevelopment && (
-                    <div className={`absolute top-0 right-0 px-2 md:px-3 py-1 md:py-1.5 rounded-bl-lg border-l border-b ${
-                      product.pilotBadge 
-                        ? 'bg-gradient-to-br from-cyan/20 to-cyan/5 border-cyan/30' 
-                        : 'bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30'
-                    }`}>
-                      <div className="flex items-center gap-1.5 md:gap-2">
-                        <div className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse ${product.pilotBadge ? 'bg-cyan' : 'bg-accent'}`} />
-                        <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wide ${product.pilotBadge ? 'text-cyan' : 'text-accent'}`}>
-                          {product.pilotBadge ? 'Идет пилот' : 'В разработке'}
-                        </span>
-                      </div>
-                    </div>
-                  )}
-                  
-                  <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
-                    <div className="p-2 md:p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors flex-shrink-0">
-                      <img src={product.icon} alt={`${product.title} — ${product.subtitle}`} className="w-5 h-5 md:w-6 md:h-6" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-xs md:text-sm font-bold text-accent mb-0.5 md:mb-1">{product.id}</div>
-                      <h3 className="text-lg md:text-xl font-bold mb-0.5 md:mb-1">{product.title}</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground">{product.subtitle}</p>
-                    </div>
-                  </div>
-
-                  <p className="text-sm leading-relaxed mb-4">{renderDescription(product.description)}</p>
-
-                  <button
-                    onClick={() => toggleProduct(product.id)}
-                    className="w-full flex items-center justify-between px-6 py-4 bg-accent/10 border border-accent/30 rounded-xl hover:bg-accent/20 hover:border-accent/50 transition-all duration-200 mb-2"
+          {/* Controls */}
+          <div className="mb-8 space-y-4">
+            {/* Search and filters */}
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                <input
+                  type="text"
+                  placeholder="Поиск по продуктам..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent"
+                />
+              </div>
+              
+              <div className="flex gap-2">
+                <div className="flex bg-muted rounded-lg p-1">
+                  <Button
+                    variant={filterStatus === 'all' ? 'default' : 'ghost'}
+                    size="sm"
+                    onClick={() => setFilterStatus('all')}
+                    className="text-xs"
                   >
-                    <span className="text-sm font-bold text-accent">
-                      {isExpanded ? 'Скрыть эффект' : 'Эффект от использования'}
-                    </span>
-                    {isExpanded ? (
-                      <ChevronUp className="h-5 w-5 text-accent" />
-                    ) : (
-                      <ChevronDown className="h-5 w-5 text-accent" />
-                    )}
-                  </button>
-
-                  {isExpanded && (
-                    <div className="space-y-3 pt-4 border-t border-border/50 animate-accordion-down">
-                      <div>
-                        <div className="text-xs font-semibold text-accent mb-1">ЭФФЕКТ:</div>
-                        {renderEffect(product.effect)}
-                      </div>
-
-                      {product.demo && (
-                        <div>
-                          <div className="text-xs font-semibold text-accent mb-1">ДЕМО:</div>
-                          {product.demoPrice && (
-                            <p className="text-base font-bold text-accent mb-2">{product.demoPrice}</p>
-                          )}
-                          {renderDemo(product.demo)}
-                          {product.demoAction && (
-                            <Button 
-                              asChild 
-                              className="mt-3 w-full bg-accent text-accent-foreground hover:bg-accent/90 hover:border-accent text-xs sm:text-sm md:text-base py-3 h-auto min-h-[44px]"
-                              variant="outline"
-                            >
-                              <a 
-                                href={product.demoAction.url} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="whitespace-normal break-words leading-tight py-2"
-                              >
-                                {product.demoAction.label}
-                              </a>
-                            </Button>
-                          )}
-                        </div>
-                      )}
-
-                      {product.demos && (
-                        <div>
-                          <div className="text-xs font-semibold text-accent mb-2">КЕЙСЫ (автопостинг):</div>
-                          <div className="space-y-2">
-                            {product.demos.map((demo, idx) => (
-                              <div key={idx}>
-                                <div className="text-xs font-semibold text-muted-foreground mb-1">{demo.category}:</div>
-                                <ul className="space-y-1 ml-2">
-                                  {demo.links.map((link, linkIdx) => (
-                                    <li key={linkIdx}>
-                                      {link.url.startsWith('/') ? (
-                                        <span className="text-xs font-bold text-muted-foreground">
-                                          — {link.text}
-                                        </span>
-                                      ) : (
-                                        <a 
-                                          href={link.url} 
-                                          target="_blank" 
-                                          rel="noopener noreferrer"
-                                          className="text-xs font-bold text-cyan underline decoration-2 hover:text-accent transition-colors"
-                                        >
-                                          — {link.text} (ссылка ↗)
-                                        </a>
-                                      )}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {product.note && (
-                        <div className="bg-muted/50 rounded-lg p-3">
-                          <p className="text-xs text-muted-foreground italic">{product.note}</p>
-                        </div>
-                      )}
-
-                      <div>
-                        <div className="text-xs font-semibold text-muted-foreground mb-2">СТЕК:</div>
-                        <div className="flex flex-wrap gap-1">
-                          {product.stack.map((tech, idx) => (
-                            <span 
-                              key={idx} 
-                              className="text-xs px-2 py-1 bg-muted rounded text-muted-foreground"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                    Все
+                  </Button>
+                  <Button
+                    variant={filterStatus === 'available' ? 'default' : 'ghost'}
+                    size="sm"
+                    onClick={() => setFilterStatus('available')}
+                    className="text-xs"
+                  >
+                    Доступны
+                  </Button>
+                  <Button
+                    variant={filterStatus === 'pilot' ? 'default' : 'ghost'}
+                    size="sm"
+                    onClick={() => setFilterStatus('pilot')}
+                    className="text-xs"
+                  >
+                    Пилот
+                  </Button>
+                  <Button
+                    variant={filterStatus === 'development' ? 'default' : 'ghost'}
+                    size="sm"
+                    onClick={() => setFilterStatus('development')}
+                    className="text-xs"
+                  >
+                    В разработке
+                  </Button>
                 </div>
-              );
-            })}
+                
+                <div className="flex bg-muted rounded-lg p-1">
+                  <Button
+                    variant={viewMode === 'grid' ? 'default' : 'ghost'}
+                    size="sm"
+                    onClick={() => setViewMode('grid')}
+                  >
+                    <Grid className="w-4 h-4" />
+                  </Button>
+                  <Button
+                    variant={viewMode === 'list' ? 'default' : 'ghost'}
+                    size="sm"
+                    onClick={() => setViewMode('list')}
+                  >
+                    <List className="w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Results count */}
+            <div className="text-sm text-muted-foreground">
+              Найдено: {filteredProducts.length} из {products.length} продуктов
+            </div>
           </div>
+
+          {/* Products grid */}
+          <div className={`grid gap-4 md:gap-6 max-w-6xl mx-auto ${
+            viewMode === 'grid' 
+              ? 'grid-cols-1 lg:grid-cols-2' 
+              : 'grid-cols-1'
+          }`}>
+            {filteredProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                isExpanded={expandedProducts.includes(product.id)}
+                onToggle={() => toggleProduct(product.id)}
+              />
+            ))}
+          </div>
+
+          {/* No results */}
+          {filteredProducts.length === 0 && (
+            <div className="text-center py-12">
+              <div className="text-muted-foreground mb-4">
+                <Search className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                <p className="text-lg font-medium">Продукты не найдены</p>
+                <p className="text-sm">Попробуйте изменить поисковый запрос или фильтры</p>
+              </div>
+              <Button
+                onClick={() => {
+                  setSearchTerm('');
+                  setFilterStatus('all');
+                }}
+                variant="outline"
+              >
+                Сбросить фильтры
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>
