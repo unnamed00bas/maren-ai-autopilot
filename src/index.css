@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* MAREN Brand Colors */
+    /* MAREN Brand Colors - Default */
     --graphite: 217 50% 10%;
     --lime: 82 78% 55%;
     --cyan: 189 94% 43%;
@@ -19,43 +19,51 @@ All colors MUST be HSL.
     --electric-fuchsia: 320 100% 58%;
     --uv-cyan: 188 100% 50%;
     
+    /* Dynamic Theme Colors - Default values */
+    --theme-primary: var(--lime);
+    --theme-secondary: var(--cyan);
+    --theme-accent: var(--lime);
+    --theme-background: 0 0% 100%;
+    --theme-foreground: var(--graphite);
+    
     /* Design System Tokens */
-    --background: 0 0% 100%;
-    --foreground: var(--graphite);
+    --background: var(--theme-background);
+    --foreground: var(--theme-foreground);
 
-    --card: 0 0% 100%;
-    --card-foreground: var(--graphite);
+    --card: var(--theme-background);
+    --card-foreground: var(--theme-foreground);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: var(--graphite);
+    --popover: var(--theme-background);
+    --popover-foreground: var(--theme-foreground);
 
-    --primary: var(--graphite);
-    --primary-foreground: 0 0% 100%;
+    --primary: var(--theme-foreground);
+    --primary-foreground: var(--theme-background);
 
     --secondary: 0 0% 96%;
-    --secondary-foreground: var(--graphite);
+    --secondary-foreground: var(--theme-foreground);
 
     --muted: 0 0% 96%;
     --muted-foreground: 217 15% 50%;
 
-    --accent: var(--lime);
-    --accent-foreground: var(--pitch);
+    --accent: var(--theme-primary);
+    --accent-foreground: var(--theme-foreground);
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 217 20% 90%;
     --input: 217 20% 90%;
-    --ring: var(--lime);
+    --ring: var(--theme-primary);
 
     --radius: 0.75rem;
     
-    /* Gradients */
+    /* Dynamic Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--theme-primary), var(--theme-secondary));
     --gradient-neon: linear-gradient(135deg, hsl(var(--toxic-lime)), hsl(var(--uv-cyan)));
     --gradient-dark: linear-gradient(180deg, hsl(var(--pitch)), hsl(var(--graphite)));
     
-    /* Shadows */
-    --shadow-glow: 0 0 30px hsl(var(--lime) / 0.3);
+    /* Dynamic Shadows */
+    --shadow-glow: 0 0 30px var(--theme-primary) / 0.3;
     --shadow-neon: 0 0 40px hsl(var(--electric-fuchsia) / 0.4);
     
     /* Animations */
@@ -63,33 +71,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: var(--graphite);
-    --foreground: 0 0% 100%;
+    --background: var(--theme-background);
+    --foreground: var(--theme-foreground);
 
     --card: 217 45% 12%;
-    --card-foreground: 0 0% 100%;
+    --card-foreground: var(--theme-foreground);
 
-    --popover: var(--graphite);
-    --popover-foreground: 0 0% 100%;
+    --popover: var(--theme-background);
+    --popover-foreground: var(--theme-foreground);
 
-    --primary: 0 0% 100%;
-    --primary-foreground: var(--graphite);
+    --primary: var(--theme-foreground);
+    --primary-foreground: var(--theme-background);
 
     --secondary: 217 40% 15%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: var(--theme-foreground);
 
     --muted: 217 40% 15%;
     --muted-foreground: 217 15% 65%;
 
-    --accent: var(--lime);
-    --accent-foreground: var(--pitch);
+    --accent: var(--theme-primary);
+    --accent-foreground: var(--theme-background);
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 217 40% 20%;
     --input: 217 40% 20%;
-    --ring: var(--lime);
+    --ring: var(--theme-primary);
   }
 }
 

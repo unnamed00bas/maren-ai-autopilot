@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from './ui/button';
 import { Menu, X } from 'lucide-react';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 interface HeaderProps {
   onCalcClick: () => void;
@@ -51,7 +52,7 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             <a href="#products" className="text-sm font-medium hover:text-accent transition-colors">
               Продукты
             </a>
@@ -64,6 +65,7 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
             <a href="#contact" className="text-sm font-medium hover:text-accent transition-colors">
               Контакты
             </a>
+            <ThemeSwitcher />
           </div>
 
           {/* Mobile menu button */}
@@ -110,6 +112,9 @@ export const Header = ({ onCalcClick, onDemoClick }: HeaderProps) => {
               >
                 Контакты
               </a>
+              <div className="pt-2 border-t border-border/30">
+                <ThemeSwitcher />
+              </div>
             </div>
           </div>
         )}
