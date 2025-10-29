@@ -44,7 +44,8 @@ const Index = () => {
         <Pricing />
         <FAQ />
         <HowMarenWorks />
-        <TelegramWidget />
+        {/* Вставка трёхколоночного вывода постов TG: передайте актуальные ID постов */}
+        <TelegramWidget channel="promaren" postIds={[18, 17, 16]} />
       </main>
 
       <Footer />
