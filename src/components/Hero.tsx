@@ -120,16 +120,8 @@ export const Hero = ({ onCalcClick, onDemoClick }: HeroProps) => {
               </Button>
             </div>
 
-            {/* Social proof - minimal */}
+            {/* Social proof - minimal (без блока 500+ клиентов) */}
             <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-1">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="w-6 h-6 rounded-full bg-gradient-to-r from-[var(--theme-primary)] to-[var(--theme-secondary)] border-2 border-background" />
-                  ))}
-                </div>
-                <span>500+ клиентов</span>
-              </div>
               <div className="flex items-center gap-1">
                 <Star className="w-4 h-4 text-yellow-500 fill-current" />
                 <span>4.9/5 рейтинг</span>

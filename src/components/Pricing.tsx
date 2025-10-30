@@ -196,15 +196,28 @@ export const Pricing = () => {
                 <table className="w-full border-collapse bg-card rounded-lg overflow-hidden">
                   <thead>
                     <tr className="bg-muted/50">
-                      <th className="border border-border p-4 text-left font-semibold">Продукт</th>
-                      <th className="border border-border p-4 text-center font-semibold">Стоимость</th>
-                      <th className="border border-border p-4 text-center font-semibold">Экономия времени</th>
-                      <th className="border border-border p-4 text-center font-semibold">Статус</th>
+                      <th className="border border-border p-4 text-left font-semibold align-middle" rowSpan={2}>Продукт</th>
+                      <th className="border border-border p-4 text-center font-semibold" colSpan={2}>Стоимость</th>
+                      <th className="border border-border p-4 text-center font-semibold align-middle" rowSpan={2}>Экономия времени</th>
+                      <th className="border border-border p-4 text-center font-semibold align-middle" rowSpan={2}>Статус</th>
+                    </tr>
+                    <tr className="bg-muted/30">
+                      <th className="border border-border p-3 text-center text-sm font-medium">Под ключ, ₽</th>
+                      <th className="border border-border p-3 text-center text-sm font-medium">Подписка, ₽/мес.</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {pricingData.map((item) => (
-                      <tr key={item.id} className="hover:bg-muted/30 transition-colors">
+                    {pricingData.map((item) => {
+                      const priceStr = item.price || '';
+                      const noteStr = item.note || '';
+                      const isSubscriptionPrice = /\/\s*мес\.?/i.test(priceStr);
+                      const subscriptionFromNoteMatch = noteStr.match(/(\d[\d\s]*)\s*₽\s*\/\s*мес\.?/i);
+                      const subscriptionFromNote = subscriptionFromNoteMatch ? `${subscriptionFromNoteMatch[1].trim()} ₽ / мес.` : '';
+                      const oneTime = !isSubscriptionPrice ? priceStr : (item.type === 'one-time' ? priceStr : '—');
+                      const subscription = isSubscriptionPrice ? priceStr : (subscriptionFromNote || (item.type === 'subscription' ? priceStr : '—'));
+                      const rowTint = item.inDevelopment ? 'bg-violet-500/5' : '';
+                      return (
+                      <tr key={item.id} className={`transition-colors ${rowTint} hover:bg-muted/30`}>
                         <td className="border border-border p-4">
                           <div className="flex items-center gap-3">
                             <div className="p-2 bg-accent/10 rounded-lg">
@@ -217,7 +230,10 @@ export const Pricing = () => {
                           </div>
                         </td>
                         <td className="border border-border p-4 text-center font-semibold">
-                          {item.price}
+                          {oneTime || '—'}
+                        </td>
+                        <td className="border border-border p-4 text-center font-semibold">
+                          {subscription || '—'}
                         </td>
                         <td className="border border-border p-4 text-center">
                           {item.benefits?.[0] || 'Индивидуально'}
@@ -228,9 +244,14 @@ export const Pricing = () => {
                               Пилот
                             </span>
                           ) : item.inDevelopment ? (
-                            <span className="px-2 py-1 bg-accent/10 text-accent rounded-full text-xs font-semibold">
-                              В разработке
-                            </span>
+                            <div className="flex flex-col items-center gap-2">
+                              <span className="px-2 py-1 rounded-full text-xs font-semibold tracking-wide border border-violet-500/20 bg-violet-500/10 text-violet-500/80 opacity-90">
+                                В разработке
+                              </span>
+                              <a href="#contact" className="inline-flex items-center justify-center px-3 py-1 rounded-lg border border-border bg-muted/40 text-foreground/70 hover:bg-accent/10 hover:text-accent transition-colors text-xs">
+                                Записаться в лист ожидания
+                              </a>
+                            </div>
                           ) : (
                             <span className="px-2 py-1 bg-green/10 text-green rounded-full text-xs font-semibold">
                               Доступно
@@ -238,7 +259,7 @@ export const Pricing = () => {
                           )}
                         </td>
                       </tr>
-                    ))}
+                    )})}
                   </tbody>
                 </table>
               </div>

@@ -77,55 +77,25 @@ const colorSchemes = {
 };
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>('default');
-  const [isDark, setIsDark] = useState(false);
+  // Lock to MAREN Classic (default) and light mode
+  const [colorScheme] = useState<ColorScheme>('default');
+  const [isDark] = useState(false);
 
-  // Load theme from localStorage on mount
-  useEffect(() => {
-    const savedScheme = localStorage.getItem('maren-color-scheme') as ColorScheme;
-    const savedDarkMode = localStorage.getItem('maren-dark-mode') === 'true';
-    
-    if (savedScheme && colorSchemes[savedScheme]) {
-      setColorScheme(savedScheme);
-    }
-    setIsDark(savedDarkMode);
-  }, []);
-
-  // Save theme to localStorage when changed
-  useEffect(() => {
-    localStorage.setItem('maren-color-scheme', colorScheme);
-  }, [colorScheme]);
-
-  useEffect(() => {
-    localStorage.setItem('maren-dark-mode', isDark.toString());
-  }, [isDark]);
-
-  // Apply CSS custom properties
   useEffect(() => {
     const root = document.documentElement;
-    const scheme = colorSchemes[colorScheme];
-    
+    const scheme = colorSchemes['default'];
     root.style.setProperty('--theme-primary', scheme.primary);
     root.style.setProperty('--theme-secondary', scheme.secondary);
     root.style.setProperty('--theme-accent', scheme.accent);
-    
-    if (isDark) {
-      root.classList.add('dark');
-      root.style.setProperty('--theme-background', 'hsl(217, 50%, 10%)');
-      root.style.setProperty('--theme-foreground', 'hsl(0, 0%, 100%)');
-    } else {
-      root.classList.remove('dark');
-      root.style.setProperty('--theme-background', scheme.background);
-      root.style.setProperty('--theme-foreground', scheme.foreground);
-    }
-  }, [colorScheme, isDark]);
+    root.classList.remove('dark');
+    root.style.setProperty('--theme-background', scheme.background);
+    root.style.setProperty('--theme-foreground', scheme.foreground);
+  }, []);
 
-  const toggleDarkMode = () => {
-    setIsDark(!isDark);
-  };
+  const noop = () => {};
 
   return (
-    <ThemeContext.Provider value={{ colorScheme, setColorScheme, isDark, toggleDarkMode }}>
+    <ThemeContext.Provider value={{ colorScheme, setColorScheme: noop as any, isDark, toggleDarkMode: noop }}>
       {children}
     </ThemeContext.Provider>
   );

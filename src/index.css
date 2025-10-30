@@ -63,11 +63,11 @@ All colors MUST be HSL.
     --gradient-dark: linear-gradient(180deg, hsl(var(--pitch)), hsl(var(--graphite)));
     
     /* Dynamic Shadows */
-    --shadow-glow: 0 0 30px var(--theme-primary) / 0.3;
-    --shadow-neon: 0 0 40px hsl(var(--electric-fuchsia) / 0.4);
+    --shadow-glow: 0 20px 60px hsl(var(--lime) / 0.18);
+    --shadow-neon: 0 30px 80px hsl(var(--uv-cyan) / 0.25);
     
     /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .dark {
@@ -114,6 +114,9 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "cv02","cv03","cv04","cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     max-width: 100vw;
     /* Improve touch scrolling on iOS */
@@ -132,11 +135,41 @@ All colors MUST be HSL.
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
     font-weight: 700;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
   }
 }
 
 @layer components {
+  /* Premium modal overlay for all pop-ups */
+  .overlay-premium {
+    /* Subtle vignette + themed graphite tint */
+    background:
+      radial-gradient(1200px 800px at 50% 10%, hsl(var(--accent) / 0.06), transparent 60%),
+      hsl(var(--graphite) / 0.78);
+    backdrop-filter: blur(6px) saturate(110%);
+  }
+
+  /* Universal fully-opaque backdrop for ALL pop-ups (no transparency) */
+  .overlay-opaque {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: #000 !important;
+    opacity: 1 !important;
+    /* Ensure no visual effects leak transparency */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Universal pop-up surface: solid light-gray without transparency */
+  .popup-surface {
+    background: #f0f0f0 !important;
+    opacity: 1 !important;
+    /* Remove any inherited filters that could affect perceived opacity */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
   .btn-hero {
     @apply bg-accent text-accent-foreground font-bold px-4 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-xl transition-all duration-300;
     @apply hover:bg-[#84CC16] hover:shadow-[0_0_30px_hsl(var(--lime)/0.5)] active:bg-[#65A30D] active:scale-95;
@@ -178,8 +211,9 @@ All colors MUST be HSL.
   }
   
   .card-product {
-    @apply bg-card border border-border rounded-2xl p-4 md:p-6 lg:p-8 transition-all duration-300;
-    @apply hover:border-accent hover:shadow-[0_0_20px_hsl(var(--lime)/0.2)];
+    @apply bg-card border border-border rounded-2xl p-4 md:p-6 lg:p-8 transition-all duration-500;
+    @apply hover:border-accent hover:shadow-2xl;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     /* Ensure text wraps properly in cards */
     overflow-wrap: break-word;
     word-break: break-word;

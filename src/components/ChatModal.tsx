@@ -143,8 +143,8 @@ const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-background rounded-lg shadow-2xl w-full max-w-2xl h-[600px] flex flex-col animate-scale-in">
+    <div className="overlay-opaque flex items-center justify-center p-4">
+      <div className="popup-surface rounded-lg shadow-2xl w-full max-w-2xl h-[600px] flex flex-col animate-scale-in">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b">
           <h2 className="text-xl font-semibold">AI-консультант MAREN</h2>

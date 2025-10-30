@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Target } from '@/components/Target';
@@ -24,6 +24,13 @@ const Index = () => {
   const [calcModalOpen, setCalcModalOpen] = useState(false);
   const [demoModalOpen, setDemoModalOpen] = useState(false);
 
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+  }, []);
+
   return (
     <div className="min-h-screen overflow-x-hidden max-w-[100vw]">
       <ProgressBar />
@@ -40,10 +47,10 @@ const Index = () => {
         <Target onDemoClick={() => setDemoModalOpen(true)} />
         <Products />
         <Testimonials />
-        <Process />
+        <HowMarenWorks />
+        <Process onCalcClick={() => setCalcModalOpen(true)} />
         <Pricing />
         <FAQ />
-        <HowMarenWorks />
         {/* Вставка трёхколоночного вывода постов TG: передайте актуальные ID постов */}
         <TelegramWidget channel="promaren" postIds={[18, 17, 16]} />
       </main>

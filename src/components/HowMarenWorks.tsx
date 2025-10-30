@@ -107,31 +107,129 @@ export const HowMarenWorks = () => {
               {/* Main title */}
               <div className="text-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                  Как работает MAREN
+                  Как мы работаем. Прозрачный процесс от первого контакта до масштабирования
                 </h2>
               </div>
 
-              {/* AI под контролем */}
+              {/* Как мы работаем — новая структура */}
               <div className="bg-muted/30 rounded-2xl p-6 md:p-8">
-                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
-                  AI под контролем. Люди под защитой.
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-center">
+                  Без хайпа. По процессу. С прозрачным результатом.
                 </h3>
-                <div className="grid gap-4 text-base md:text-lg text-muted-foreground leading-relaxed">
-                  <div className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">1</span>
-                    <p className="pt-1">MAREN работает в white-data-зоне.</p>
+                {/* Timeline intro */}
+                <div className="mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                    {/* Item 1 */}
+                    <div className="relative rounded-2xl border border-border/60 bg-card/70 supports-[backdrop-filter]:backdrop-blur-md p-5">
+                      <div className="flex items-start gap-3">
+                        <span className="mt-1 inline-flex h-3 w-3 rounded-full bg-accent shadow-[0_0_0_4px_hsl(var(--accent)/0.15)]" />
+                        <div>
+                          <h4 className="text-base md:text-lg font-semibold mb-1">Без хайпа.</h4>
+                          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                            Мы проектируем цепочки, где контент создаётся сам — от брифа до публикации, а люди возвращают себе часы.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Item 2 */}
+                    <div className="relative rounded-2xl border border-border/60 bg-card/70 supports-[backdrop-filter]:backdrop-blur-md p-5">
+                      <div className="flex items-start gap-3">
+                        <span className="mt-1 inline-flex h-3 w-3 rounded-full bg-accent shadow-[0_0_0_4px_hsl(var(--accent)/0.15)]" />
+                        <div>
+                          <h4 className="text-base md:text-lg font-semibold mb-1">По процессу.</h4>
+                          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                            Вместо «сделаем красиво» — пошаговая архитектура: сценарии, роли, данные и инструменты.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Item 3 */}
+                    <div className="relative rounded-2xl border border-border/60 bg-card/70 supports-[backdrop-filter]:backdrop-blur-md p-5">
+                      <div className="flex items-start gap-3">
+                        <span className="mt-1 inline-flex h-3 w-3 rounded-full bg-accent shadow-[0_0_0_4px_hsl(var(--accent)/0.15)]" />
+                        <div>
+                          <h4 className="text-base md:text-lg font-semibold mb-1">С прозрачным результатом.</h4>
+                          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                            Метрики и контроль качества на каждом этапе — от первого контакта до масштабирования.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">2</span>
-                    <p className="pt-1">Все процессы соответствуют требованиям 152-ФЗ, ISO/IEC 27001 и принципам прозрачного AI Governance.</p>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">3</span>
-                    <p className="pt-1">Мы не используем «серые» данные и ведём аудит логов всех действий ассистента.</p>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">4</span>
-                    <p className="pt-1">Каждое решение можно проверить, каждое действие — восстановить.</p>
+                </div>
+
+                {/* Steps */}
+                <ol className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+                  <li className="rounded-2xl border border-border/60 bg-card/70 supports-[backdrop-filter]:backdrop-blur-md p-5 md:p-6">
+                    <div className="flex items-start gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">1</span>
+                      <div>
+                        <h4 className="font-semibold text-lg md:text-xl mb-1">Шаг 1. Диагностика</h4>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                          Анализируем текущий процесс создания контента: кто вовлечён, где узкие места, какие данные используются. Идентифицируем точки неэффективности, замеряем потери времени, определяем, как продукты MAREN могут ускорить цикл.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li className="rounded-2xl border border-border/60 bg-card/70 supports-[backdrop-filter]:backdrop-blur-md p-5 md:p-6">
+                    <div className="flex items-start gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">2</span>
+                      <div>
+                        <h4 className="font-semibold text-lg md:text-xl mb-1">Шаг 2. Архитектура</h4>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                          Проектируем оптимальную структуру: определяем источники данных, сценарии, необходимые инструменты и роли. Выстраиваем white-data-зону и обеспечиваем соответствие требованиям 152-ФЗ.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li className="rounded-2xl border border-border/60 bg-card/70 supports-[backdrop-filter]:backdrop-blur-md p-5 md:p-6">
+                    <div className="flex items-start gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">3</span>
+                      <div>
+                        <h4 className="font-semibold text-lg md:text-xl mb-1">Шаг 3. Сборка</h4>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                          Настраиваем интеграции на базе n8n/Make.com, обучаем модели, формируем визуальные и текстовые материалы. Тестируем на реальных кейсах, проверяем воспроизводимость и качество результата.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li className="rounded-2xl border border-border/60 bg-card/70 supports-[backdrop-filter]:backdrop-blur-md p-5 md:p-6">
+                    <div className="flex items-start gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">4</span>
+                      <div>
+                        <h4 className="font-semibold text-lg md:text-xl mb-1">Шаг 4. Автоматизация</h4>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                          Внедряем метрики, систему оповещений, контроль версий и логи. Процесс запускается в автономном режиме: задачи движутся сами, отчёты формируются автоматически, ошибки отслеживаются.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li className="rounded-2xl border border-border/60 bg-card/70 supports-[backdrop-filter]:backdrop-blur-md p-5 md:p-6 md:col-span-2">
+                    <div className="flex items-start gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">5</span>
+                      <div>
+                        <h4 className="font-semibold text-lg md:text-xl mb-1">Шаг 5. Сопровождение</h4>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                          В течение двух недель после запуска осуществляем поддержку: помогаем адаптировать сценарии, обновляем промпты, масштабируем экосистему.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+
+                {/* Принцип MAREN — акцентный блок */}
+                <div className="mt-6 md:mt-8">
+                  <div className="rounded-2xl border border-accent/20 bg-accent/5 p-5 md:p-6 text-center">
+                    <p className="text-base md:text-lg text-foreground font-semibold">
+                      Никакой магии — только инженерия, данные и уважение ко времени.
+                    </p>
+                    <p className="text-lg md:text-xl font-bold mt-2">Контент — сам. Время — вам.</p>
                   </div>
                 </div>
               </div>

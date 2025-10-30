@@ -144,7 +144,7 @@ export const Testimonials = () => {
 
             <div className="mt-8 md:mt-10 text-center">
               <Button 
-                className="btn-hero"
+                className="btn-hero w-full md:w-auto !rounded-2xl !px-8 !py-4 shadow-3xl ring-1 ring-[hsl(var(--ring))]/40 hover:shadow-[0_0_30px_hsl(var(--accent)/0.5)]"
                 onClick={() => setCaseModalOpen(true)}
               >
                 Подробнее про кейс

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { ThemeSwitcher } from './ThemeSwitcher';
 
 interface NavigationProps {
   onCalcClick: () => void;
@@ -107,12 +106,10 @@ export const Navigation = ({ onCalcClick, onDemoClick }: NavigationProps) => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
-            <ThemeSwitcher />
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-2">
-            <ThemeSwitcher />
             <Button
               variant="ghost"
               size="sm"
